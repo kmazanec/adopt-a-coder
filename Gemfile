@@ -38,6 +38,19 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'travis-lint'
+
+gem 'coveralls', require: false
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
