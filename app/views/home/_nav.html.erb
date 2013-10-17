@@ -1,0 +1,29 @@
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>How it works</li>
+    <li>Recent Candidates</li>
+    <li>Recent Donors</li>
+    <li>FAQ</li>
+  </ul>
+  <div>
+    Donate
+  </div>
+  <% if logged_in? %>
+    <%= current_user.name %>
+    <ul>
+      <% if current_user_candidate %>
+        <li>Profile</li>
+        <li>Application</li>
+      <% else %>
+        <li>Profile</li>
+        <li>Your Nominees</li>
+      <% end %>
+    </ul>
+    <div>
+      Logout
+    </div>
+  <% else %>
+    Sign Up!
+  <% end %>
+</nav>
