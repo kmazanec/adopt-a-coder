@@ -22,6 +22,6 @@ FactoryGirl.define do
       f.mission "become a great coder"
       f.profile_photo_id "1"
       f.profile_video_id "1"
-      f.type "donor"
+      f.type "Donor"
   end
 end
