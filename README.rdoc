@@ -1,3 +1,5 @@
 == README
 
-[![Coverage Status](https://coveralls.io/repos/kmazanec/adopt-a-coder/badge.png)](https://coveralls.io/r/kmazanec/adopt-a-coder)
+
+{<img src="https://coveralls.io/repos/kmazanec/adopt-a-coder/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/kmazanec/adopt-a-coder]
+
