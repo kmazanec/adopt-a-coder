@@ -1,0 +1,63 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/application.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/campaign.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donation.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/media.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/nomination.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/question.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/response.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1382032024
+  }
+}

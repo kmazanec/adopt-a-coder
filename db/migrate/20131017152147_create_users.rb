@@ -30,7 +30,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :biography
       t.text :mission
       t.integer :profile_photo_id
-      t.ingeger :profile_video_id
+      t.integer :profile_video_id
 
 
       # USER TYPE - For single-table inheritance
