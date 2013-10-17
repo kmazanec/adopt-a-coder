@@ -34,7 +34,7 @@ class CreateUsers < ActiveRecord::Migration
 
 
       # USER TYPE - For single-table inheritance
-      t.string :type 
+      t.string :type
 
 
 
