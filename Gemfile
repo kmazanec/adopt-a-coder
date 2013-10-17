@@ -49,6 +49,7 @@ group :test, :development do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'cucumber-rails', :require => false
 end
 
 # Use unicorn as the app server
