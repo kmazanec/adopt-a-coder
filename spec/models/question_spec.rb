@@ -14,9 +14,14 @@ require 'spec_helper'
       end
 
       it "should not be valid with out a body entered" do
-        FactoryGirl.create(:question, body: nil).should_not be_valid
+        FactoryGirl.build(:question, body: nil).should_not be_valid
       end
 
+      it  "should have a unique question" do
+        question = FactoryGirl.create(:question)
+        FactoryGirl.create(:question, body: "what is the state capital")
+        FactoryGirl.build(:question, body: "what is the state capital").should_not be_valid
+      end
 
 
     end
