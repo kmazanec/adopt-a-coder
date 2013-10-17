@@ -1,5 +1,12 @@
 require 'spec_helper'
 
-describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  describe User do
+
+    context "Validations and Associations" do
+
+      it "should make a user" do
+        FactoryGirl.create(:user).should be_valid
+      end
+
+    end
+  end
