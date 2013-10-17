@@ -1,6 +1,6 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 FactoryGirl.define do
-  factory :user do |f|
+  factory :donor do |f|
       f.email "ka@gmail.com"
       f.name "Kevin Another"
       f.phone "555-212-6061"
@@ -24,5 +24,7 @@ FactoryGirl.define do
       f.profile_photo_id "1"
       f.profile_video_id "1"
       f.type "Donor"
+
+
   end
 end
