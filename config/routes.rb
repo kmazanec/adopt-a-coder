@@ -10,6 +10,7 @@ AdoptACoder::Application.routes.draw do
   end
 
   get '/logout' => 'sessions#logout'
+  post '/login' => 'sessions#login'
 
   post 'candidate/application/submit' => 'applications#submit'
 
