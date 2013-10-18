@@ -13,6 +13,7 @@ class CandidatesController < ApplicationController
       @candidate = Candidate.new(candidate_params)
       if @candidate.save
         session[:id] = @candidate.id
+        Application.create(candidate_id: @candidate.id)
         redirect_to candidate_path(@candidate)
       else
         # flash[:notice] what are the errors?
