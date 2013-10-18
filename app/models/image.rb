@@ -1,0 +1,3 @@
+class Image < Media
+
+end
