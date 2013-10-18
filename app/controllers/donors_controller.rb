@@ -21,7 +21,13 @@ class DonorsController < ApplicationController
   end
 
   def show
-
+    if logged_in? && current_user_donor
+      @donor = current_user
+      @donations = Donation.includes(:candidate).find_by(donor: @donor)
+      @nominations = Nomination.includes(:candidate).find_by(donor: @donor)
+    else
+      redirect_to index_path
+    end
   end
 
   private
