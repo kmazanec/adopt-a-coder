@@ -1,7 +1,66 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Donor.create(name: "Daddy Warbucks", email: "dad@warbucks.com", password: "test", password_confirmation: "test")
+Donor.create(name: "Eric Schultz", email: "eric@google.com", password: "test", password_confirmation: "test")
+Donor.create(name: "Darlene McCormick", email: "darlene@cars.com", password: "test", password_confirmation: "test")
+Donor.create(name: "Wilma Rogers", email: "wilma@gmail.com", password: "test", password_confirmation: "test")
+Donor.create(email: "rich@rich.biz", password: "test", password_confirmation: "test")
+
+c = Candidate.create(name: "Kevin Another", email: "kevin@another.com", phone: "123-456-7890",
+                password: "test", password_confirmation: "test", address1: "123 State St",
+                city: "Chicago", state: "IL", zip: "60600", twitter: "@kevinAnother22", 
+                facebook: "facebook.com/kevinanother22", blog: "kevinanother.tumblr.com")
+
+m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+             type: "Image", user_id: c.id)
+c.update_attributes(profile_photo_id: m.id)
+
+m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
+             type: "Video", user_id: c.id)
+c.update_attributes(profile_video_id: m.id)
+
+
+
+c = Candidate.create(name: "Tiffany Another", email: "tiffany@another.com", phone: "456-789-1023",
+                password: "test", password_confirmation: "test", address1: "456 Sesame Way",
+                city: "Boise", state: "ID", zip: "78012")
+
+m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+             type: "Image", user_id: c.id)
+c.update_attributes(profile_photo_id: m.id)
+
+m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
+             type: "Video", user_id: c.id)
+c.update_attributes(profile_video_id: m.id)
+
+c = Candidate.create(name: "Kenan Thompson", email: "kenan@thompson.com", phone: "634-345-7253",
+                password: "test", password_confirmation: "test", address1: "29801 Fort Thomas Pike",
+                address2: "Apt. 3D", city: "Nashville", state: "TN", zip: "37211")
+
+m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+             type: "Image", user_id: c.id)
+c.update_attributes(profile_photo_id: m.id)
+
+m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
+             type: "Video", user_id: c.id)
+c.update_attributes(profile_video_id: m.id)
+
+c = Candidate.create(name: "Maria Lopez", email: "maria@lopez.com", phone: "928-356-1535",
+                password: "test", password_confirmation: "test", address1: "87 West North Ave",
+                city: "Gainesville", state: "FL", zip: "34535")
+
+m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+             type: "Image", user_id: c.id)
+c.update_attributes(profile_photo_id: m.id)
+
+m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
+             type: "Video", user_id: c.id)
+c.update_attributes(profile_video_id: m.id)
+
+
+Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12000)
+
+15.times do
+  str = ""
+  10.times { str << [97..122].chr }
+  Donation.create(token: str, amount: rand(10..500), donor_id: rand(1..Donor.count), campaign_id: 1)
+
+end
