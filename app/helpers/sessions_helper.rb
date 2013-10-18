@@ -16,6 +16,4 @@ module SessionsHelper
     current_user.class == Donor
   end
 
-
-
 end
