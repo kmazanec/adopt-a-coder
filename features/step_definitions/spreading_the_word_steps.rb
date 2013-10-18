@@ -7,7 +7,7 @@ When(/^I follow the link to facebook$/) do
 end
 
 Then(/^I should be able to spread the word on facebook\.$/) do
-  page.should have_content "Share"
+  page.should have_content "Share This Link"
 end
 
 When(/^I follow the link to Tweet$/) do
