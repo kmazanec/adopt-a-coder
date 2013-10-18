@@ -1,6 +1,19 @@
 <h1>Profile Page</h1>
 
-<h3>
-  <%#= link_to  %>
+<h2><%= current_user.name %>, <%= current_user.id %></h2>
 
-</h3>
+<table>
+  <tr>
+    <td>To Do:</td>
+    <td>Status:</td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
+    <td>FINISHED?</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>FINISHED?</td>
+  </tr>
+</table>
+
