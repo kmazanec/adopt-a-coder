@@ -1,0 +1,10 @@
+<div class="container">
+  <%= link_to 'Create Profile', new_candidate_path %>
+
+  <%= form_tag login_path, :id => "login" do %>
+  <%= label_tag :email %>
+  <%= f.email_field :email, placeholder:"Email" %>
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder:"Password" %>
+  <%= f.submit "Login" %>
+</div>
