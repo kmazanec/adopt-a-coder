@@ -7,5 +7,6 @@ AdoptACoder::Application.routes.draw do
     resources "applications"
   end
 
+  get '/logout' => 'sessions#logout'
 
 end
