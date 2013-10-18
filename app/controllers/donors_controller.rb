@@ -23,7 +23,7 @@ class DonorsController < ApplicationController
       @donations = Donation.includes(:candidate).find_by(donor: @donor)
       @nominations = Nomination.includes(:candidate).find_by(donor: @donor)
     else
-      redirect_to index_path
+      redirect_to root_path
     end
   end
 
