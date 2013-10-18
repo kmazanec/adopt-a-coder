@@ -1,0 +1,26 @@
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  
+  <%= form_for @donor do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Full Name" %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "Email" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Password" %>
+
+  
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+
+    <%= f.submit %>
+
+  <% end %>
+  
+</div>
