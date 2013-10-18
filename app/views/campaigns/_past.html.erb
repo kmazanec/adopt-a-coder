@@ -1,0 +1,19 @@
+<!-- Current Campaign Partial -->
+<div>
+<% past_campaigns.each do |campaign| %>
+  <div>
+    <h1><%= campaign.candidate.name %></h1>
+    <h2><%= campaign.total %></h2>
+    <h2><%= campaign.goal %></h2>
+  </div>
+  <div>
+    <a href="<%#= #campaign.candidate.photo %>"></a>
+  </div>
+  <div>
+    <img src=" <%# campaign.candidate.profile %> ">
+  </div>
+  <div>
+    <%= link_to 'Read my story >', candidate_path(campaign.candidate) %>
+  </div>
+  <% end %>
+</div>
