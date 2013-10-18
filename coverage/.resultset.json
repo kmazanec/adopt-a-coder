@@ -41,7 +41,14 @@
         1,
         1,
         null,
+        null,
         1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -99,8 +106,153 @@
         null,
         1,
         null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/home_controller.rb": [
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1382049302
+    "timestamp": 1382114650
+  },
+  "Cucumber Features": {
+    "coverage": {
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/application.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/campaign.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/candidate.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/user.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donation.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donor.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/media.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/nomination.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/question.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/response.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/home_controller.rb": [
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1382114613
   }
 }
