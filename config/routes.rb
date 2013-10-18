@@ -2,9 +2,9 @@ AdoptACoder::Application.routes.draw do
 
   root "home#index"
 
-  resources "donor"
-  resources "candidate" do
-    resources "application"
+  resources "donors"
+  resources "candidates" do
+    resources "applications"
   end
 
 
