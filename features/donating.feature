@@ -1,4 +1,4 @@
-Feature: Daonating
+Feature: Donating
   In order for donators to donate
   As a donator
   I want to press a button and donate
