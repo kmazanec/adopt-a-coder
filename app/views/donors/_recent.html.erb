@@ -1,5 +1,10 @@
 <div>
-  <h1>Recent Donors</h1>
-
-
+  <h1>Recent Donations</h1>
+  <% recent_donations.each do |donation| %>
+  <div>
+    <h4>Donor: <%= donation.donor.name %></h4>
+    <p>Donation Amount: $<%= donation.amount %></p>
+    <p><%= donation.created_at.strftime("Donated on %m/%d/%Y") %></p>
+  </div>
+  <% end %>
 </div>
