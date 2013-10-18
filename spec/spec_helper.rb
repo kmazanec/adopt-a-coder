@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rails'
 require 'coveralls'
+
 Coveralls.wear!('rails')
 
 
