@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for :candidate do |f| %>
+  <%= form_for @candidate do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, placeholder:"Full Name" %>
   <%= f.label :email %>
@@ -10,8 +10,10 @@
   <%= f.password_field :password, placeholder:"Password" %>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, placeholder:"Password Confirmation" %>
-  <%= f.label :address %>
-  <%= f.text_field :address1, placeholder:"Address" %>
+  <%= f.label :address1 %>
+  <%= f.text_field :address1, placeholder:"Address1" %>
+  <%= f.label :address2 %>
+  <%= f.text_field :address2, placeholder:"Address2" %>
   <%= f.label :city %>
   <%= f.text_field :city, placeholder:"City" %>
   <%= f.label :state %>
