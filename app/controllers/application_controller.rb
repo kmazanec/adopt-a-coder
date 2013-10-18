@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     string = (0...50).map{ o[rand(o.length)] }.join
   end
   
+
+  include SessionsHelper
+
+
 end

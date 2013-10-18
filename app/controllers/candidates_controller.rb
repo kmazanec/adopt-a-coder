@@ -1,5 +1,4 @@
 class CandidatesController < ApplicationController
-
   def new
     @candidate = Candidate.new
   end
@@ -9,20 +8,19 @@ class CandidatesController < ApplicationController
   end
 
   def create
-    begin
+
       @candidate = Candidate.new(candidate_params)
       if @candidate.save
         session[:id] = @candidate.id
         Application.create(candidate_id: @candidate.id)
         redirect_to candidate_path(@candidate)
       else
-        # flash[:notice] what are the errors?
+
+        flash[:notice] = "Invalid Parameters. Please try again."
+
         render :new
       end
-    rescue ApplicationController::ParameterMissing
-      flash[:notice] = "Invalid Parameters. Please try again."
-      redirect_to new_candidate_path
-    end
+
   end
 
   def show
