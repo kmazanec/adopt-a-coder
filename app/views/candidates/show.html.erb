@@ -23,7 +23,7 @@
     </tr>
   <% else %>
     <tr>
-      <td><%= link_to 'Application' %></td>
+      <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
       <td>Completed</td>
     </tr>
     <tr>
