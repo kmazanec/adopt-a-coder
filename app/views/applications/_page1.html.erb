@@ -1,3 +1,9 @@
 <div>
-
+  <%= form_tag candidate_application_path id: "update" do %>
+    <% @responses.each do |response| %>
+      <p><%= response.question.body %></p>
+      <p><%= text_field_tag response.body %></p>
+      <% end %>
+      <%= submit_tag "Save Answers" %>
+    <% end %>
 </div>

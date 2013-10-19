@@ -12,4 +12,12 @@ class Candidate < User
   validates :email, presence: true
   validates :email, uniqueness: true
   validates_format_of :email, :with => /.+@.+\..{2,}/
+
+  after_create :application_create
+
+  protected
+  def application_create
+    Application.create(candidate_id: self.id)
+  end
+
 end

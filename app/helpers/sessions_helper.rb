@@ -16,4 +16,8 @@ module SessionsHelper
     current_user.class == Donor
   end
 
+  def current_application
+    @application ||= Application.includes(:candidate, :responses).find_by(candidate_id: session[:id])
+  end
+
 end
