@@ -12,4 +12,6 @@ module ApplicationHelper
     @past_campaigns ||= Campaign.includes(:candidate).order("id DESC").limit(10)
   end
 
+
+
 end
