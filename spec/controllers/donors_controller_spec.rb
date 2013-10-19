@@ -4,6 +4,7 @@ describe DonorsController do
 
   before(:each) do
     @donor = FactoryGirl.create(:donor)
+    controller.stub(:current_user).and_return(@donor)
   end
 
   describe "#create" do
@@ -88,5 +89,24 @@ describe DonorsController do
     end
 
   end
+
+  describe "#show" do
+
+    it "should show the profile view" do
+      get :show, :id => @donor.id
+
+      response.should render_template(:show)
+    end
+
+    it "should redirect home if your not logged in" do
+      get :show, :id => 3
+
+      response.should render_template(:show)
+    end
+
+
+
+  end
+
 
 end
