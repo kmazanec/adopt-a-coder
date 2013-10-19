@@ -7,10 +7,10 @@ class ApplicationsController < ApplicationController
   end
 
   def update
+
   end
 
   def edit
-    @questions = Question.all
     @responses = current_application.responses.all
   end
 
@@ -24,4 +24,11 @@ class ApplicationsController < ApplicationController
       redirect_to candidate_path(current_user)
     end
   end
+
+private
+
+def response_params
+  params.require(:response).permit(:body)
+end
+
 end

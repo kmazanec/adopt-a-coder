@@ -1,9 +1,34 @@
 <div>
-  <%= form_tag candidate_application_path id: "update" do %>
-    <% @responses.each do |response| %>
-      <p><%= response.question.body %></p>
-      <p><%= text_field_tag response.body %></p>
-      <% end %>
-      <%= submit_tag "Save Answers" %>
+  <% @responses.each do |response| %>
+    <%= form_for response, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
+    <p><%= response.question.body %></p>
+      <%= f.text_area :body %>
+      <%= f.submit %>
     <% end %>
+  <% end %>
 </div>
+
+
+
+<%= form_for response, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
+  <%= f.fields_for :responses do |builder| %>
+    <%= render "response_fields", :f => builder %>
+  <% end %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
+<p>
+  <%= f.label :question %><br />
+  <%= f.text_area :question, :rows => 3 %><br />
+</p>
+<%= f.fields_for :answers do |builder| %>
+  <%= render 'answer_fields', :f => builder %>
+<% end %>
+
+
+
+
+<p>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</p>
