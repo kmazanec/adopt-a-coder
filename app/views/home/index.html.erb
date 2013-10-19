@@ -1,44 +1,68 @@
-<div class="pure-u-1-6"> 
-  <div class="pure-menu pure-menu-open">
+<!--   <div class="pure-menu pure-menu-open">
   <ul>
-    <li><%= link_to "Home", root_path %></li>
+    <li><%#= link_to "Home", root_path %></li>
     <li><a href="#about">How it works</a></li>
     <li><a href="#current_candidates" >Recent Candidates</a></li>
     <li><a href="#recent_donors" >Recent Donors</a></li>
     <li><a href="#past_campaigns" >Past Campaigns</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
+  </div> -->
+
+
+  <div id="current_campaign" class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
+      <%= render "campaigns/current" %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
-</div>
 
-<div class="pure-u-5-6">
-
-  <div class="pure-u-1 l-box">
-    <%= render "campaigns/current" %>
-  </div>
-
-  <div class="pure-u-1 l-box">
+  <div class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
     <%= render "donate_form"  %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="about" class="pure-u-1 l-box">
+  <div id="about" class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
     <%= render "about" %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="current_candidates" class="pure-u-1 l-box">
+  <div id="current_candidates" class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
     <%= render "candidates/group_six" %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="recent_donors" class="pure-u-1 l-box">
+  <div id="recent_donors" class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
     <%= render "donors/recent" %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="past_campaigns" class="pure-u-1 l-box">
+  <div id="past_campaigns" class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
     <%= render "campaigns/past" %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="faq" class="pure-u-1 l-box">
+  <div id="faq" class="pure-u-1">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
     <%= render "faq" %>
+    </div>
+    <div class="pure-u-1-6"></div>
   </div>
 
-</div>

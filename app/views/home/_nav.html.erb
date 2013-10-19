@@ -1,21 +1,17 @@
 <nav class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><div>Donate</div></li>
-
+  <ul class="r-box">
   <% if logged_in? %>
     <% if current_user_candidate %>
-
       <li><%= link_to current_user.name, candidate_path(current_user) %></li>
-        <li>Profile</li>
-        <li>Application</li>
+      <li>Profile</li>
+      <li>Application</li>
     <% else %>
       <li><%= link_to current_user.name, donor_path(current_user) %></li>
     <% end %>
       <li><%= link_to "Logout", logout_path %></li>
+    </ul>
   <% else %>
-    <li>
-      <%= form_tag login_path, class: "pure-form" do %>
+      <li><%= form_tag login_path, class: "pure-form f-box" do %>
         <%= label_tag :email %>
         <%= email_field_tag :email, nil, placeholder: "email@example.com" %>
 
@@ -23,9 +19,10 @@
         <%= password_field_tag :password, nil, placeholder: "password" %>
 
         <%= submit_tag "Login", class: "pure-button" %>
-      <% end %>
-    </li>
+      <% end %></li>
     <li><%= link_to "Sign Up!", signup_path %></li>
+    </ul>
   <% end %>
-  </ul>
+    <li><%= link_to "Adopt-a-Coder", root_path, class: "logo-type" %></li>
+    <li><div class="pure-button pure-button-primary">Donate</div></li>
 </nav>

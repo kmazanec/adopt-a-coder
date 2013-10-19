@@ -17,11 +17,78 @@ body,
     padding: 1em;
 }
 
+.r-box {
+  float: right;
+}
+
+.f-box {
+  padding: 0 1em;
+}
 .container {
   margin: 3.5em 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.logo-type {
+  font-family: 'Inconsolata', sans-serif;
 }
 
 nav {
   height: 2.5em;
   padding: .5em 0;
+}
+
+.candidate-title {
+  text-align: center;
+  margin: 0;
+  font-size: 3em;
+}
+
+.video-container {
+  margin: 0 auto;
+}
+
+
+/* MAIN PAGE  */
+
+#current_campaign {
+  background-color: white;
+}
+
+#about {
+  background-color: white;
+}
+
+#current_candidateds {
+  background-color: white;
+}
+
+#recent_donors {
+  background-color: white;
+}
+
+#past_campaigns {
+  background-color: white;
+}
+
+#faq {
+  background-color: white;
+}
+
+.social-container {
+  float: right;
+}
+
+.social {
+  margin: 0;
+  padding: 0;
+}
+
+.dollars {
+  font-size: 3em;
+  font-weight: 400;
+  margin: 0;
 }
