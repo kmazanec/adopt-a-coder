@@ -10,6 +10,8 @@ class ApplicationsController < ApplicationController
   end
 
   def edit
+    @questions = Question.all
+    @responses = current_application.responses.all
   end
 
   def submit
