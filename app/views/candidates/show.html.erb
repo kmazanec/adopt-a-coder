@@ -12,17 +12,24 @@
     <td>To Do:</td>
     <td>Status:</td>
   </tr>
-  <tr>
-    <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
-    <td>FINISHED?</td>
-  </tr>
-  <tr>
-    <% if !current_application.complete %>
-      <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission' } %></td>
-    <% else %>
-      <td>SUBMITTED</td>
-    <% end %>
-    <td>FINISHED?</td>
-  </tr>
+  <% if !current_application.complete %>
+    <tr>
+      <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
+      <td>Incomplete</td>
+    </tr>
+    <tr>
+        <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission' } %></td>
+        <td>Not Submitted</td>
+    </tr>
+  <% else %>
+    <tr>
+      <td><%= link_to 'Application' %></td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+        <td>Already</td>
+        <td>Submitted</td>
+    </tr>
+  <% end %>
 </table>
 
