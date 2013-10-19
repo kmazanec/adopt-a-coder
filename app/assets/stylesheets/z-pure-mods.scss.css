@@ -1,0 +1,27 @@
+
+body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    /* Add your font in here, whether it's a custom font or a normal font */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+.pure-g > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.l-box {
+    padding: 1em;
+}
+
+.container {
+  margin: 3.5em 0;
+}
+
+nav {
+  height: 2.5em;
+  padding: .5em 0;
+}
