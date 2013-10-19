@@ -1,7 +1,47 @@
 <div>
-  <h2><%= current_user.name %></h2>
+  <h2><%= @donor.name %></h2>
   <h3>Recent Donations</h3>
-  
+  <% if @donations && @donations.any? %>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Beneficiary</th>
+      </tr>
+    <% @donations.each do |donation| %>
+      <tr>
+        <td><%= donation.created_at %></td>
+        <td>$ <%= donation.amount %></td>
+        <td><%= link_to donation.candidate.name, candidate_path(donation.candidate) %></td>
+      </tr>
+    <% end %>
+    </table>
+  <% else %>
+  <h4>It looks like you haven't donated yet...</h4>
+  <div>Donate Now</div>
+  <% end %>
 
+  <h3>Candidates You've Nominated</h3>
+  <% if @nominations && @nominations.any? %>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+      </tr>
+    <% @nominations.each do |nomination| %>
+      <tr>
+        <td><%= nomination.created_at %></td>
+        <td><%= link_to nomination.candidate.name, candidate_path(nomination.candidate) %></td>
+      </tr>
+    <% end %>
+  <% else %>
+  <h4>It looks like you haven't nominated anyone yet...</h4>
+    <% if @donations && @donations.any? %>
+      <%= link_to "Checkout the candidates and nominate someone!", candidates_path %>
+    <% else %>
+      <p>You need to make a donation before you can nominate anyone</p>
+      <div>Donate Now</div>
+    <% end %>
+  <% end %>
 
 </div>

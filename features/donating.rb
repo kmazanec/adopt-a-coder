@@ -1,1 +1,0 @@
-donating.rb
