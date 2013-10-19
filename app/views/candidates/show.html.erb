@@ -17,7 +17,11 @@
     <td>FINISHED?</td>
   </tr>
   <tr>
-    <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post %></td>
+    <% if !current_application.complete %>
+      <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission' } %></td>
+    <% else %>
+      <td>SUBMITTED</td>
+    <% end %>
     <td>FINISHED?</td>
   </tr>
 </table>

@@ -83,3 +83,31 @@ end
 
 Candidate.all.each {|c| c.profile_video_id = 2; c.save }
 Candidate.all.each {|c| c.profile_photo_id = 1; c.save }
+
+life_questions = ["Briefly introduce yourself with any information you think is important",
+                  "Tell us about an experience from your life that has influenced your development as a person.",
+                  "Describe your most meaningful achievement that has made an impact in your community",
+                  "How would you utilize your experience from this program to give back to your community?"]
+
+tech_questions = ["What is it about technology or coding that excites you?",
+                  "Tell us your understanding of how the internet works in 200 words or less.",
+                  "Tell us how you will use the internet to change the world?",
+                  "Include a few links below that demonstrate your current interest in coding (github account, codeacademy profile, ect.)."]
+
+need_questions = ["How will you stay motivated for 9 weeks in an intensive learning environment?",
+                  "How will an experience like this improve your life for the better?",
+                  "Please briefly describe what qualifies you for this scholarship",
+                  "How can this website be improved to be more accessible for potential candidates like yourself?"]
+
+life_questions.each do |question|
+  Question.create(body: question)
+end
+
+tech_questions.each do |question|
+  Question.create(body: question)
+end
+
+need_questions.each do |question|
+  Question.create(body: question)
+end
+

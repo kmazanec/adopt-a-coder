@@ -1,5 +1,5 @@
 <%= form_for current_application, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
-  <% current_application.responses.order("id ASC").slice(0,3).each do |response| %>
+  <% current_application.responses.order("id ASC").slice(0,4).each do |response| %>
     <%= f.fields_for :responses, response do |r| %>
       <%= r.label :body, "#{response.question.body}" %>
       <%= r.text_area :body %>
