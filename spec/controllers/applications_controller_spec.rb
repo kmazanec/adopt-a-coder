@@ -8,7 +8,9 @@ describe ApplicationsController do
       @application = FactoryGirl.create(:application)
       @candidate = FactoryGirl.create(:candidate)
       @candidate.application = @application
+      @app = @candidate.application
       controller.stub(:current_user).and_return(@candidate)
+
     end
 
     it "should change the status of a users application to complete" do
@@ -34,7 +36,19 @@ describe ApplicationsController do
 
       redirect_to candidate_path(@candidate)
     end
+  end
 
+  describe "#edit" do
+
+    it 'should render the edit page' do
+      @candidate = FactoryGirl.create(:candidate)
+      @app = @candidate.application
+      controller.stub(:current_application).and_return(@candidate.application)
+
+      get :edit, candidate_id: @candidate.id, id: @app.id
+
+      response.should render_template(:edit)
+    end
 
   end
 
