@@ -23,9 +23,7 @@ require 'spec_helper'
         FactoryGirl.create(:response).should be_valid
       end
 
-      it "should not be valid with out a body entered" do
-        FactoryGirl.build(:response, body: nil).should_not be_valid
-      end
+
 
 
 
