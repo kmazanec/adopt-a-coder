@@ -5,7 +5,7 @@
   <h2><%= current_campaign.goal %></h2>
 
   <div>
-    <a href="<%#= #current_campaign.candidate.video %>"></a>
+    <iframe width="600" height="300" src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
   </div>
 
   <div>
