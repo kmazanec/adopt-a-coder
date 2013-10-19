@@ -99,9 +99,11 @@ describe DonorsController do
     end
 
     it "should redirect home if your not logged in" do
-      get :show, :id => 3
+      @candidate = FactoryGirl.create(:candidate)
+      controller.stub(:current_user).and_return(@candidate)
+      get :show, :id => @candidate
 
-      response.should render_template(:show)
+      redirect_to root_path
     end
 
 
