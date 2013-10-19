@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @candidates = Candidate.all
   end
 
+  def signup
+    render :_signup
+  end
+
 end
