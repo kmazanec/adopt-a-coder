@@ -1,33 +1,31 @@
-<nav>
-  <%= link_to "Home", root_path %>
-  <div>
-    Donate
-  </div>
+<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li><div>Donate</div></li>
+
   <% if logged_in? %>
     <% if current_user_candidate %>
-      <%= link_to current_user.name, candidate_path(current_user) %>
-      <ul>
+
+      <li><%= link_to current_user.name, candidate_path(current_user) %></li>
         <li>Profile</li>
         <li>Application</li>
-      </ul>
     <% else %>
-      <%= link_to current_user.name, donor_path(current_user) %>
+      <li><%= link_to current_user.name, donor_path(current_user) %></li>
     <% end %>
-    <div>
-      <%= link_to "Logout", logout_path %>
-    </div>
+      <li><%= link_to "Logout", logout_path %></li>
   <% else %>
-    <%= form_tag login_path do %>
-      <%= label_tag :email %>
-      <%= email_field_tag :email, nil, placeholder: "email@example.com" %>
+    <li>
+      <%= form_tag login_path, class: "pure-form" do %>
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, placeholder: "email@example.com" %>
 
-      <%= label_tag :password %>
-      <%= password_field_tag :password, nil, placeholder: "password" %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, placeholder: "password" %>
 
-      <%= submit_tag "Login" %>
-    <% end %>
-
-
-    <%= link_to "Sign Up!", signup_path %>
+        <%= submit_tag "Login", class: "pure-button" %>
+      <% end %>
+    </li>
+    <li><%= link_to "Sign Up!", signup_path %></li>
   <% end %>
+  </ul>
 </nav>

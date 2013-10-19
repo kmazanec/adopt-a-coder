@@ -1,8 +1,9 @@
 <!-- Current Campaign Partial -->
-<div>
-  <h1><%= current_campaign.candidate.name %></h1>
-  <h2><%= current_campaign.total %></h2>
-  <h2><%= current_campaign.goal %></h2>
+<div class="pure-g-r">
+
+  <h1 class="pure-u-1 pure-coder"><%= current_campaign.candidate.name %></h1>
+  <h2 class="pure-u-1-2"><%= current_campaign.total %></h2>
+  <h2 class="pure-u-1-2"><%= current_campaign.goal %></h2>
 
   <div>
     <iframe width="600" height="300" src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>

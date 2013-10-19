@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>AdoptACoder</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,13 +10,21 @@
   <script type="text/javascript">Stripe.setPublishableKey('pk_test_oRsat9T97yBaR68ncNtQ81Xz');</script>
   
 </head>
-<body>
+<body class="pure-skin-coder">
+
 
 <%= render "home/nav" %>
 
-<%= yield %>
+<div class="container">
+
+  <div class="pure-g-r">
+    <%= yield %>
+  </div>
+
+</div>
 
 <%= render "home/footer" %>
+
 
 </body>
 </html>

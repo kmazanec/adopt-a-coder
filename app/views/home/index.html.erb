@@ -1,39 +1,43 @@
-<ul>
-  <li><%= link_to "Home", root_path %></li>
-  <li><a href="#about">How it works</a></li>
-  <li><a href="#current_candidates" >Recent Candidates</a></li>
-  <li><a href="#recent_donors" >Recent Donors</a></li>
-  <li><a href="#past_campaigns" >Past Campaigns</a></li>
-  <li><a href="#faq">FAQ</a></li>
-</ul>
+<div class="pure-u-1-6"> 
+  <div class="pure-menu pure-menu-open">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li><a href="#about">How it works</a></li>
+    <li><a href="#current_candidates" >Recent Candidates</a></li>
+    <li><a href="#recent_donors" >Recent Donors</a></li>
+    <li><a href="#past_campaigns" >Past Campaigns</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  </div>
+</div>
 
-<div class="container">
+<div class="pure-u-5-6">
 
-  <div>
+  <div class="pure-u-1 l-box">
     <%= render "campaigns/current" %>
   </div>
 
-  <div>
+  <div class="pure-u-1 l-box">
     <%= render "donate_form"  %>
   </div>
 
-  <div id="about">
+  <div id="about" class="pure-u-1 l-box">
     <%= render "about" %>
   </div>
 
-  <div id="current_candidates">
+  <div id="current_candidates" class="pure-u-1 l-box">
     <%= render "candidates/group_six" %>
   </div>
 
-  <div id="recent_donors">
+  <div id="recent_donors" class="pure-u-1 l-box">
     <%= render "donors/recent" %>
   </div>
 
-  <div id="past_campaigns">
+  <div id="past_campaigns" class="pure-u-1 l-box">
     <%= render "campaigns/past" %>
   </div>
 
-  <div id="faq">
+  <div id="faq" class="pure-u-1 l-box">
     <%= render "faq" %>
   </div>
 
