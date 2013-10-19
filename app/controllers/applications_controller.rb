@@ -7,7 +7,7 @@ class ApplicationsController < ApplicationController
   end
 
   def update
-
+    p response_params
   end
 
   def edit
@@ -25,10 +25,12 @@ class ApplicationsController < ApplicationController
     end
   end
 
-private
+  private
 
-def response_params
-  params.require(:response).permit(:body)
-end
+  def update_params
+    params.require(:application).permit(:responses)
+  end
+
+  # def update_params
 
 end

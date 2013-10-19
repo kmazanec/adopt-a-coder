@@ -1,34 +1,10 @@
-<div>
-  <% @responses.each do |response| %>
-    <%= form_for response, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
-    <p><%= response.question.body %></p>
-      <%= f.text_area :body %>
-      <%= f.submit %>
+<%= form_for current_application, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
+  <% current_application.responses.each do |response| %>
+    <%= f.fields_for :responses, response do |r| %>
+      <%= r.label :body, "#{response.question.body}" %>
+      <%= r.text_area :body %>
     <% end %>
   <% end %>
-</div>
-
-
-
-<%= form_for response, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
-  <%= f.fields_for :responses do |builder| %>
-    <%= render "response_fields", :f => builder %>
-  <% end %>
-  <p><%= f.submit "Submit" %></p>
+  <%= f.submit "Save Application" %>
 <% end %>
 
-<p>
-  <%= f.label :question %><br />
-  <%= f.text_area :question, :rows => 3 %><br />
-</p>
-<%= f.fields_for :answers do |builder| %>
-  <%= render 'answer_fields', :f => builder %>
-<% end %>
-
-
-
-
-<p>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-</p>
