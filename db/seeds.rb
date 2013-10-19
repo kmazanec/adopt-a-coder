@@ -14,7 +14,7 @@ donor_ids << d.id
 
 c = Candidate.create(name: "Kevin Another", email: "kevin@another.com", phone: "123-456-7890",
                 password: "test", password_confirmation: "test", address1: "123 State St",
-                city: "Chicago", state: "IL", zip: "60600", twitter: "@kevinAnother22", 
+                city: "Chicago", state: "IL", zip: "60600", twitter: "@kevinAnother22",
                 facebook: "facebook.com/kevinanother22", blog: "kevinanother.tumblr.com")
 candidate_ids << c.id
 
@@ -80,3 +80,6 @@ Donor.all.each do |donor|
   donor.nominations.build(campaign_id: 1, candidate_id: candidate_ids.sample)
   donor.save
 end
+
+Candidate.all.each {|c| c.profile_video_id = 2; c.save }
+Candidate.all.each {|c| c.profile_photo_id = 1; c.save }
