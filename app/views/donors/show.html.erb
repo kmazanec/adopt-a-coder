@@ -34,6 +34,7 @@
         <td><%= link_to nomination.candidate.name, candidate_path(nomination.candidate) %></td>
       </tr>
     <% end %>
+    </table>
   <% else %>
   <h4>It looks like you haven't nominated anyone yet...</h4>
     <% if @donations && @donations.any? %>

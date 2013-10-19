@@ -1,29 +1,33 @@
 <nav>
-  <ul>
-    <li>Home</li>
-    <li>How it works</li>
-    <li>Recent Candidates</li>
-    <li>Recent Donors</li>
-    <li>FAQ</li>
-  </ul>
+  <%= link_to "Home", root_path %>
   <div>
     Donate
   </div>
   <% if logged_in? %>
-    <%= current_user.name %>
-    <ul>
-      <% if current_user_candidate %>
+    <% if current_user_candidate %>
+      <%= link_to current_user.name, candidate_path(current_user) %>
+      <ul>
         <li>Profile</li>
         <li>Application</li>
-      <% else %>
-        <li>Profile</li>
-        <li>Your Nominees</li>
-      <% end %>
-    </ul>
+      </ul>
+    <% else %>
+      <%= link_to current_user.name, donor_path(current_user) %>
+    <% end %>
     <div>
       <%= link_to "Logout", logout_path %>
     </div>
   <% else %>
-    Sign Up!
+    <%= form_tag login_path do %>
+      <%= label_tag :email %>
+      <%= email_field_tag :email, nil, placeholder: "email@example.com" %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, placeholder: "password" %>
+
+      <%= submit_tag "Login" %>
+    <% end %>
+
+
+    <%= link_to "Sign Up!", signup_path %>
   <% end %>
 </nav>

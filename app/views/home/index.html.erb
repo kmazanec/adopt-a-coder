@@ -1,3 +1,12 @@
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+  <li><a href="#about">How it works</a></li>
+  <li><a href="#current_candidates" >Recent Candidates</a></li>
+  <li><a href="#recent_donors" >Recent Donors</a></li>
+  <li><a href="#past_campaigns" >Past Campaigns</a></li>
+  <li><a href="#faq">FAQ</a></li>
+</ul>
+
 <div class="container">
 
   <div>
@@ -6,24 +15,25 @@
 
   <div>
     <%= render "donate_form"  %>
+  </div>
 
-  <div>
+  <div id="about">
     <%= render "about" %>
   </div>
 
-  <div>
+  <div id="current_candidates">
     <%= render "candidates/group_six" %>
   </div>
 
-  <div>
+  <div id="recent_donors">
     <%= render "donors/recent" %>
   </div>
 
-  <div>
+  <div id="past_campaigns">
     <%= render "campaigns/past" %>
   </div>
 
-  <div>
+  <div id="faq">
     <%= render "faq" %>
   </div>
 

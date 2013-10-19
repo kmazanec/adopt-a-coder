@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
    def password_generator
-    o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
-    string = (0...50).map{ o[rand(o.length)] }.join
-  end
-  
+      o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+      string = (0...50).map{ o[rand(o.length)] }.join
+   end
+
 
   include SessionsHelper
   include ApplicationHelper
