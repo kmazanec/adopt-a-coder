@@ -1,26 +1,18 @@
 <nav>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><a href="#about">How it works</a></li>
-    <li><a href="#current_candidates" >Recent Candidates</a></li>
-    <li><a href="#recent_donors" >Recent Donors</a></li>
-    <li><a href="#past_campaigns" >Past Campaigns</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
+  <%= link_to "Home", root_path %>
   <div>
     Donate
   </div>
   <% if logged_in? %>
-    <%= current_user.name %>
-    <ul>
-      <% if current_user_candidate %>
+    <% if current_user_candidate %>
+      <%= link_to current_user.name, candidate_path(current_user) %>
+      <ul>
         <li>Profile</li>
         <li>Application</li>
-      <% else %>
-        <li>Profile</li>
-        <li>Your Nominees</li>
-      <% end %>
-    </ul>
+      </ul>
+    <% else %>
+      <%= link_to current_user.name, donor_path(current_user) %>
+    <% end %>
     <div>
       <%= link_to "Logout", logout_path %>
     </div>
