@@ -12,8 +12,10 @@ class ApplicationsController < ApplicationController
       redirect_to :back
     elsif params[:next]
       redirect_to :back
-    else params[:back]
+    elsif params[:back]
       redirect_to :back
+    else
+      redirect_to candidate_path(current_user)
     end
   end
 
@@ -22,13 +24,19 @@ class ApplicationsController < ApplicationController
   end
 
   def submit
-    begin
-      @application = current_user.application
-      @application.update_attribute(:complete, true)
-    rescue ActiveRecord::RecordNotFound
-      flash[:notice] = "We were unable to submit that record. Please try again."
-    ensure
-      redirect_to candidate_path(current_user)
+    @application = current_user.application
+    if @application.complete?
+      begin
+
+        @application.update_attribute(:complete, true)
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "We were unable to submit that record. Please try again."
+      ensure
+        redirect_to candidate_path(current_user)
+      end
+    else
+      flash[:notice] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
+      redirect_to :back
     end
   end
 
