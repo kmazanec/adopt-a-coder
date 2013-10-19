@@ -1,0 +1,10 @@
+<%= form_for current_application, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
+  <% current_application.responses.order("id ASC").slice(8,4).each do |response| %>
+    <%= f.fields_for :responses, response do |r| %>
+      <%= r.label :body, "#{response.question.body}" %>
+      <%= r.text_area :body %>
+    <% end %>
+  <% end %>
+<%= f.submit "Save and Return to Profile", name: "save_and_exit" %>
+<%= f.submit "Back", name: "back" %>
+<% end %>

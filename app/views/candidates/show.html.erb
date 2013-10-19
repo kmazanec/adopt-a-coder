@@ -2,18 +2,34 @@
 
 <h2><%= current_user.name %>, <%= current_user.id %></h2>
 
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+<!-- IN the CONTROLLER, NEED TO MAKE A CHANGE SO THE PROFILE PAGE REFLECTS IF IT IS A DONOR OR CANDIDATE -->
+
 <table>
   <tr>
     <td>To Do:</td>
     <td>Status:</td>
   </tr>
-  <tr>
-    <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
-    <td>FINISHED?</td>
-  </tr>
-  <tr>
-    <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post %></td>
-    <td>FINISHED?</td>
-  </tr>
+  <% if !current_application.complete %>
+    <tr>
+      <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
+      <td>Incomplete</td>
+    </tr>
+    <tr>
+        <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission' } %></td>
+        <td>Not Submitted</td>
+    </tr>
+  <% else %>
+    <tr>
+      <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+        <td>Already</td>
+        <td>Submitted</td>
+    </tr>
+  <% end %>
 </table>
 

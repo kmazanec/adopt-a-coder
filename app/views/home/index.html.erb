@@ -1,3 +1,4 @@
+
 <!--   <div class="pure-menu pure-menu-open">
   <ul>
     <li><%#= link_to "Home", root_path %></li>
@@ -9,6 +10,9 @@
   </ul>
   </div> -->
 
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
 
   <div id="current_campaign" class="pure-u-1">
     <div class="pure-u-1-6"></div>
@@ -16,7 +20,7 @@
       <%= render "campaigns/current" %>
     </div>
     <div class="pure-u-1-6"></div>
-  </div>
+
 
   <div class="pure-u-1">
     <div class="pure-u-1-6"></div>

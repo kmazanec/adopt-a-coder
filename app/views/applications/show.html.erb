@@ -1,0 +1,17 @@
+<div>
+  <%= link_to "Return to Profile", :back %>
+
+
+  <h1>Scholarship Application</h1>
+  <h2><%= current_user.name %></h2>
+
+  <p><%= current_application.updated_at.strftime("Submitted On: %m/%d/%y at %I:%M%p")%></p>
+
+  <div>
+    <% current_application.responses.each do |response| %>
+      <h4><%= response.question.body %></h4>
+      <p><%= response.body %></p>
+    <% end %>
+  </div>
+
+</div>

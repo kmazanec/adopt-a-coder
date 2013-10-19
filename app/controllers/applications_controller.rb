@@ -7,21 +7,43 @@ class ApplicationsController < ApplicationController
   end
 
   def update
+    Application.save_application(update_params)
+    if params[:save_and_continue]
+      redirect_to :back
+    elsif params[:next]
+      redirect_to :back
+    elsif params[:back]
+      redirect_to :back
+    else
+      redirect_to candidate_path(current_user)
+    end
   end
 
   def edit
-    @questions = Question.all
     @responses = current_application.responses.all
   end
 
   def submit
-    begin
-      @application = current_user.application
-      @application.update_attribute(:complete, true)
-    rescue ActiveRecord::RecordNotFound
-      flash[:notice] = "We were unable to submit that record. Please try again."
-    ensure
-      redirect_to candidate_path(current_user)
+    @application = current_user.application
+    if @application.complete?
+      begin
+        @application.update_attribute(:complete, true)
+        flash[:notice] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "We were unable to submit that record. Please try again."
+      ensure
+        redirect_to candidate_path(current_user)
+      end
+    else
+      flash[:notice] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
+      redirect_to :back
     end
   end
+
+  private
+
+  def update_params
+    params.require(:application).permit(responses_attributes: [:id, :body])
+  end
+
 end
