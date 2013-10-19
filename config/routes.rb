@@ -4,7 +4,7 @@ AdoptACoder::Application.routes.draw do
 
   resources "charges"
   resources "donors"
-  
+
   resources "candidates" do
     resources "applications"
   end
