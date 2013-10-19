@@ -6,6 +6,14 @@ class Application < ActiveRecord::Base
 
   after_create :create_responses
 
+  def self.save_application(input)
+    input[:responses_attributes].each_value do |params_hash|
+      response = Response.find(params_hash[:id])
+      response.update_attributes(body: params_hash[:body])
+    end
+  end
+
+
   protected
   def create_responses
     Question.all.each do |question|

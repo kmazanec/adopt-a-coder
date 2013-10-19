@@ -7,7 +7,8 @@ class ApplicationsController < ApplicationController
   end
 
   def update
-    p response_params
+    Application.save_application(update_params)
+    redirect_to :back
   end
 
   def edit
@@ -28,9 +29,7 @@ class ApplicationsController < ApplicationController
   private
 
   def update_params
-    params.require(:application).permit(:responses)
+    params.require(:application).permit(responses_attributes: [:id, :body])
   end
-
-  # def update_params
 
 end
