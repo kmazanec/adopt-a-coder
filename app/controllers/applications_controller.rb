@@ -8,7 +8,13 @@ class ApplicationsController < ApplicationController
 
   def update
     Application.save_application(update_params)
-    redirect_to :back
+    if params[:save_and_continue]
+      redirect_to :back
+    elsif params[:next]
+      redirect_to :back
+    else params[:back]
+      redirect_to :back
+    end
   end
 
   def edit
