@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <h6><%= @candidate.responses.first.question %></h6>
+    <p><%= @candidate.responses.first.body %></p>
+  </div>
+   <div>
+    <h6><%= @candidate.responses.find(3).question %></h6>
+    <p><%= @candidate.responses.find(3).body %></p>
+  </div>
+  <div>
+    <h6><%= @candidate.responses.find(4).question %></h6>
+    <p><%= @candidate.responses.find(4).body %></p>
+  </div>
+</div>

@@ -26,11 +26,11 @@ class ApplicationsController < ApplicationController
       rescue ActiveRecord::RecordNotFound
         flash[:notice] = "We were unable to submit that record. Please try again."
       ensure
-        redirect_to candidate_path(current_user)
+        redirect_to edit_candidate_path(current_user)
       end
     else
       flash[:notice] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
-      redirect_to :back
+      redirect_to edit_candidate_path(current_user)
     end
   end
 

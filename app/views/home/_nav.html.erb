@@ -9,7 +9,7 @@
       <li><div class="button">Donate</div></li>
   <% if logged_in? %>
     <% if current_user_candidate %>
-      <li><%= link_to current_user.name, candidate_path(current_user) %></li>
+      <li><%= link_to current_user.name, edit_candidate_path(current_user) %></li>
       <li>Profile</li>
       <li>Application</li>
     <% else %>
