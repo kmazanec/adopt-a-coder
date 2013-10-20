@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Video do
 
-    context "Youtube regex" do
+    describe "Youtube regex" do
 
       it "should have the proper regex" do
         video = Video.create!(url: "http://www.youtube.com/watch?v=xEhaVhta7sI")
