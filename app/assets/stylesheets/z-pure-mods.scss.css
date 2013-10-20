@@ -19,8 +19,17 @@
   height: 50px;
 }
 
+.lots-of-margin {
+  margin: 5% 0;
+}
+
+.little-bit-of-bottom-margin {
+  margin-bottom: 10px;
+}
+
 .container {
-  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .center {
@@ -47,6 +56,12 @@
 .no-margin {
   margin: 0;
 }
+
+.image-square {
+  overflow: hidden;
+
+}
+
 
 
 
