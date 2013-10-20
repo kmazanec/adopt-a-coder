@@ -6,10 +6,13 @@ describe ApplicationsController do
   describe "#submit" do
     before(:each) do
       @application = FactoryGirl.create(:application)
+      @myresponse = FactoryGirl.create(:response)
       @candidate = FactoryGirl.create(:candidate)
       @candidate.application = @application
       @app = @candidate.application
+      @app.responses = [@myresponse]
       controller.stub(:current_user).and_return(@candidate)
+      controller.stub(:current_application).and_return(@app)
 
     end
 
@@ -18,24 +21,11 @@ describe ApplicationsController do
 
 
 
+      flash[:success].should eq "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
       @candidate.reload.application.complete.should eq true
-    end
-
-    it "should flash notice if the submission does not work" do
-      post 'submit'
-
-
-      flash[:notice].should be_nil
-      @candidate.reload.application.complete.should eq true
-    end
-
-    it "should redirect to user page" do
-      post 'submit'
-
-
-
       redirect_to candidate_path(@candidate)
     end
+
   end
 
   describe "#edit" do
