@@ -4,7 +4,11 @@ class CandidatesController < ApplicationController
   end
 
   def index
-    @candidates = Candidate.order("RANDOM()")
+    if params[:search]
+      @candidates = Candidate.search(params[:search]).order("Random()")
+    else
+      @candidates = Candidate.order("RANDOM()")
+    end
   end
 
   def create
