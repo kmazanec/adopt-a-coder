@@ -1,37 +1,72 @@
 <!-- Current Campaign Partial -->
-<div>
-  <h1><%= current_campaign.candidate.name %></h1>
-  <h2><%= current_campaign.total %></h2>
-  <h2><%= current_campaign.goal %></h2>
+<div class="">
 
-  <div>
-    <iframe width="600" height="300" src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
+
+  <div class="row">
+    <div class="small-12 large-7 columns">
+      <div class="flex-video">
+      <iframe src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="small-12 large-4 columns">
+      <h5>Currently funding...</h5>
+      <h1 class="candidate-title"><%= current_campaign.candidate.name %></h1>
+    <div class="pure-u-1-2 social-container">
+      <ul class="pure-menu pure-menu-open pure-menu-horizontal social">
+      <li>
+        <div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="adoptacoder">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+      </li>
+
+      <li>
+        <div>
+        <a href="#"
+          onclick="
+            window.open(
+              'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+              'facebook-share-dialog',
+              'width=626,height=436');
+            return false;">
+          <%= image_tag 'facebook.svg', size: "18" %>
+        </a>
+        </div>
+      </li>
+
+      <li>
+      <div>
+        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site    http://localhost:3000" title="Share by Email">Share by Email</a>
+      </div>
+      </li>
+    </ul>
+    </div>
+  </div>
+    <div class="">
+      <h4>Countdown Clock</h4>
+    </div>
   </div>
 
-  <div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="adoptacoder">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  <div class="row">
+    <div class="small-4 large-2 columns">
+      <h2 class="dollars">$ <%= current_campaign.total %></h2>      
+    </div>
+    <div class="nice round progress success large-8 columns">
+      <span class="meter" style="width: <%=current_campaign.total/current_campaign.goal.to_f*100%>%"></span>
+    </div>
+    <div class="small-4 large-2 columns">
+      <h2 class="dollars">$ <%= current_campaign.goal %></h2>      
+    </div>
   </div>
 
-  <div>
-    <a href="#"
-      onclick="
-        window.open(
-          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-          'facebook-share-dialog',
-          'width=626,height=436');
-        return false;">
-      Share on Facebook
-    </a>
+  <div class="pure-u-1-2">
+    <%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "pure-button" %>
   </div>
 
-  <div>
-    <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site    http://localhost:3000" title="Share by Email">Share by Email</a>
-  </div>
+  <!-- SOCIAL SHARING -->
 
-  <div>
-    <%= link_to 'Read my story >', candidate_path(current_campaign.candidate) %>
-  </div>
+
 
   <div>
     <a href="#">Donate</a>

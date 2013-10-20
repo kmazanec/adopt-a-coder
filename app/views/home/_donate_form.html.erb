@@ -1,61 +1,64 @@
-<%= form_tag charges_path, :id => 'payment-form' do %>
+
+<%= form_tag charges_path, :id => 'payment-form', class: "pure-form pure-form-aligned" do %>
 
   <span class="payment-errors"></span>
 
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>Name</span>
-      <input type="text"  name='name'/>
     </label>
+      <input type="text"  name='name'/>
   </div>
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>Email</span>
-      <input type="text" name='email'/>
     </label>
+      <input type="text" name='email'/>
   </div>
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>Amount</span>
-      <input type="text" name='amount'/>
     </label>
+      <input type="text" name='amount'/>
   </div>
 
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>Card Number</span>
-      <input type="text" size="20" data-stripe="number"/>
     </label>
+      <input type="text" size="20" data-stripe="number"/>
   </div>
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>CVC</span>
-      <input type="text" size="4" data-stripe="cvc"/>
     </label>
+      <input type="text" size="4" data-stripe="cvc"/>
   </div>
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>Expiration (MM/YYYY)</span>
-      <input type="text" size="2" data-stripe="exp-month"/>
     </label>
+      <input type="text" size="2" data-stripe="exp-month"/>
     <span> / </span>
     <input type="text" size="4" data-stripe="exp-year"/>
   </div>
 
-  <div class="form-row">
+  <div class="form-row pure-control-group">
     <label>
       <span>Zip Code</span>
-      <input type="text" size="5" data-stripe="address_zip"/>
     </label>
+      <input type="text" size="5" data-stripe="address_zip"/>
   </div>
 
-  <button type="submit">Donate</button>
+  <div class="pure-controls">
+    <button type="submit" class="pure-button pure-button-primary">Submit Transaction</button>
+  </div>
 
 
   <script>

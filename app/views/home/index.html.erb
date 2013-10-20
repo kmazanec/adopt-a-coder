@@ -1,40 +1,47 @@
-<ul>
-  <li><%= link_to "Home", root_path %></li>
-  <li><a href="#about">How it works</a></li>
-  <li><a href="#current_candidates" >Recent Candidates</a></li>
-  <li><a href="#recent_donors" >Recent Donors</a></li>
-  <li><a href="#past_campaigns" >Past Campaigns</a></li>
-  <li><a href="#faq">FAQ</a></li>
-</ul>
+<div class="row"></div>
+<div class="row">
+  <div class="small-12 large-7 small-centered columns">
+  <dl class="sub-nav">
+    <dd class="active"><%= link_to "Home", root_path %></dd>
+    <dd><a href="#about">How it works</a></dd>
+    <dd><a href="#current_candidates" >Recent Candidates</a></dd>
+    <dd><a href="#recent_donors" >Recent Donors</a></dd>
+    <dd><a href="#past_campaigns" >Past Campaigns</a></dd>
+    <dd><a href="#faq">FAQ</a></dd>
+  </dl>
+</div>
 
-<div class="container">
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
 
-  <div>
-    <%= render "campaigns/current" %>
+  <div class="row">
+    <div id="current_campaign">
+      <%= render "campaigns/current" %>
+    </div>
   </div>
 
-  <div>
+  <div class="row">
     <%= render "donate_form"  %>
   </div>
 
-  <div id="about">
+  <div id="about" class="row">
     <%= render "about" %>
   </div>
 
-  <div id="current_candidates">
+  <div id="current_candidates" class="row">
     <%= render "candidates/group_six" %>
   </div>
 
-  <div id="recent_donors">
+  <div id="recent_donors" class="row">
     <%= render "donors/recent" %>
   </div>
 
-  <div id="past_campaigns">
+  <div id="past_campaigns" class="row">
     <%= render "campaigns/past" %>
   </div>
 
-  <div id="faq">
+  <div id="faq" class="row">
     <%= render "faq" %>
   </div>
 
-</div>
