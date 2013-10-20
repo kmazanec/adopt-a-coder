@@ -6,7 +6,7 @@
   </ul>
   <section class="top-bar-section">
   <ul class="right">
-      <li><div class="button success">Donate</div></li>
+      <li><a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a></li>
   <% if logged_in? %>
     <% if current_user_candidate %>
       <li><%= link_to current_user.name, candidate_path(current_user) %></li>
