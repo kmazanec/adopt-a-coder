@@ -13,6 +13,13 @@ class Application < ActiveRecord::Base
     end
   end
 
+  def complete?
+    self.responses.each do |response|
+      return false if response.body.length < 10
+    end
+    true
+  end
+
 
   protected
   def create_responses
