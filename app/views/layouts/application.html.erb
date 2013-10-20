@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Adopt-a-Coder" %></title>
 
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -31,6 +31,14 @@
 
 
 <%= render "home/nav" %>
+
+<% if flash[:notice] %>
+  <div data-alert class="alert-box"><%= flash[:notice] %><a href class="close">x</a></div>
+<% elsif flash[:error] %>
+  <div data-alert class="alert-box error"><%= flash[:error] %><a href class="close">x</a></div>
+<% elsif flash[:success] %>
+  <div data-alert class="alert-box success"><%= flash[:success] %><a href class="close">x</a></div>
+<% end %>
 
 <div class="container">
 

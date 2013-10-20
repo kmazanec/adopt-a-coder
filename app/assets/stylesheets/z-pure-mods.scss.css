@@ -23,7 +23,9 @@
   margin-top: 5px;
 }
 
-
+.center {
+  text-align: center;
+}
 
 
 
@@ -47,9 +49,7 @@
   margin: 3.5em 0;
 }*/
 
-/*.center {
-  text-align: center;
-}*/
+
 
 /*.logo-type {
   font-family: 'Inconsolata', sans-serif;
