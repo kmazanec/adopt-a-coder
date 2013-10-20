@@ -40,6 +40,17 @@ require 'spec_helper'
          FactoryGirl.build(:campaign, goal: nil).should_not be_valid
       end
 
+      it "should give the total donations" do
+        campaign = FactoryGirl.create(:campaign)
+        donation = FactoryGirl.create(:donation)
+        campaign.donations = [donation]
+        total = campaign.total_donations
+
+        total.should eq 10
+      end
+
+
+
 
     end
   end
