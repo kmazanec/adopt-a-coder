@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
   end
 
   def index
-
+    @candidates = Candidate.order("RANDOM()")
   end
 
   def create

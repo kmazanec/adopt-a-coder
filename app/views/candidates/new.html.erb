@@ -1,25 +1,10 @@
 <div class="container">
-  <%= form_for @candidate do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder:"Full Name" %>
-  <%= f.label :email %>
+  <%= link_to 'Create Profile', new_candidate_path %>
+
+  <%= form_tag login_path, :id => "login" do %>
+  <%= label_tag :email %>
   <%= f.email_field :email, placeholder:"Email" %>
-  <%= f.label :phone %>
-  <%= f.phone_field :phone, placeholder:"Phone" %>
   <%= f.label :password %>
   <%= f.password_field :password, placeholder:"Password" %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, placeholder:"Password Confirmation" %>
-  <%= f.label :address1 %>
-  <%= f.text_field :address1, placeholder:"Address1" %>
-  <%= f.label :address2 %>
-  <%= f.text_field :address2, placeholder:"Address2" %>
-  <%= f.label :city %>
-  <%= f.text_field :city, placeholder:"City" %>
-  <%= f.label :state %>
-  <%= f.text_field :state, placeholder:"State" %>
-  <%= f.label :zip %>
-  <%= f.text_field :zip, placeholder:"Zip" %>
-  <%= f.submit "Create Profile" %>
-  <% end %>
+  <%= f.submit "Login" %>
 </div>

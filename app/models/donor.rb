@@ -10,6 +10,8 @@ class Donor < User
 
   validates :password, presence: true, :on => :create
 
+  include ApplicationHelper
+
   def nomination_available?
     Nomination.find_by(campaign_id: current_campaign, donor_id: self.id).nil?
   end

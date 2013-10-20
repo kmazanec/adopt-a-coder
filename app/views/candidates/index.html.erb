@@ -1,10 +1,17 @@
-<div class="container">
-  <%= link_to 'Create Profile', new_candidate_path %>
+<div>
+  <!-- MUST ADD A SEARCH BAR HERE -->
 
-  <%= form_tag login_path, :id => "login" do %>
-  <%= label_tag :email %>
-  <%= f.email_field :email, placeholder:"Email" %>
-  <%= f.label :password %>
-  <%= f.password_field :password, placeholder:"Password" %>
-  <%= f.submit "Login" %>
+  <% if @candidates && @candidates.any? %>
+    <% @candidates.each do |candidate| %>
+      <div>
+        <%= image_tag(Image.find(candidate.profile_photo_id).url, size: "350", alt: "Image of #{candidate.name}") %>
+        <h4><%= candidate.name %></h4>
+        <h6><%= candidate.mission %></h6>
+        <p><%= candidate.biography %></p>
+        <div>
+          <%= link_to 'Nominate!', nominations_path(candidate), method: :post, data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' } %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
