@@ -90,5 +90,27 @@ describe CandidatesController do
 
   end
 
+  describe "#show" do
+
+    it "should show the candidate profile view" do
+      get :show, :id => @candidate.id
+
+      response.should render_template(:show)
+   end
+
+  end
+
+  describe "#index" do
+    it "should show the all the candates" do
+      get :index
+
+      response.should render_template(:index)
+   end
+
+
+
+  end
+
+
 
 end
