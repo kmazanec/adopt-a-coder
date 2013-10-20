@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to donor_path(current_user)
       end
     else
-      flash[:notice] = "Incorrect Email or Password"
+      flash[:error] = "Incorrect Email or Password"
       redirect_to root_path
     end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def logout
     session[:id] = nil
-    flash[:notice] = 'You have successfully logged out'
+    flash[:success] = 'You have successfully logged out'
     redirect_to root_path
   end
 
