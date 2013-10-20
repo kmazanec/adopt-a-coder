@@ -21,9 +21,9 @@ describe ApplicationsController do
 
 
 
-      flash[:success].should eq "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
       @candidate.reload.application.complete.should eq true
-      redirect_to candidate_path(@candidate)
+      flash[:success].should eq "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
+      response.should redirect_to edit_candidate_path(@candidate)
     end
 
   end
