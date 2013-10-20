@@ -15,6 +15,11 @@ class Candidate < User
 
   after_create :application_create
 
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
+
+
   protected
   def application_create
     Application.create(candidate_id: self.id)

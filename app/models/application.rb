@@ -14,6 +14,7 @@ class Application < ActiveRecord::Base
   end
 
   def complete?
+    return false if self.responses.length != self.questions.length
     self.responses.each do |response|
       return false if response.body.length < 10
     end

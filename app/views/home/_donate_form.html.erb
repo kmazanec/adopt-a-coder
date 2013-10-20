@@ -1,63 +1,56 @@
 
-<%= form_tag charges_path, :id => 'payment-form', class: "pure-form pure-form-aligned" do %>
+<div id="payment-modal" class="reveal-modal medium">
 
-  <span class="payment-errors"></span>
+<h5 class="center">Make a donation to support <%= current_campaign.candidate.name %></h5>
+
+<%= form_tag charges_path, :id => 'payment-form', class: "no-margin" do %>
+
+  <% if flash[:error] %>
+    <span data-alert class="payment-errors alert-box alert"><%= flash[:error] %></span>
+  <% end %>
 
 
-  <div class="form-row pure-control-group">
-    <label>
-      <span>Name</span>
-    </label>
-      <input type="text"  name='name'/>
+  <div class="row">
+    <div class="small-12 large-4 columns"><label class="right inline" for="payment-name">Name on card</label></div>
+    <div class="small-12 large-8 columns"><input id="payment-name" type="text"  name='name'/></div>
   </div>
 
-  <div class="form-row pure-control-group">
-    <label>
-      <span>Email</span>
-    </label>
-      <input type="text" name='email'/>
+  <div class="row">
+    <div class="small-12 large-4 columns"><label class="right inline" for="payment-email">Email</label></div>
+    <div class="small-12 large-8 columns"><input id="payment-email" type="email"  name='email'/></div>
   </div>
 
-  <div class="form-row pure-control-group">
-    <label>
-      <span>Amount</span>
-    </label>
-      <input type="text" name='amount'/>
+  <div class="row">
+    <div class="small-12 large-4 columns"><label class="right inline" for="payment-amount">Amount to contribute $</label></div>
+    <div class="small-12 large-8 columns"><input id="payment-amount" type="text"  name='amount'/></div>
   </div>
 
-
-  <div class="form-row pure-control-group">
-    <label>
-      <span>Card Number</span>
-    </label>
-      <input type="text" size="20" data-stripe="number"/>
+  <div class="row">
+    <div class="small-12 large-4 columns"><label class="right inline" for="payment-card">Card Number</label></div>
+    <div class="small-12 large-8 columns"><input id="payment-card" type="text" size="20" data-stripe="number"/></div>
   </div>
 
-  <div class="form-row pure-control-group">
-    <label>
-      <span>CVC</span>
-    </label>
-      <input type="text" size="4" data-stripe="cvc"/>
+  <div class="row">
+    <div class="small-12 large-4 columns"><label class="right inline" for="payment-cvc">CVC</label></div>
+    <div class="small-12 large-8 columns"><input id="payment-cvc" type="text" size="4" data-stripe="cvc"/></div>
+  </div>
+  
+  <div class="row">
+    <div class="small-4 large-4 columns"><label class="right inline" for="payment-exp">Exp (MM/YYYY)</label></div>
+    <div class="small-3 large-3 columns"><input type="text" size="2" data-stripe="exp-month"/></div>
+    <div class="small-1 large-1 columns">/</div>
+    <div class="small-4 large-4 columns"><input type="text" size="4" data-stripe="exp-year"/></div>
   </div>
 
-  <div class="form-row pure-control-group">
-    <label>
-      <span>Expiration (MM/YYYY)</span>
-    </label>
-      <input type="text" size="2" data-stripe="exp-month"/>
-    <span> / </span>
-    <input type="text" size="4" data-stripe="exp-year"/>
+  <div class="row">
+    <div class="small-12 large-4 columns"><label class="right inline" for="payment-zip">Zip Code</label></div>
+    <div class="small-12 large-8 columns"><input id="payment-zip" type="text" size="5" data-stripe="address_zip"/></div>
   </div>
 
-  <div class="form-row pure-control-group">
-    <label>
-      <span>Zip Code</span>
-    </label>
-      <input type="text" size="5" data-stripe="address_zip"/>
-  </div>
-
-  <div class="pure-controls">
-    <button type="submit" class="pure-button pure-button-primary">Submit Transaction</button>
+  <div class="row">
+    <div class="small-12 large-8 large-offset-4 columns">
+      <button type="submit" class="button">Submit Transaction</button>
+    </div>
   </div>
 
 
@@ -96,3 +89,7 @@
     });
   </script>
 <% end %>
+
+<a class="close-reveal-modal">&#215;</a>
+
+</div>

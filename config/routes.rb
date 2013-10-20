@@ -15,4 +15,6 @@ AdoptACoder::Application.routes.draw do
 
   post 'candidate/application/submit' => 'applications#submit'
 
+  post 'nominations' => 'nominations#create'
+
 end

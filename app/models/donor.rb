@@ -9,4 +9,11 @@ class Donor < User
   validates_format_of :email, :with => /.+@.+\..{2,}/
 
   validates :password, presence: true, :on => :create
+
+  include ApplicationHelper
+
+  def nomination_available?
+    Nomination.find_by(campaign_id: current_campaign, donor_id: self.id).nil?
+  end
+
 end

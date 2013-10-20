@@ -1,10 +1,24 @@
 <div class="container">
-  <%= link_to 'Create Profile', new_candidate_path %>
+  <%= form_tag(candidates_path, :method => "get", id: "search-form") do %>
+    <div>
+      <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Candidates" %>
+      <!-- In order to have the "search" icon int the button, we need to use plain HTML instead
+           of using a Rails form helper -->
+      <button class="btn" type="submit">Search</button>
+    </div>
+  <% end %>
 
-  <%= form_tag login_path, :id => "login" do %>
-  <%= label_tag :email %>
-  <%= f.email_field :email, placeholder:"Email" %>
-  <%= f.label :password %>
-  <%= f.password_field :password, placeholder:"Password" %>
-  <%= f.submit "Login" %>
+  <% if @candidates && @candidates.any? %>
+    <% @candidates.each do |candidate| %>
+      <div>
+        <%= link_to image_tag(Image.find(candidate.profile_photo_id).url, size: "350", alt: "Image of #{candidate.name}"), candidate_path(candidate) %>
+        <h4><%= link_to candidate.name, candidate_path(candidate) %></h4>
+        <h6><%= candidate.mission %></h6>
+        <p><%= candidate.biography %></p>
+        <div>
+          <%= link_to 'Nominate!', nominations_path(candidate), method: :post, data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' } %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
