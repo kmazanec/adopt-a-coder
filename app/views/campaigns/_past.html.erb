@@ -1,19 +1,53 @@
 <!-- Current Campaign Partial -->
-<div>
-<% past_campaigns.each do |campaign| %>
-  <div>
-    <h1><%= campaign.candidate.name %></h1>
-    <h2><%= campaign.total %></h2>
-    <h2><%= campaign.goal %></h2>
-  </div>
-  <div>
-    <a href="<%#= #campaign.candidate.photo %>"></a>
-  </div>
-  <div>
-    <img src=" <%# campaign.candidate.profile %> ">
-  </div>
-  <div>
-    <%= link_to 'Read my story >', candidate_path(campaign.candidate) %>
-  </div>
-  <% end %>
+<h1>Testamonials of Past Campaigns</h1>
+
+<div class='row'>
+
+    <div class= 'small-12 large-4 columns'>
+      <img src='http://static.tumblr.com/lfllwrt/vJZmdc737/dmac_small.jpg' style="max-height: 200px; max-width: 200px;">
+      <h4>David McDonald</h4>
+      <h6>
+        "Shereef said at the beginning and the end of the program, 'I hope you realize that learning Ruby was just an excuse to get you here.'  Truer words have never been said.  This man created a space for us to be radically self-expressive and supported in the hopes that we go out in the world and do the same for others; paying it forward."  
+      </h6>
+    </div>
+    <div class= 'small-12 large-4 columns'>
+      <img src="http://devbootcamp.com/imgs/blog/aquilina-phil.jpg" style="max-height: 200px; max-width: 200px;">
+      <h4>Phil Aquilina</h4>
+      <h6>
+        "Where do I start? I wake up excited to start the day. I'm proud of the work I do, and every time some of my code goes into our app, my heart does a little jump for joy. Sometimes, I go to our site and I think to myself, I'm so lucky to be part of this, working with people that really want to produce something useful to the world. When I come home, I get to build beautiful and meaningful things of my own."
+      </h6>
+    </div>
+
+    <div class= 'small-12 large-4 columns'>
+      <img src="http://devbootcamp.com/imgs/blog/Boots/josh.png" style="max-height: 200px; max-width: 200px;">
+      <h4>Josh Miramant</h4>
+      <h6>
+        "What you think you’re going to get out of it is trivial compared to what you will get out of it. I’m approaching so many new things that are exciting, and I feel that I can conquer them with so much more confidence. Through DBC I’ve taken on something that was probably the most difficult, the most exciting, and the most fun thing all at the same time. New challenges feel dwarfed because now I can unpack them- I’m ready for them.  That and I get to do something that I really love. I think that’s probably the best thing I’ve taken away."
+      </h6>
+    </div>
+
+    <div class= 'small-12 large-4 columns'>
+      <img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/3/000/236/0e1/3ef72de.jpg' style="max-height: 200px; max-width: 200px;">
+      <h4>Natasha Murashev</h4>
+      <h6>
+        "I still remember the moment it all made sense. It felt like I had a new superpower. I knew I could now do anything, and it felt invigorating. Until that point, I was learning to program because I knew I needed it, and I was not willing to quit, but at that moment I finally started to love it."  
+      </h6>
+    </div>
+    <div class= 'small-12 large-4 columns'>
+      <img src="http://devbootcamp.github.com/imgs/blog/Boots/alyssa-pic.png" style="max-height: 200px; max-width: 200px;">
+      <h4> Alyssa Ravassio </h4>
+      <h6>
+        "My experience at Dev Bootcamp was one of the best in my life. Aside from learning an incredible amount about web development, the school’s emphasis on communication, feedback, and personal development made a profound impact on me. Dev Bootcamp has a wonderful counselor, Sefora, who helps you sort through your mind’s chaos, and an amazing yoga teacher, Katy, who teaches you to promote calmness by moving with your breath. The Dev Bootcamp experience is for your whole person. It is an optimal learning environment fostered by a community of compassionate experts."
+      </h6>
+    </div>
+
+    <div class= 'small-12 large-4 columns'>
+      <img src="http://devbootcamp.com/imgs/blog/Boots/josh.png" style="max-height: 200px; max-width: 200px;">
+      <h4>Josh Miramant</h4>
+      <h6>
+        "What you think you’re going to get out of it is trivial compared to what you will get out of it. I’m approaching so many new things that are exciting, and I feel that I can conquer them with so much more confidence. Through DBC I’ve taken on something that was probably the most difficult, the most exciting, and the most fun thing all at the same time. New challenges feel dwarfed because now I can unpack them- I’m ready for them.  That and I get to do something that I really love. I think that’s probably the best thing I’ve taken away."
+      </h6>
+    </div>
+  
+
 </div>
