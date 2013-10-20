@@ -22,7 +22,7 @@ class ApplicationsController < ApplicationController
     if @application.complete?
       begin
         @application.update_attribute(:complete, true)
-        flash[:notice] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
+        flash[:success] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
       rescue ActiveRecord::RecordNotFound
         flash[:notice] = "We were unable to submit that record. Please try again."
       ensure
@@ -30,7 +30,7 @@ class ApplicationsController < ApplicationController
       end
     else
       flash[:notice] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
-      redirect_to :back
+      redirect_to candidate_path(current_user)
     end
   end
 
