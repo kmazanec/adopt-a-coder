@@ -69,6 +69,7 @@ describe ApplicationsController do
       patch :update, candidate_id: @candidate.id, id: @application.id, application: {"responses_attributes"=>{"0"=>{"body"=>"Hello, Worldaslkdjfjkldsjhadslf", "id"=> @myresponse.id}}}
 
       @myresponse.reload.body.should eq "Hello, Worldaslkdjfjkldsjhadslf"
+      response.should redirect_to(edit_candidate_application_path(@candidate, @app))
     end
 
   end
