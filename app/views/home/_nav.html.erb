@@ -1,5 +1,12 @@
-<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-  <ul class="r-box">
+<div class="fixed">
+
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name"><h1><%= link_to "Adopt-a-Coder", root_path, class: "logo-type" %></h1></li>
+  </ul>
+  <section class="top-bar-section">
+  <ul class="right">
+      <li><div class="button">Donate</div></li>
   <% if logged_in? %>
     <% if current_user_candidate %>
       <li><%= link_to current_user.name, candidate_path(current_user) %></li>
@@ -9,20 +16,22 @@
       <li><%= link_to current_user.name, donor_path(current_user) %></li>
     <% end %>
       <li><%= link_to "Logout", logout_path %></li>
-    </ul>
   <% else %>
-      <li><%= form_tag login_path, class: "pure-form f-box" do %>
-        <%= label_tag :email %>
-        <%= email_field_tag :email, nil, placeholder: "email@example.com" %>
-
-        <%= label_tag :password %>
-        <%= password_field_tag :password, nil, placeholder: "password" %>
-
-        <%= submit_tag "Login", class: "pure-button" %>
-      <% end %></li>
-    <li><%= link_to "Sign Up!", signup_path %></li>
-    </ul>
+      <li class="has-dropdown"><a href="#">Login</a>
+        <ul class="dropdown login-nav">
+          <%= form_tag login_path, class: "login-nav" do %>
+            <li><%= label_tag :email %></li>
+            <li><%= email_field_tag :email, nil, placeholder: "email@example.com" %></li>
+            <li><%= label_tag :password %></li>
+            <li><%= password_field_tag :password, nil, placeholder: "password" %></li>
+            <li><%= submit_tag "Login", class: "button radius" %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to "Sign Up!", signup_path %></li>
   <% end %>
-    <li><%= link_to "Adopt-a-Coder", root_path, class: "logo-type" %></li>
-    <li><div class="pure-button pure-button-primary">Donate</div></li>
+    </ul>
+  </section>
 </nav>
+
+</div>

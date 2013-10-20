@@ -1,55 +1,56 @@
 
-body,
-.pure-g [class *= "pure-u"],
-.pure-g-r [class *= "pure-u"] {
+body{
     /* Add your font in here, whether it's a custom font or a normal font */
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.login-nav{
+  width: 200px;
+}
 
 
-.pure-g > div {
+/*.pure-g > div {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-.l-box {
+}*/
+/*.l-box {
     padding: 1em;
-}
+}*/
 
-.r-box {
+/*.r-box {
   float: right;
-}
+}*/
 
-.f-box {
+/*.f-box {
   padding: 0 1em;
-}
-.container {
+}*/
+/*.container {
   margin: 3.5em 0;
-}
+}*/
 
-.center {
+/*.center {
   text-align: center;
-}
+}*/
 
-.logo-type {
+/*.logo-type {
   font-family: 'Inconsolata', sans-serif;
-}
+}*/
 
-nav {
+/*nav {
   height: 2.5em;
   padding: 0.5em 0;
-}
+}*/
 
-.candidate-title {
+/*.candidate-title {
   text-align: center;
   margin: 0;
   font-size: 3em;
-}
+}*/
 
-.video-container {
+/*.video-container {
   margin: 0 auto;
-}
+}*/
 
 
 /* MAIN PAGE  */
@@ -78,17 +79,17 @@ nav {
   background-color: white;
 }
 
-.social-container {
+/*.social-container {
   float: right;
-}
+}*/
 
-.social {
+/*.social {
   margin: 0;
   padding: 0;
-}
+}*/
 
-.dollars {
+/*.dollars {
   font-size: 3em;
   font-weight: 400;
   margin: 0;
-}
+}*/

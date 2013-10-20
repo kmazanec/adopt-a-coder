@@ -1,10 +1,11 @@
 <div>
   <h1>Recent Donations</h1>
+  <ul class="small-block-grid-2 large-block-grid-4">
   <% recent_donations.each do |donation| %>
-  <div class="pure-u-1-4">
+  <li>
     <h4>Donor: <%= donation.donor.name %></h4>
     <p>Donation Amount: $<%= donation.amount %></p>
     <p><%= donation.created_at.strftime("Donated on %m/%d/%Y") %></p>
-  </div>
+  </li>
   <% end %>
 </div>

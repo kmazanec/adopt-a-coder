@@ -1,74 +1,47 @@
-
-
-<!--   <div class="pure-menu pure-menu-open">
-  <ul>
-    <li><%#= link_to "Home", root_path %></li>
-    <li><a href="#about">How it works</a></li>
-    <li><a href="#current_candidates" >Recent Candidates</a></li>
-    <li><a href="#recent_donors" >Recent Donors</a></li>
-    <li><a href="#past_campaigns" >Past Campaigns</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  </div> -->
+<div class="row"></div>
+<div class="row">
+  <div class="small-12 large-7 small-centered columns">
+  <dl class="sub-nav">
+    <dd class="active"><%= link_to "Home", root_path %></dd>
+    <dd><a href="#about">How it works</a></dd>
+    <dd><a href="#current_candidates" >Recent Candidates</a></dd>
+    <dd><a href="#recent_donors" >Recent Donors</a></dd>
+    <dd><a href="#past_campaigns" >Past Campaigns</a></dd>
+    <dd><a href="#faq">FAQ</a></dd>
+  </dl>
+</div>
 
   <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
   <% end %>
 
-  <div id="current_campaign" class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div class="row">
+    <div id="current_campaign">
       <%= render "campaigns/current" %>
     </div>
-    <div class="pure-u-1-6"></div>
   </div>
 
-
-  <div class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div class="row">
     <%= render "donate_form"  %>
-    </div>
-    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="about" class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div id="about" class="row">
     <%= render "about" %>
-    </div>
-    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="current_candidates" class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div id="current_candidates" class="row">
     <%= render "candidates/group_six" %>
-    </div>
-    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="recent_donors" class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div id="recent_donors" class="row">
     <%= render "donors/recent" %>
-    </div>
-    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="past_campaigns" class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div id="past_campaigns" class="row">
     <%= render "campaigns/past" %>
-    </div>
-    <div class="pure-u-1-6"></div>
   </div>
 
-  <div id="faq" class="pure-u-1">
-    <div class="pure-u-1-6"></div>
-    <div class="pure-u-2-3">
+  <div id="faq" class="row">
     <%= render "faq" %>
-    </div>
-    <div class="pure-u-1-6"></div>
   </div>
 

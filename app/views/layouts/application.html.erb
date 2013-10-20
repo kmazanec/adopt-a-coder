@@ -18,7 +18,7 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%#= stylesheet_link_tag    "application" %>
-    <%#= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
 
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
@@ -32,10 +32,7 @@
 
 <%= render "home/nav" %>
 
-
-  <div class="pure-g-r container">
     <%= yield %>
-  </div>
 
 
 <%= render "home/footer" %>
