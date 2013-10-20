@@ -1,7 +1,6 @@
-<div class="row"></div>
 <div class="row">
   <div class="small-12 large-7 small-centered columns">
-  <dl class="sub-nav">
+  <dl class="sub-nav sub-nav-padding">
     <dd class="active"><%= link_to "Home", root_path %></dd>
     <dd><a href="#about">How it works</a></dd>
     <dd><a href="#current_candidates" >Recent Candidates</a></dd>
@@ -10,10 +9,7 @@
     <dd><a href="#faq">FAQ</a></dd>
   </dl>
 </div>
-
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
+</div>
 
   <div class="row">
     <div id="current_campaign">
