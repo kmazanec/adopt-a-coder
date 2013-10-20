@@ -1,0 +1,10 @@
+<div>
+  <h3>Social Media</h3>
+    <%= link_to image_tag("codeacademy.png", class: "codeacademy_icon", alt: "CodeAcademy"), "#{@candidate.codeacademy}", target: '_blank' if @candidate.codeacademy %>
+    <%= link_to image_tag("facebook.svg", class: "facebook_icon", alt: "Facebook"), "#{@candidate.facebook}", target: '_blank' if @candidate.facebook %>
+    <%= link_to image_tag("twitter.svg", class: "twitter_icon", alt: "Twitter"), "#{@candidate.twitter}", target: '_blank' if @candidate.twitter %>
+    <%= link_to image_tag("github_alt.svg", class: "github_icon", alt: "Github"), "#{@candidate.github}", target: '_blank' if @candidate.github %>
+    <%= link_to image_tag("linkedin.svg", class: "linkedin_icon", alt: "LinkedIn"), "#{@candidate.linked_in}", target: '_blank' if @candidate.linked_in %>
+    <%= link_to "#{@candidate.name}'s personal blog", "#{@candidate.blog}", target: '_blank' if @candidate.blog %>
+    <%= link_to "#{@candidate.name}'s personal website", "#{@candidate.personal_url}", target: '_blank' if @candidate.personal_url %>
+</div>

@@ -8,9 +8,11 @@ class ApplicationsController < ApplicationController
 
   def update
     Application.save_application(update_params)
-
-    redirect_to edit_candidate_application_path(current_user, current_application)
-
+    if params[:save_and_exit]
+      redirect_to edit_candidate_path(current_user)
+    else
+      redirect_to edit_candidate_application_path(current_user, current_application)
+    end
   end
 
   def edit
@@ -26,11 +28,11 @@ class ApplicationsController < ApplicationController
       rescue ActiveRecord::RecordNotFound
         flash[:notice] = "We were unable to submit that record. Please try again."
       ensure
-        redirect_to candidate_path(current_user)
+        redirect_to edit_candidate_path(current_user)
       end
     else
       flash[:notice] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
-      redirect_to candidate_path(current_user)
+      redirect_to edit_candidate_path(current_user)
     end
   end
 
