@@ -8,9 +8,11 @@ class ApplicationsController < ApplicationController
 
   def update
     Application.save_application(update_params)
-
-    redirect_to edit_candidate_application_path(current_user, current_application)
-
+    if params[:save_and_exit]
+      redirect_to edit_candidate_path(current_user)
+    else
+      redirect_to edit_candidate_application_path(current_user, current_application)
+    end
   end
 
   def edit

@@ -30,6 +30,7 @@ class CandidatesController < ApplicationController
 
   def show
     @candidate = Candidate.find(params[:id])
+    @responses = @candidate.responses
   end
 
 private
