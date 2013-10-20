@@ -27,6 +27,23 @@
   text-align: center;
 }
 
+.tall {
+  height: 3em;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.dollars {
+  font-size: 2em;
+  margin: .2em 0.5em;
+}
+
 
 
 /*.pure-g > div {
