@@ -22,12 +22,11 @@ class ApplicationsController < ApplicationController
   def submit
     @application = current_user.application
     if @application.complete?
-      begin
-        @application.update_attribute(:complete, true)
+      if @application.update_attribute(:complete, true)
         flash[:success] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
-      rescue ActiveRecord::RecordNotFound
+        redirect_to edit_candidate_path(current_user)
+      else
         flash[:notice] = "We were unable to submit that record. Please try again."
-      ensure
         redirect_to edit_candidate_path(current_user)
       end
     else
