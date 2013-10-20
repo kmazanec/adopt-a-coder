@@ -13,8 +13,8 @@ AdoptACoder::Application.routes.draw do
   post '/login' => 'sessions#login'
   get '/signup' => 'home#signup'
 
-  post 'candidate/application/submit' => 'applications#submit'
+  post '/candidate/application/submit' => 'applications#submit'
 
-  post 'nominations' => 'nominations#create'
+  post '/nominations' => 'nominations#create'
 
 end
