@@ -40,6 +40,14 @@ require 'spec_helper'
       it "should have a password" do
         FactoryGirl.build(:donor, password: nil).should_not be_valid
       end
+
+      it "should check to see if there are nominations avaliable" do
+        donor = FactoryGirl.build(:donor)
+        available= donor.nomination_available?
+
+        available.should eq true
+      end
+
     end
   end
 
