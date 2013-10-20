@@ -1,48 +1,70 @@
 <div>
   <h2><%= @donor.name %></h2>
-  <h3>Recent Donations</h3>
-  <% if @donations && @donations.any? %>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Amount</th>
-        <th>Beneficiary</th>
-      </tr>
-    <% @donations.each do |donation| %>
-      <tr>
-        <td><%= donation.created_at %></td>
-        <td>$ <%= donation.amount %></td>
-        <td><%= link_to donation.candidate.name, candidate_path(donation.candidate) %></td>
-      </tr>
-    <% end %>
-    </table>
-  <% else %>
-  <h4>It looks like you haven't donated yet...</h4>
-  <div>Donate Now</div>
-  <% end %>
-
-  <h3>Candidates You've Nominated</h3>
-  <% if @nominations && @nominations.any? %>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Name</th>
-      </tr>
-    <% @nominations.each do |nomination| %>
-      <tr>
-        <td><%= nomination.created_at %></td>
-        <td><%= link_to nomination.candidate.name, candidate_path(nomination.candidate) %></td>
-      </tr>
-    <% end %>
-    </table>
-  <% else %>
-  <h4>It looks like you haven't nominated anyone yet...</h4>
-    <% if @donations && @donations.any? %>
-      <%= link_to "Checkout the candidates and nominate someone!", candidates_path %>
+  <div>
+    <h3>Current Campaign</h3>
+    <% if @donor.nomination_available? %>
+      <h6><%= link_to "You have a nomination available, nominate someone!", candidates_path %></h6>
     <% else %>
-      <p>You need to make a donation before you can nominate anyone</p>
-      <div>Donate Now</div>
+      <% if !@donor.current_campaign_donation? %>
+        <h5>You have no donation for the current campaign. Please make a donation for this campaign in order to nominate the next scholarship recipient!</h5>
+        <div class="small-6 columns">
+          <a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a>
+        </div>
+      <% else %>
+        <h6>You have already nominated someone for this campaign!</h6>
+        <p><%= link_to "Visit Your Nominee's Profile Now", candidate_path(@donor.nominations.last.candidate) %></p>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
+  <div>
+    <h3>Recent Donations</h3>
+    <% if @donations && @donations.any? %>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Beneficiary</th>
+        </tr>
+      <% @donations.each do |donation| %>
+        <tr>
+          <td><%= donation.created_at %></td>
+          <td>$ <%= donation.amount %></td>
+          <td><%= link_to donation.candidate.name, candidate_path(donation.candidate) %></td>
+        </tr>
+      <% end %>
+      </table>
+    <% else %>
+    <h4>It looks like you haven't donated yet...</h4>
+    <div>Donate Now</div>
+    <% end %>
+  </div>
+
+  <div>
+    <h3>Candidates You've Nominated</h3>
+    <% if @nominations && @nominations.any? %>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+        </tr>
+      <% @nominations.each do |nomination| %>
+        <tr>
+          <td><%= nomination.created_at %></td>
+          <td><%= link_to nomination.candidate.name, candidate_path(nomination.candidate) %></td>
+        </tr>
+      <% end %>
+      </table>
+    <% else %>
+    <h4>It looks like you haven't nominated anyone yet...</h4>
+      <% if @donor.nomination_available? %>
+        <%= link_to "Checkout the candidates and nominate someone!", candidates_path %>
+      <% else %>
+        <h5>Please make a donation for this campaign in order to nominate the next scholarship recipient!</h5>
+        <div class="small-6 columns">
+          <a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

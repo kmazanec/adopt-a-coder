@@ -16,7 +16,7 @@ describe ApplicationsController do
 
     end
 
-    it "should change the status of a users application to complete" do
+    it "should change the status of a users application to complete and have success flash notice" do
       post 'submit'
 
 
@@ -61,7 +61,6 @@ describe ApplicationsController do
       @myresponse.reload.body.should eq "Hello, Worldaslkdjfjkldsjhadslf"
       response.should redirect_to(edit_candidate_application_path(@candidate, @app))
     end
-
   end
 
 end
