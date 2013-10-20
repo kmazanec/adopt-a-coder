@@ -16,7 +16,7 @@ class Candidate < User
   after_create :application_create
 
   def self.search(query)
-    where("name like ?", "%#{query}%")
+    all(conditions: ["LOWER(name) like ?", "%#{query}%".downcase])
   end
 
 
