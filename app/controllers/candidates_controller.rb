@@ -5,7 +5,7 @@ class CandidatesController < ApplicationController
 
   def index
     if params[:search]
-      @candidates = Candidate.search(params[:search]).order("Random()")
+      @candidates = Candidate.order("RANDOM()").search(params[:search])
     else
       @candidates = Candidate.order("RANDOM()")
     end

@@ -1,3 +1,4 @@
+<div>
   <% if @candidates && @candidates.any? %>
     <ul class="small-block-grid-2 large-block-grid-6">
     <% @candidates.each do |candidate| %>
@@ -11,3 +12,5 @@
     <% end %>
     </ul>
   <% end %>
+  <%= link_to "See All Candidates", candidates_path %>
+</div>

@@ -16,4 +16,8 @@ class Donor < User
     Nomination.find_by(campaign_id: current_campaign, donor_id: self.id).nil?
   end
 
+  def current_campaign_donation?
+    self.donations.where(campaign_id: current_campaign).any?
+  end
+
 end
