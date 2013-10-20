@@ -1,24 +1,43 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/video.rb": [
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/campaign.rb": [
+        1,
+        1,
+        1,
         1,
         null,
         1,
         1,
+        null,
         1,
+        1,
+        null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/media.rb": [
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donation.rb": [
         1,
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1382291199
+    "timestamp": 1382295517
   },
   "Cucumber Features": {
     "coverage": {
