@@ -26,7 +26,6 @@ describe ApplicationsController do
       redirect_to candidate_path(@candidate)
     end
 
-
   end
 
   describe "#edit" do
