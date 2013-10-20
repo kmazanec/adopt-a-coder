@@ -19,6 +19,27 @@ require 'spec_helper'
         application.macro.should == :has_many
       end
 
+      describe "#complete?" do
+        it "should return false if the length of a response is less then 10 characters" do
+          application = FactoryGirl.create(:application)
+          response = FactoryGirl.build(:response, body: "hello")
+          application.responses = [response]
+          answer = application.complete?
+
+          answer.should eq false
+        end
+
+        it "should return true if the length of a response is less then 10 characters" do
+          application = FactoryGirl.create(:application)
+          response = FactoryGirl.build(:response)
+          application.responses = [response]
+          answer = application.complete?
+
+          answer.should eq true
+        end
+
+      end
+
     end
   end
 

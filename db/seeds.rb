@@ -109,6 +109,7 @@ m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
              type: "Video", user_id: c.id)
 c.update_attributes(profile_video_id: m.id)
 
+c = Candidate.first
 
 Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12000)
 
