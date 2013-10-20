@@ -52,5 +52,30 @@ describe ApplicationsController do
 
   end
 
+
+  describe "#update" do
+
+    it 'should update the application' do
+
+      @myresponse = Response.create!(body: "this is a response")
+
+      @application = FactoryGirl.create(:application)
+      @candidate = FactoryGirl.create(:candidate)
+      @candidate.application = @application
+      @app = @candidate.application
+      controller.stub(:current_user).and_return(@candidate)
+      controller.stub(:current_application).and_return(@app)
+
+      patch :update, candidate_id: @candidate.id, id: @application.id, application: {"responses_attributes"=>{"0"=>{"body"=>"Hello, Worldaslkdjfjkldsjhadslf", "id"=> @myresponse.id}}}
+
+      @myresponse.reload.body.should eq "Hello, Worldaslkdjfjkldsjhadslf"
+      response.should redirect_to(edit_candidate_application_path(@candidate, @app))
+    end
+
+  end
+
 end
+
+
+
 
