@@ -1,12 +1,28 @@
 
-body{
+* {
     /* Add your font in here, whether it's a custom font or a normal font */
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 .login-nav{
-  width: 200px;
+  width: 300px;
+  padding: 0 10px;
 }
+
+.login-fields{
+  background-color: #111111;
+  margin: 0 10px;
+  height: 150px;
+}
+
+.sub-nav-padding {
+  padding: 25px 0;
+  margin: 0;
+}
+
+
+
+
 
 
 /*.pure-g > div {
