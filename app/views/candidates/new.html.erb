@@ -1,11 +1,22 @@
 <div class="container">
-  <%= link_to 'Create Profile', new_candidate_path %>
 
-  <%= form_for login_path, :id => "login" do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email, placeholder:"Email" %>
-  <%= f.label :password %>
-  <%= f.password_field :password, placeholder:"Password" %>
-  <%= f.submit "Login" %>
+  <h3>Signup to be a candidate!</h3>
+
+  <%= form_for @candidate do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Full Name" %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder:"Email" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder:"Password" %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+
+    <%= f.submit %>
+
   <% end %>
+
 </div>

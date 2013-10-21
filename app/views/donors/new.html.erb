@@ -1,5 +1,8 @@
 <div class="">
-  
+    <!-- <h5>Already Donated? <%#= link_to 'Click here to receive your password by email', session %></h5> -->
+
+  <h3>Signup to be a donor</h3>
+
   <%= form_for @donor do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: "Full Name" %>
@@ -10,12 +13,12 @@
     <%= f.label :password %>
     <%= f.password_field :password, placeholder: "Password" %>
 
-  
+
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
 
     <%= f.submit %>
 
   <% end %>
-  
+
 </div>
