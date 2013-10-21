@@ -20,7 +20,7 @@
 }
 
 .lots-of-margin {
-  margin: 5% 0;
+  margin: 4% 0;
 }
 
 .little-bit-of-bottom-margin {
@@ -61,53 +61,24 @@
   overflow: hidden;
   max-width: 200px;
   max-height: 300px;
-
 }
-
-
-
-
-/*.pure-g > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}*/
-/*.l-box {
-    padding: 1em;
-}*/
-
-/*.r-box {
-  float: right;
-}*/
-
-/*.f-box {
-  padding: 0 1em;
-}*/
-/*.container {
-  margin: 3.5em 0;
-}*/
-
 
 
 /*.logo-type {
   font-family: 'Inconsolata', sans-serif;
 }*/
 
-/*nav {
-  height: 2.5em;
-  padding: 0.5em 0;
-}*/
+.dark {
+  background-color: black;
+}
 
-/*.candidate-title {
-  text-align: center;
-  margin: 0;
-  font-size: 3em;
-}*/
+.light {
+  background-color: white;
+}
 
-/*.video-container {
-  margin: 0 auto;
-}*/
-
+.no-border {
+  border: none;
+}
 
 /* MAIN PAGE  */
 

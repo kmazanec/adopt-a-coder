@@ -1,4 +1,6 @@
 <div>
+  <h1>Aspiring Coders</h1>
+  <h3 class="subheader">Donate to the current campaign and nominate someone to receive the next scholarship</h3>
   <% if @candidates && @candidates.any? %>
     <ul class="small-block-grid-2 large-block-grid-4">
     <% @candidates.each do |candidate| %>
@@ -6,6 +8,7 @@
         <div class="panel">
           <%= image_tag Image.find(candidate.profile_photo_id).url, class: "image-square", size: "180" %>
           <%= candidate.name %>
+          <br>
           <div class="tiny button round">
             Nominate Me!
           </div>
@@ -14,5 +17,5 @@
     <% end %>
     </ul>
   <% end %>
-  <%= link_to "See All Candidates", candidates_path %>
+  <%= link_to "See All Candidates...", candidates_path, class: "button" %>
 </div>

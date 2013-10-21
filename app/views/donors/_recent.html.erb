@@ -2,10 +2,17 @@
   <h1>Recent Donations</h1>
   <ul class="small-block-grid-2 large-block-grid-4">
   <% recent_donations.each do |donation| %>
-  <li>
-    <h4>Donor: <%= donation.donor.name %></h4>
-    <p>Donation Amount: $<%= donation.amount %></p>
-    <p><%= donation.created_at.strftime("Donated on %m/%d/%Y") %></p>
-  </li>
+    <li>
+      <% if donation.amount >= 100 %>
+      <div class="panel callout">
+      <% else %>
+      <div class="panel">
+      <% end %>
+        <span class="right"><%= donation.created_at.strftime("%m/%d/%Y") %></span>
+        <h4>$<%= donation.amount %></h4>
+        <span>courtesy of...</span>
+        <h5><%= donation.donor.name %></h5>
+      </div>
+    </li>
   <% end %>
 </div>
