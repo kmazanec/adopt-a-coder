@@ -4,6 +4,8 @@ class Response < ActiveRecord::Base
   belongs_to :question
 
 
-
+  def complete?
+    self.body.length > 9
+  end
 
 end
