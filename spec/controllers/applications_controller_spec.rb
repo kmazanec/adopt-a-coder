@@ -6,11 +6,14 @@ describe ApplicationsController do
   describe "#submit" do
     before(:each) do
       @application = FactoryGirl.create(:application)
+      @question = FactoryGirl.create(:question)
+      @application.questions = [@question]
       @myresponse = FactoryGirl.create(:response)
       @candidate = FactoryGirl.create(:candidate)
       @candidate.application = @application
       @app = @candidate.application
       @app.responses = [@myresponse]
+
       controller.stub(:current_user).and_return(@candidate)
       controller.stub(:current_application).and_return(@app)
 
