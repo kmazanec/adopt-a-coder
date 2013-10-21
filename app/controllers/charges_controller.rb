@@ -29,18 +29,24 @@ class ChargesController < ApplicationController
       )
       @charge_id = charge.id #This will store the token that is returned on a successful process of the car
       @donor = Donor.find_by_name(params[:name])
-      if @donor == nil
-        temp_password = password_generator
-        @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
-        @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
-      else
-        @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+      
+      respond_to do |format|
+        if @donor == nil
+          temp_password = password_generator
+          @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
+          
+          DonorMailer.welcome_email(@donor).deliver
+          format.html { render :_donation_confirmation}
+    
+          @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+        else
+          @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+          format.html { render :_donation_confirmation}
+        end
       end
-      render :_donation_confirmation
-      # render "donors/_donation_confirmation"
-    rescue Stripe::CardError => e
-    # The card has been declined
-
+      rescue Stripe::CardError => e
+      # The card has been declined
+      
     end
   end
 end
