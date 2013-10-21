@@ -63,6 +63,12 @@
   max-height: 300px;
 }
 
+.icon {
+  overflow: hidden;
+  max-height: 25px;
+  max-width: 100px;
+}
+
 
 /*.logo-type {
   font-family: 'Inconsolata', sans-serif;

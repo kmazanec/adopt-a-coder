@@ -1,34 +1,37 @@
-<h1>Profile Page</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <h2><%= current_user.name %></h2>
+  </div>
+  <div class="small-12 columns">
+    <table>
+      <tr>
+        <td>To Do:</td>
+        <td>Status:</td>
+      </tr>
+      <% if !current_application.complete %>
+        <tr>
+          <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
+          <td>Incomplete</td>
+        </tr>
+        <tr>
+            <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission.' } %></td>
+            <td>Not Submitted</td>
+        </tr>
+      <% else %>
+        <tr>
+          <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
+          <td>Completed</td>
+        </tr>
+        <tr>
+            <td>Already</td>
+            <td>Submitted</td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 
-<h2><%= current_user.name %>, <%= current_user.id %></h2>
+  <%= render "candidates/edit_personal_info" %>
+  <%= render "candidates/edit_social_media" %>
+  <%= render "candidates/edit_about_me" %>
 
-<table>
-  <tr>
-    <td>To Do:</td>
-    <td>Status:</td>
-  </tr>
-  <% if !current_application.complete %>
-    <tr>
-      <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
-      <td>Incomplete</td>
-    </tr>
-    <tr>
-        <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission.' } %></td>
-        <td>Not Submitted</td>
-    </tr>
-  <% else %>
-    <tr>
-      <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
-      <td>Completed</td>
-    </tr>
-    <tr>
-        <td>Already</td>
-        <td>Submitted</td>
-    </tr>
-  <% end %>
-</table>
-
-<%= render "candidates/edit_personal_info" %>
-<%= render "candidates/edit_social_media" %>
-<%= render "candidates/edit_about_me" %>
-
+</div>

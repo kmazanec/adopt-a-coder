@@ -1,17 +1,19 @@
-<div>
-  <%= form_for current_user do |f| %>
-    <%= f.label :phone %>
-    <%= f.phone_field :phone %>
-    <%= f.label :address1 %>
-    <%= f.text_field :address1 %>
-    <%= f.label :address2 %>
-    <%= f.text_field :address2 %>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-    <%= f.label :zip %>
-    <%= f.number_field :zip %>
-    <%= f.submit "Update Profile" %>
-  <% end %>
-</div>
+  <div class="small-6 columns">
+    <div class="panel">
+      <%= form_for current_user do |f| %>
+        <%= f.label :phone %>
+        <%= f.phone_field :phone %>
+        <%= f.label :address1 %>
+        <%= f.text_field :address1 %>
+        <%= f.label :address2 %>
+        <%= f.text_field :address2 %>
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+        <%= f.label :state %>
+        <%= f.text_field :state %>
+        <%= f.label :zip %>
+        <%= f.number_field :zip %>
+        <%= f.submit "Update Profile" %>
+      <% end %>
+    </div>
+  </div>
