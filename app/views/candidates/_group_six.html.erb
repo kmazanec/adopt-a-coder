@@ -4,7 +4,7 @@
     <% @candidates.each do |candidate| %>
       <li>
         <div class="panel">
-            <%= image_tag Image.find(candidate.profile_photo_id).url, class: "image-square", size: "180" %>
+          <%= image_tag Image.find(candidate.profile_photo_id).url, class: "image-square", size: "180" %>
           <%= candidate.name %>
           <div class="tiny button round">
             Nominate Me!
