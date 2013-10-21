@@ -1,0 +1,12 @@
+<div>
+  <h3>Social Media</h3>
+  <ul>
+    <li>Code Academy: <%= link_to current_user.codeacademy, current_user.codeacademy, target: '_blank' if current_user.codeacademy %></li>
+    <li>Facebook: <%= link_to current_user.facebook, target: '_blank' if current_user.facebook %></li>
+    <li>Twitter: <%= link_to current_user.twitter, target: '_blank' if current_user.twitter %></li>
+    <li>Github: <%= link_to current_user.github, target: '_blank' if current_user.github %></li>
+    <li>LinkedIn: <%= link_to current_user.linked_in, target: '_blank' if current_user.linked_in %></li>
+    <li>Blog: <%= link_to current_user.blog, target: '_blank' if current_user.blog %></li>
+    <li>Personal Url: <%= link_to current_user.personal_url, target: '_blank' if current_user.personal_url %></li>
+  </ul>
+</div>
