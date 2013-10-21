@@ -10,8 +10,8 @@ require 'spec_helper'
 
         code.should eq "xEhaVhta7sI"
       end
-
     end
-
-
   end
+
+
+

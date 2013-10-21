@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Campaign do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should belong to a candidate" do
         campaign = Campaign.reflect_on_association(:candidate)
@@ -50,10 +50,10 @@ require 'spec_helper'
           total.should eq 10
         end
       end
-
-
-
-
     end
   end
+
+
+
+
 

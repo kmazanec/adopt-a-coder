@@ -16,7 +16,6 @@ describe "Sign Up Page for donor" do
     click_button "Create Donor"
     page.should have_content "Candidates You've Nominated"
     page.should have_content "Scott"
-
   end
 
   it "should show the copyright" do
@@ -26,9 +25,10 @@ describe "Sign Up Page for donor" do
 
     within('footer') { expect(page).to have_content('Copyright') }
   end
-
-
-
-
-
 end
+
+
+
+
+
+

@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Donor do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should have many donations" do
         donor = Donor.reflect_on_association(:donations)
@@ -59,8 +59,8 @@ require 'spec_helper'
           @current_campaign.should eq false
         end
       end
-
     end
   end
+
 
 

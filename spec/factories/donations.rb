@@ -6,7 +6,7 @@ FactoryGirl.define do
     f.amount "10"
     f.donor_id "1"
     f.campaign_id "1"
-
   end
 end
+
 

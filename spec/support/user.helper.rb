@@ -31,5 +31,5 @@ module UserHelper
 
       click_button "Create Profile"
   end
-
 end
+

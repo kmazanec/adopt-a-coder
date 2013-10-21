@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Application do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should belong to a candidate" do
         application = Application.reflect_on_association(:candidate)
@@ -69,9 +69,9 @@ require 'spec_helper'
 
           @application.response_percent_complete.should eq 100
         end
-
       end
-
     end
   end
+
+
 

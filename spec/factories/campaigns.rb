@@ -7,6 +7,6 @@ FactoryGirl.define do
     f.end_date "09-12-1111"
     f.total "12099"
     f.goal "1111"
-
   end
 end
+

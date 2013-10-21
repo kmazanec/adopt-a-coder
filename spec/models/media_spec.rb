@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Media do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should belong to a user" do
         media = Media.reflect_on_association(:user)
@@ -22,7 +22,7 @@ require 'spec_helper'
         FactoryGirl.create(:media, url: "www.google.com")
         FactoryGirl.build(:media, url: "www.google.com").should_not be_valid
       end
-
     end
   end
+
 

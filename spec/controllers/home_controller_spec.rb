@@ -10,6 +10,6 @@ describe HomeController do
       expect(response).to render_template(:partial => '_signup')
     end
   end
-
 end
+
 

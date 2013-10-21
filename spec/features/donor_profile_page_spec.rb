@@ -31,5 +31,5 @@ describe "Profile Page for donor" do
 
     within('footer') { expect(page).to have_content('Copyright') }
   end
-
 end
+

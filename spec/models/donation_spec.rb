@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Donation do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should belong to a donor" do
         donation = Donation.reflect_on_association(:donor)
@@ -40,7 +40,7 @@ require 'spec_helper'
         FactoryGirl.create(:donation, token: "12345678910")
         FactoryGirl.build(:donation, token: "12345678910").should_not be_valid
       end
-
-
     end
   end
+
+

@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Response do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should belong to an application" do
         response = Response.reflect_on_association(:application)
@@ -22,10 +22,10 @@ require 'spec_helper'
       it "should be valid with body text entered" do
         FactoryGirl.create(:response).should be_valid
       end
-
-
-
-
-
     end
   end
+
+
+
+
+

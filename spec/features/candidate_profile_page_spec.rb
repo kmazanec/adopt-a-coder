@@ -10,12 +10,10 @@ describe "Profile Page for candidate" do
 
   it "should let you start your application" do
 
-
     page.should have_link "Application Form"
   end
 
   it "should let you sumbit your application" do
-
 
     page.should have_link "Submit Application"
   end
@@ -24,6 +22,8 @@ describe "Profile Page for candidate" do
 
     within('footer') { expect(page).to have_content('Copyright') }
   end
-
-
 end
+
+
+
+
