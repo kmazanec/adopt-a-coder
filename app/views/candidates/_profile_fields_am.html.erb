@@ -1,0 +1,25 @@
+<div>
+  <table>
+    <tr>
+      <td colspan=0><h4>About Me</h4></td>
+    </tr>
+    <tr>
+      <td><%= link_to "Update About Me Information", edit_candidate_path(current_user) %></td>
+    </tr>
+    <tr>
+      <td>Mission Statement:</td>
+      <td><%= current_user.mission %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Biography:</td>
+      <td><%= current_user.biography %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Current Project:</td>
+      <td><%= current_user.currently_working_on %></td>
+      <td></td>
+    </tr>
+  </table>
+</div>

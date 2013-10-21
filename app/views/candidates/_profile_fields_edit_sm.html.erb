@@ -1,0 +1,46 @@
+<div>
+  <%= form_for current_user do |f| %>
+    <table>
+        <tr>
+          <th colspan=0>Social Media</th>
+          <th></th>
+          <th><%= f.submit 'Submit Info' %></th>
+        </tr>
+        <tr>
+          <td><%= f.label :codeacademy, 'Code Academy:' %></td>
+          <td colspan=2><%= f.text_field :codeacademy %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :facebook, 'facebook:' %></td>
+          <td colspan=2><%= f.text_field :facebook %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :twitter, 'twitter:' %></td>
+          <td colspan=2><%= f.text_field :twitter %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :github, 'Github:' %></td>
+          <td colspan=2><%= f.text_field :github %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :linked_in, 'LinkedIn:' %></td>
+          <td colspan=2><%= f.text_field :linked_in %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :blog, 'Personal Blog:' %></td>
+          <td colspan=2><%= f.text_field :blog %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :personal_url, 'Personal Url:' %></td>
+          <td colspan=2><%= f.text_field :personal_url %></td>
+          <td></td>
+        </tr>
+    </table>
+  <% end %>
+</div>
