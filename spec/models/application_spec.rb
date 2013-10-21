@@ -58,7 +58,7 @@ require 'spec_helper'
 
       end
 
-      describe "#completed_responses" do
+      describe "#response_percent_complete" do
 
         it "should return the percent amount of completed responses" do
           @application = FactoryGirl.create(:application)
