@@ -35,7 +35,7 @@ class ChargesController < ApplicationController
           temp_password = password_generator
           @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
           
-          DonorMailer.welcome_email(@donor).deliver
+          DonorMailer.donation_mailer(@donor).deliver
           format.html { render :_donation_confirmation}
     
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)

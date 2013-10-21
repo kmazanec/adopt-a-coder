@@ -11,7 +11,7 @@ class DonorsController < ApplicationController
       if @donor.id
         session[:id] = @donor.id
         DonorMailer.welcome_email(@donor).deliver
-        format.html { redirect_to(@donor, notice: 'User was successfully created.') }
+        format.html { redirect_to(@donor) }
 
         # redirect_to donor_path(@donor)
       else
