@@ -1,17 +1,9 @@
 <!-- Current Campaign Partial -->
 <div class="">
   <div class="row">
-    <!-- VIDEO CONTAINER -->
-    <div class="small-12 large-7 columns">
-      <div class="panel radius">
-      <div class="flex-video">
-      <iframe src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
-      </div>
-      </div>
-    </div>
     
     <!-- CONTENT CONTAINER -->
-    <div class="small-12 large-5 columns">
+    <div class="small-12 large-5 push-7 columns">
       <div class="panel radius">
 
       <div class="panel callout radius">
@@ -92,6 +84,15 @@
     </div>
     </div>
     <!-- END CONTENT CONTAINER -->
+
+    <!-- VIDEO CONTAINER -->
+    <div class="small-12 large-7 pull-5 columns">
+      <div class="panel radius">
+      <div class="flex-video">
+      <iframe src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
+      </div>
+      </div>
+    </div>
 
 
   </div>
