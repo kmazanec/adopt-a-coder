@@ -13,10 +13,9 @@ class ChargesController < ApplicationController
 
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
-    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" 
-    puts token
-
     
+
+
     @amount = params[:amount]
     @paid = (@amount.to_i * 100).to_s
 
@@ -33,10 +32,11 @@ class ChargesController < ApplicationController
       if @donor == nil
         temp_password = password_generator
         @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
-        Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+        @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
       else
-        Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+        @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
       end
+      render :_donation_confirmation
       # render "donors/_donation_confirmation"
     rescue Stripe::CardError => e
     # The card has been declined
