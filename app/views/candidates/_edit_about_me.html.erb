@@ -1,0 +1,11 @@
+<div>
+  <%= form_for current_user do |f| %>
+    <%= f.label :mission %>
+    <%= f.text_field :mission %>
+    <%= f.label :biography %>
+    <%= f.text_field :biography %>
+    <%= f.label :currently_working_on %>
+    <%= f.text_field :currently_working_on %>
+    <%= f.submit "Update About Me" %>
+  <% end %>
+</div>
