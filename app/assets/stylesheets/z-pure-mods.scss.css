@@ -82,6 +82,13 @@
   background-color: white;
 }
 
+.light-text {
+  color: white;
+  a {
+    color: white;
+  }
+}
+
 .no-border {
   border: none;
 }
@@ -136,6 +143,10 @@ ul.countdown li.seperator {
 ul.countdown li p {
   color: #a7abb1;
   font-size: 14px;
+}
+
+.candidate-title {
+  margin-bottom: 0.375em;
 }
 
 
