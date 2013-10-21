@@ -27,7 +27,7 @@ describe ApplicationsController do
 
       @candidate.reload.application.complete.should eq true
       flash[:success].should eq "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
-      response.should redirect_to edit_candidate_path(@candidate)
+      response.should redirect_to profile_candidate_path(@candidate)
     end
 
     it "should not let application be submited if it isnt completely full" do
@@ -37,7 +37,7 @@ describe ApplicationsController do
 
       @candidate.reload.application.complete.should eq false
       flash[:error].should eq "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
-      response.should redirect_to edit_candidate_path(@candidate)
+      response.should redirect_to profile_candidate_path(@candidate)
     end
 
   end
