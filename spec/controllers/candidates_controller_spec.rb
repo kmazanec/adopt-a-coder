@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe CandidatesController do
 
-  before(:each) do
-    @candidate = FactoryGirl.create(:candidate)
-  end
+   before(:each) do
+     @candidate = FactoryGirl.create(:candidate)
+   end
 
   describe "#create" do
 
@@ -46,6 +46,7 @@ describe CandidatesController do
     end
 
     it "should render the new view if the candidate doesnt save" do
+
       expect { post 'create', :candidate => { "email" => "",
         "name" => "scott mascio", "phone" => "555-233-6541","password" => "Password1",
         "password_confirmation" => "Password1", "address1" => "224 north illinois",
@@ -62,6 +63,7 @@ describe CandidatesController do
     end
 
     it "should have a flash notice if params are missing" do
+
         expect { post 'create', :candidate => { "email" => "",
           "name" => "scott mascio", "phone" => "555-233-6541","password" => "Password1",
           "password_confirmation" => "Password1", "address1" => "224 north illinois",
@@ -73,7 +75,7 @@ describe CandidatesController do
           "mission" => "become a great coder too", "profile_photo_id" => "2",
           "profile_video_id" => "2", "type" => "Candidate"} }.to_not change(Candidate, :count).by(1)
 
-          flash[:notice].should_not be_nil
+          flash[:error].should_not be_nil
           response.should render_template(:new)
     end
 
@@ -83,6 +85,7 @@ describe CandidatesController do
 
 
     it "should render create view" do
+
       get 'new'
 
         response.should render_template(:new)
@@ -93,6 +96,7 @@ describe CandidatesController do
   describe "#show" do
 
     it "should show the candidate profile view" do
+
       get :show, :id => @candidate.id
 
       response.should render_template(:show)
@@ -102,11 +106,25 @@ describe CandidatesController do
 
   describe "#index" do
     it "should show the all the candates" do
+
       get :index
 
       response.should render_template(:index)
    end
 
+  end
+
+  describe "#index" do
+
+     it 'should update email' do
+
+      controller.stub(:current_user).and_return(@candidate)
+
+      patch :update, id: @candidate.id, candidate: {:mission => "become a coder"}
+
+      @candidate.reload.mission.should eq "become a coder"
+      response.should redirect_to(edit_candidate_path(@candidate))
+    end
 
 
   end
