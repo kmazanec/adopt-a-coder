@@ -37,6 +37,10 @@ class CandidatesController < ApplicationController
     @responses = @candidate.responses
   end
 
+  def profile
+
+  end
+
 private
 
 def candidate_params

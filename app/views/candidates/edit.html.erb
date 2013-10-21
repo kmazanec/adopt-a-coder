@@ -8,7 +8,12 @@
         <td>To Do:</td>
         <td>Status:</td>
       </tr>
+        <tr>
+          <td><%= link_to 'Profile', profile_candidates_path(current_user) %></td>
+          <td></td>
+        </tr>
       <% if !current_application.complete %>
+
         <tr>
           <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
           <td>Incomplete</td>
@@ -30,8 +35,5 @@
     </table>
   </div>
 
-  <%= render "candidates/edit_personal_info" %>
-  <%= render "candidates/edit_social_media" %>
-  <%= render "candidates/edit_about_me" %>
 
 </div>
