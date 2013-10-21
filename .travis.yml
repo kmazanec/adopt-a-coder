@@ -7,9 +7,10 @@ env:
 
 before_script:
   - bundle exec rake db:test:prepare
-  - bundle exec RAILS_ENV=test rake db:create
-  - bundle exec RAILS_ENV=test rake db:migrate
-  - bundle exec RAILS_ENV=test rake db:seed
+  - bundle exec rake db:create RAILS_ENV=test
+  - bundle exec rake db:migrate RAILS_ENV=test
+  - bundle exec rake db:seed RAILS_ENV=test
+
 
 
 
