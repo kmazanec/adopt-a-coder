@@ -4,15 +4,22 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+$highlight-color: #AC0A3C;
+/* We use these to control header font styles */
+
 .login-nav{
-  width: 300px;
-  padding: 0 10px;
+  width: 320px;
+  padding: 0 15px;
+  li {
+    padding: 2px;
+  }
 }
 
 .login-fields{
   background-color: #111111;
-  margin: 0 10px;
-  height: 150px;
+  margin: 0;
+  padding-top: 10px;
+  height: 180px;
 }
 
 .fixed {
@@ -70,9 +77,10 @@
 }
 
 
-/*.logo-type {
+.logo-type {
   font-family: 'Inconsolata', sans-serif;
-}*/
+  font-size: 1.2em;
+}
 
 .dark {
   background-color: #444;
@@ -91,6 +99,10 @@
   a {
     color: white;
   }
+}
+
+.magenta-text {
+  color: $highlight-color;
 }
 
 .no-border {
@@ -125,6 +137,7 @@
 
 
 ul.countdown {
+  color: #AC0A3C;
   list-style: none;
   margin: 5px 0;
   padding: 0;
@@ -145,7 +158,7 @@ ul.countdown li.seperator {
   vertical-align: top;
 }
 ul.countdown li p {
-  color: #a7abb1;
+  color: #222;
   font-size: 14px;
 }
 
