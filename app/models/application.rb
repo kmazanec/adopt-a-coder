@@ -16,9 +16,21 @@ class Application < ActiveRecord::Base
   def complete?
     return false if self.responses.length != self.questions.length
     self.responses.each do |response|
-      return false if response.body.length < 10
+      return false if !response.complete?
     end
     true
+  end
+
+  def response_percent_complete
+    (100  * completed_responses/(self.responses.count))
+  end
+
+  def completed_responses
+    responses_complete = 0
+    self.responses.each do |response|
+      responses_complete += 1 if response.complete?
+    end
+    responses_complete
   end
 
 

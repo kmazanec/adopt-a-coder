@@ -19,6 +19,9 @@ class Candidate < User
     all(conditions: ["LOWER(name) like ?", "%#{query}%".downcase])
   end
 
+  def profile_complete?
+
+  end
 
   protected
   def application_create
