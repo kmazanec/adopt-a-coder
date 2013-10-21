@@ -28,8 +28,8 @@
 }
 
 .container {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .center {
@@ -75,11 +75,15 @@
 }*/
 
 .dark {
-  background-color: black;
+  background-color: #444;
 }
 
 .light {
-  background-color: white;
+  background-color: #CCC;
+}
+
+.white {
+  background-color: #FFF;
 }
 
 .light-text {

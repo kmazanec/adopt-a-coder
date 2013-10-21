@@ -45,7 +45,7 @@ describe SessionsController do
     it "should redirect to the candidates profile page if user is a candidate" do
       post :login, { email: @user.email, password: "password" }
 
-      response.should redirect_to(edit_candidate_path(@user))
+      response.should redirect_to(profile_candidate_path(@user))
     end
 
     it "should redirect to the donor profile page if user a donor" do

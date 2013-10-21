@@ -123,7 +123,7 @@ describe CandidatesController do
       patch :update, id: @candidate.id, candidate: {:mission => "become a coder"}
 
       @candidate.reload.mission.should eq "become a coder"
-      response.should redirect_to(edit_candidate_path(@candidate))
+      response.should redirect_to(profile_candidate_path(@candidate))
     end
 
 
