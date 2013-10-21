@@ -56,6 +56,7 @@ describe ApplicationsController do
       @candidate = FactoryGirl.create(:candidate)
       @candidate.application = @application
       @app = @candidate.application
+
       controller.stub(:current_user).and_return(@candidate)
       controller.stub(:current_application).and_return(@app)
 
