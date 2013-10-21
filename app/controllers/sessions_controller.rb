@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:id] = user.id
       if current_user_candidate
-        redirect_to edit_candidate_path(current_user)
+        redirect_to profile_candidate_path(current_user)
       else
         redirect_to donor_path(current_user)
       end

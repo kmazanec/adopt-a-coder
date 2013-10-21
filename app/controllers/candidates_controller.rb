@@ -29,7 +29,7 @@ class CandidatesController < ApplicationController
 
   def update
     current_user.update_attributes(update_params)
-    redirect_to edit_candidate_path(current_user)
+    redirect_to profile_candidate_path(current_user)
   end
 
   def show
