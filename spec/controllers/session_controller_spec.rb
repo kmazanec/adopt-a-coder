@@ -18,7 +18,7 @@ describe SessionsController do
     it "flashes a notice on logout" do
       delete :logout
 
-      flash[:notice].should_not be_nil
+      flash[:success].should_not be_nil
     end
 
     it "redirects to root path" do
@@ -57,7 +57,7 @@ describe SessionsController do
     it "should flash notice if the email or password is incorrect" do
       post :login, { email: @user.email, password: "password55" }
 
-      flash[:notice].should_not be_nil
+      flash[:error].should_not be_nil
       response.should redirect_to(root_path)
     end
   end
