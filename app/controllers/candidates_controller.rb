@@ -15,7 +15,7 @@ class CandidatesController < ApplicationController
       @candidate = Candidate.new(candidate_params)
       if @candidate.save
         session[:id] = @candidate.id
-        Application.create(candidate_id: @candidate.id)
+        CandidateMailer.candidate_mailer(@candidate).deliver
         redirect_to candidate_path(@candidate)
       else
         flash[:error] = "Invalid Parameters. Please try again."
