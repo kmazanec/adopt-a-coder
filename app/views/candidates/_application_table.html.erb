@@ -1,32 +1,32 @@
 <div class="small-12 columns">
   <table>
-  <h6>Application Status</h6>
-  <tr>
-    <td>To Do:</td>
-    <td>Status:</td>
-  </tr>
+    <h6>Application Status</h6>
+    <tr>
+      <td>To Do:</td>
+      <td>Status:</td>
+    </tr>
     <tr>
       <td><%= link_to 'Profile', edit_candidate_path(current_user) %></td>
       <td></td>
     </tr>
-  <% if !current_application.complete %>
-    <tr>
-      <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
-      <td><%= number_to_percentage(current_user.application.response_percent_complete, precision: 0) %> Complete</td>
-    </tr>
-    <tr>
-        <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission.' } %></td>
-        <td>Not Submitted</td>
-    </tr>
-  <% else %>
-    <tr>
-      <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
-      <td>Completed</td>
-    </tr>
-    <tr>
-        <td>Already</td>
-        <td>Submitted</td>
-    </tr>
-  <% end %>
+    <% if !current_application.complete %>
+      <tr>
+        <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
+        <td><%= number_to_percentage(current_user.application.response_percent_complete, precision: 0) %> Complete</td>
+      </tr>
+      <tr>
+          <td><%= link_to 'Submit Application', candidate_application_submit_path, method: :post, data: { confirm: 'Are you sure? You cannot edit your application after submission.' } %></td>
+          <td>Not Submitted</td>
+      </tr>
+    <% else %>
+      <tr>
+        <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+          <td>Already</td>
+          <td>Submitted</td>
+      </tr>
+      <% end %>
   </table>
 </div>
