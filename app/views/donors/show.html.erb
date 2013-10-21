@@ -28,7 +28,7 @@
         </tr>
       <% @donations.each do |donation| %>
         <tr>
-          <td><%= donation.created_at %></td>
+          <td><%= donation.created_at.strftime("%m/%d/%y") %></td>
           <td>$ <%= donation.amount %></td>
           <td><%= link_to donation.candidate.name, candidate_path(donation.candidate) %></td>
         </tr>

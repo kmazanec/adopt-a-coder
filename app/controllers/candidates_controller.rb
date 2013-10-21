@@ -18,7 +18,7 @@ class CandidatesController < ApplicationController
         Application.create(candidate_id: @candidate.id)
         redirect_to candidate_path(@candidate)
       else
-        flash[:notice] = "Invalid Parameters. Please try again."
+        flash[:error] = "Invalid Parameters. Please try again."
         render :new
       end
   end

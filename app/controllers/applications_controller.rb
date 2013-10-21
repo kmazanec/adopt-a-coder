@@ -26,11 +26,11 @@ class ApplicationsController < ApplicationController
         flash[:success] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
         redirect_to edit_candidate_path(current_user)
       else
-        flash[:notice] = "We were unable to submit that record. Please try again."
+        flash[:error] = "We were unable to submit that record. Please try again."
         redirect_to edit_candidate_path(current_user)
       end
     else
-      flash[:notice] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
+      flash[:error] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
       redirect_to edit_candidate_path(current_user)
     end
   end

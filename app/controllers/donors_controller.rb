@@ -11,7 +11,7 @@ class DonorsController < ApplicationController
         session[:id] = @donor.id
         redirect_to donor_path(@donor)
       else
-        flash[:notice] = "There was an error, please try again"
+        flash[:error] = "There was an error, please try again"
         render :new
       end
 
