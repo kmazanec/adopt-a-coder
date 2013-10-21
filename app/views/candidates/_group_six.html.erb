@@ -1,12 +1,14 @@
 <div>
   <% if @candidates && @candidates.any? %>
-    <ul class="small-block-grid-2 large-block-grid-6">
+    <ul class="small-block-grid-2 large-block-grid-4">
     <% @candidates.each do |candidate| %>
       <li>
-        <%= image_tag Image.find(candidate.profile_photo_id).url, size: "150" %>
-        <%= candidate.name %>
-        <div class="pure-button">
-          Nominate Me!
+        <div class="panel">
+          <%= image_tag Image.find(candidate.profile_photo_id).url, class: "image-square", size: "180" %>
+          <%= candidate.name %>
+          <div class="tiny button round">
+            Nominate Me!
+          </div>
         </div>
       </li>
     <% end %>
