@@ -21,6 +21,18 @@ class Application < ActiveRecord::Base
     true
   end
 
+  def response_percent_complete
+    (100  * completed_responses/(self.responses.count))
+  end
+
+  def completed_responses
+    responses_complete = 0
+    self.responses.each do |response|
+      responses_complete += 1 if response.body.length > 9
+    end
+    responses_complete
+  end
+
 
   protected
   def create_responses
