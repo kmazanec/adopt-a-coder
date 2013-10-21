@@ -41,8 +41,8 @@ donor_ids << d.id
 
 c = Candidate.create(name: "Kevin Another", email: "kevin@another.com", phone: "123-456-7890",
                 password: "test", password_confirmation: "test", address1: "123 State St",
-                city: "Chicago", state: "IL", zip: "60600", twitter: "@kevinAnother22",
-                facebook: "facebook.com/kevinanother22", blog: "kevinanother.tumblr.com")
+                city: "Chicago", state: "IL", zip: "60600", twitter: "http://www.twitter.com/kevinAnother22",
+                facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com")
 candidate_ids << c.id
 
 m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
