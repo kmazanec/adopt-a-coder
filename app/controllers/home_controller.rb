@@ -2,7 +2,7 @@
 class HomeController < ApplicationController
 
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.order("RANDOM()").limit(4)
   end
 
   def signup

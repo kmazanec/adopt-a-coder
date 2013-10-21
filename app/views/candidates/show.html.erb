@@ -1,30 +1,35 @@
-<h1><%= @candidate.name %>'s Profile</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <h1><%= @candidate.name %>'s Profile</h1>
+  </div>
 
-<div>
-  <%= image_tag(Image.find(@candidate.profile_photo_id).url, size: "350", alt: "Image of #{@candidate.name}") %>
-  <h4><%= @candidate.name %></h4>
-  <h6><%= @candidate.mission %></h6>
-  <p><%= @candidate.biography %></p>
-</div>
-<div>
-  <%= link_to 'Nominate!', nominations_path(@candidate), method: :post, data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' } %>
-</div>
+  <div class="small-12 large-3 columns">
+    <%= image_tag(Image.find(@candidate.profile_photo_id).url, size: "350", alt: "Image of #{@candidate.name}") %>
+    <div class="center">
+      <%= link_to 'Nominate!', nominations_path(@candidate), method: :post, class: "small button round", data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' } %>
+    </div>
+  </div>
 
-<div>
-  <h3>Mission Statement</h3>
-  <p><%= @candidate.mission %></p>
-</div>
+  <div class="small-12 large-6 columns">
+    <div class="panel">
+      <h3>Mission Statement</h3>
+      <p><%= @candidate.mission %></p>
+    </div>
 
-<div>
-  <h3>Biography</h3>
-  <p><%= @candidate.biography %></p>
-</div>
+    <div class="">
+      <h3>Biography</h3>
+      <p><%= @candidate.biography %></p>
+    </div>
 
-<div>
-  <%= render "social_media" %>
-</div>
 
-<div>
-  <%= render "application_highlights" %>
-</div>
+    <div class="">
+      <%= render "application_highlights" %>
+    </div>
+  </div>
 
+  <div class="small-12 large-3 columns">
+    <div class="panel">
+      <%= render "social_media" %>
+    </div>
+  </div>
+</div>

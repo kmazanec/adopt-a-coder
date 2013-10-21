@@ -1,19 +1,21 @@
-<div>
-  <%= form_for current_user do |f| %>
-    <%= f.label :twitter %>
-    <%= f.url_field :twitter %>
-    <%= f.label :facebook %>
-    <%= f.url_field :facebook %>
-    <%= f.label :linked_in %>
-    <%= f.url_field :linked_in %>
-    <%= f.label :codeacademy %>
-    <%= f.url_field :codeacademy %>
-    <%= f.label :github %>
-    <%= f.url_field :github %>
-    <%= f.label :blog %>
-    <%= f.url_field :blog %>
-    <%= f.label :personal_url %>
-    <%= f.url_field :personal_url %>
-    <%= f.submit "Update Social Media" %>
-  <% end %>
+<div class="small-6 columns">
+    <div class="panel">
+      <%= form_for current_user do |f| %>
+        <%= f.label :twitter %>
+        <%= f.url_field :twitter %>
+        <%= f.label :facebook %>
+        <%= f.url_field :facebook %>
+        <%= f.label :linked_in %>
+        <%= f.url_field :linked_in %>
+        <%= f.label :codeacademy %>
+        <%= f.url_field :codeacademy %>
+        <%= f.label :github %>
+        <%= f.url_field :github %>
+        <%= f.label :blog %>
+        <%= f.url_field :blog %>
+        <%= f.label :personal_url %>
+        <%= f.url_field :personal_url %>
+        <%= f.submit "Update Social Media" %>
+      <% end %>
+    </div>
 </div>

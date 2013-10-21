@@ -11,14 +11,18 @@
   <% if logged_in? %>
     <% if current_user_candidate %>
       <li><%= link_to current_user.name, candidate_path(current_user) %></li>
-      <li><%= link_to "Profile", edit_candidate_path(current_user) %></li>
-      <li><%= link_to "Application", edit_candidate_application_path(current_user, current_user.application) %></li>
+      <li><%= link_to "Edit Profile", edit_candidate_path(current_user) %></li>
+      <% if current_user.application.complete %>
+      <li><%= link_to "My Application", candidate_application_path(current_user, current_user.application) %></li>
+      <% else %>
+      <li><%= link_to "My Application", edit_candidate_application_path(current_user, current_user.application) %></li>
+      <% end %>
     <% else %>
       <li><%= link_to current_user.name, donor_path(current_user) %></li>
     <% end %>
       <li><%= link_to "Logout", logout_path %></li>
   <% else %>
-      <li class="has-dropdown"><a href="#">Login</a>
+      <li class="has-dropdown"><a href>Login</a>
         <ul class="dropdown">
           <div class="login-fields">
           <%= form_tag login_path, class: "login-nav" do %>
@@ -31,7 +35,7 @@
         </div>
         </ul>
       </li>
-      <li><%= link_to "Sign Up!", signup_path %></li>
+      <li><%= link_to "Sign Up!", signup_path, "data-reveal-id" => "signup-modal" %></li>
   <% end %>
     </ul>
   </section>

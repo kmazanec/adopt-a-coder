@@ -5,11 +5,11 @@ module ApplicationHelper
   end
 
   def recent_donations
-    @recent_donations ||= Donation.includes(:donor).order("id DESC").limit(10)
+    @recent_donations ||= Donation.includes(:donor).order("id DESC").limit(8)
   end
 
   def past_campaigns
-    @past_campaigns ||= Campaign.includes(:candidate).order("id DESC").limit(10)
+    @past_campaigns ||= Campaign.includes(:candidate).order("id DESC").limit(3)
   end
 
 
