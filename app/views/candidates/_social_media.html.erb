@@ -2,10 +2,10 @@
   <h3>Social Media</h3>
   <ul class="side-nav center">
     <li><%= link_to image_tag("codeacademy.png", class: "codeacademy_icon icon", alt: "CodeAcademy"), @candidate.codeacademy, target: '_blank' if @candidate.codeacademy %></li>
-    <li><%= link_to image_tag("facebook.svg", class: "facebook_icon icon", alt: "Facebook"), @candidate.facebook}, target: '_blank' if @candidate.facebook %></li>
-    <li><%= link_to image_tag("twitter.svg", class: "twitter_icon icon", alt: "Twitter"), @candidate.twitter}, target: '_blank' if @candidate.twitter %></li>
+    <li><%= link_to image_tag("facebook.svg", class: "facebook_icon icon", alt: "Facebook"), @candidate.facebook, target: '_blank' if @candidate.facebook %></li>
+    <li><%= link_to image_tag("twitter.svg", class: "twitter_icon icon", alt: "Twitter"), @candidate.twitter, target: '_blank' if @candidate.twitter %></li>
     <li><%= link_to image_tag("github_alt.svg", class: "github_icon icon", alt: "Github"), @candidate.github, target: '_blank' if @candidate.github %></li>
-    <li><%= link_to image_tag("linkedin.svg", class: "linkedin_icon icon", alt: "LinkedIn"), @candidate.linked_in}, target: '_blank' if @candidate.linked_in %></li>
+    <li><%= link_to image_tag("linkedin.svg", class: "linkedin_icon icon", alt: "LinkedIn"), @candidate.linked_in, target: '_blank' if @candidate.linked_in %></li>
     <li><%= link_to "#{@candidate.name}'s personal blog", "#{@candidate.blog}", target: '_blank' if @candidate.blog %></li>
     <li><%= link_to "#{@candidate.name}'s personal website", "#{@candidate.personal_url}", target: '_blank' if @candidate.personal_url %></li>
   </ul>
