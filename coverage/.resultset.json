@@ -1,43 +1,58 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/campaign.rb": [
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/application.rb": [
         1,
         1,
         1,
-        1,
-        null,
         1,
         1,
         null,
         1,
+        null,
         1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        24,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donation.rb": [
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/question.rb": [
         1,
         1,
         1,
         1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/response.rb": [
         1,
         1,
         1,
         1,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1382295517
+    "timestamp": 1382311948
   },
   "Cucumber Features": {
     "coverage": {
@@ -46,11 +61,11 @@
         1,
         null,
         1,
-        2,
+        4,
         null,
         null,
         1,
-        2,
+        0,
         null,
         null,
         null
@@ -93,7 +108,7 @@
         null,
         1,
         1,
-        2,
+        0,
         null,
         null,
         null
@@ -113,6 +128,22 @@
         null,
         null
       ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/video.rb": [
+        1,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/adopt_a_coder/app/models/media.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/apprentice/Desktop/adopt_a_coder/app/models/campaign.rb": [
         1,
         1,
@@ -122,22 +153,10 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/video.rb": [
         1,
+        0,
         null,
-        1,
-        2,
-        2,
         null,
-        null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/media.rb": [
-        1,
-        1,
-        1,
-        1,
         null
       ],
       "/Users/apprentice/Desktop/adopt_a_coder/app/models/image.rb": [
@@ -154,6 +173,15 @@
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/apprentice/Desktop/adopt_a_coder/app/models/donor.rb": [
@@ -169,81 +197,8 @@
         null,
         1,
         null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/candidates_controller.rb": [
-        1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/application.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        4,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/question.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1382216662
+    "timestamp": 1382296906
   }
 }
