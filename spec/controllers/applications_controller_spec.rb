@@ -21,7 +21,7 @@ describe ApplicationsController do
 
     it "should change the status of a users application to complete and have success flash notice" do
       post 'submit'
-      @application = FactoryGirl.create(:application)
+
 
 
 
@@ -31,14 +31,12 @@ describe ApplicationsController do
     end
 
     it "should not let application be submited if it isnt completely full" do
+      @application.stub(:complete?).and_return(false)
       post 'submit'
-      @application_2 = FactoryGirl.build(:application)
-      @application_2.questions = []
-      @candidate.application = @application_2
 
 
       @candidate.reload.application.complete.should eq false
-
+      flash[:error].should eq "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
       response.should redirect_to edit_candidate_path(@candidate)
     end
 
