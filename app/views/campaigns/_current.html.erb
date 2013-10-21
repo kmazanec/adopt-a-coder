@@ -17,56 +17,76 @@
       <div class="panel callout radius">
         <h5>Currently funding...</h5>
         <h1 class="candidate-title"><%= current_campaign.candidate.name %></h1>
-      </div>
-      <div class="row">
-        <div class="small-6 columns">
-          <%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "button secondary radius" %>
-        </div>
-        <div class="small-6 columns">
-          <a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a>
-        </div>
+        <h5 class="subheader"><%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "light-text primary no-margin" %></h5>
       </div>
 
       <div class="panel radius">
-        <h4>Countdown Clock</h4>
-      </div>
-
-      <!-- SOCIAL CONTAINER -->
-      <div class="social-container">
-        <ul class="button-group">
-
-          <!-- TWITTER -->
-          <li class="small button secondary">
-            <div>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="adoptacoder">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            </div>
+        <h4>Time Remaining</h4>
+        <ul class="countdown">
+          <li> <span class="days">00</span>
+          <p class="days_ref no-margin">days</p>
           </li>
-
-          <!-- FACEBOOK -->
-          <li class="small button secondary">
-            <div>
-            <a href="#"
-              onclick="
-                window.open(
-                  'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-                  'facebook-share-dialog',
-                  'width=626,height=436');
-                return false;">
-              <%= image_tag 'facebook.svg', size: "18" %>
-            </a>
-            </div>
+          <li class="seperator">.</li>
+          <li> <span class="hours">00</span>
+          <p class="hours_ref no-margin">hours</p>
           </li>
-
-          <!-- EMAIL -->
-          <li class="small button secondary">
-            <div>
-              <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site    http://localhost:3000" title="Share by Email">Share by Email</a>
-            </div>
+          <li class="seperator">:</li>
+          <li> <span class="minutes">00</span>
+          <p class="minutes_ref no-margin">minutes</p>
+          </li>
+          <li class="seperator">:</li>
+          <li> <span class="seconds">00</span>
+          <p class="seconds_ref no-margin">seconds</p>
           </li>
         </ul>
       </div>
-      <!-- END SOCIAL CONTAINER -->
+
+      <div class="row">
+        <div class="small-4 columns">
+          <a href="#" class="button success radius no-margin" data-reveal-id="payment-modal">Donate</a>
+        </div>
+        <!-- SOCIAL CONTAINER -->
+        <div class="small-8 columns">
+          <ul class="button-group right">
+
+            <!-- TWITTER -->
+            <li class="small button secondary">
+              <div>
+                <a href="https://twitter.com/share?text=This coder inspires me! Read their story... http://bit.ly/1bPcb7p&hashtags=adoptacoder%2Cinspiration" class="twitter popup" data-hashtags="adoptacoder"><%= image_tag 'twitter.svg', size: "23" %></a>
+              </div>
+            </li>
+
+            <li class="small button secondary">
+              <div>
+                <a href="https://plus.google.com/share?url=http%3A//www.adoptacoder.org" class="google popup"><%= image_tag 'google.svg', size: "23" %></a>
+              </div>
+            </li>
+
+            <!-- FACEBOOK -->
+            <li class="small button secondary">
+              <div>
+              <a href="#"
+                onclick="
+                  window.open(
+                    'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+                    'facebook-share-dialog',
+                    'width=626,height=436');
+                  return false;">
+                <%= image_tag 'facebook.svg', size: "23" %>
+              </a>
+              </div>
+            </li>
+
+            <!-- EMAIL -->
+            <li class="small button secondary">
+              <div>
+                <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site    http://localhost:3000" title="Share by Email"><%= image_tag 'mail.png', size: "27" %></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- END SOCIAL CONTAINER -->
+      </div>
 
 
     </div>
