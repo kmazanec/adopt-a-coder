@@ -9,10 +9,11 @@ class ChargesController < ApplicationController
 
     # Set your secret key: remember to change this to your live secret key in production
   # See your keys here https://manage.stripe.com/account
-    Stripe.api_key = "sk_test_Ecm4yHVzsXk5fOJRpEcQ5S7u"
+    Stripe.api_key = "sk_test_UiyLySwAvxuicW8WYNbBS8vr"
 
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
+    
 
 
     @amount = params[:amount]
@@ -31,10 +32,12 @@ class ChargesController < ApplicationController
       if @donor == nil
         temp_password = password_generator
         @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
-        Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+        @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
       else
-        Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+        @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
       end
+      render :_donation_confirmation
+      # render "donors/_donation_confirmation"
     rescue Stripe::CardError => e
     # The card has been declined
 
