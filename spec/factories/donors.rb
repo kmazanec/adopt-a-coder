@@ -24,7 +24,7 @@ FactoryGirl.define do
       f.profile_photo_id "1"
       f.profile_video_id "1"
       f.type "Donor"
-
-
   end
 end
+
+

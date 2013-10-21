@@ -31,7 +31,7 @@ describe "Sign Up Page for candidate" do
 
     within('footer') { expect(page).to have_content('Copyright') }
   end
-
-
-
 end
+
+
+

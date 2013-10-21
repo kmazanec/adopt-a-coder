@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Donor do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should have many donations" do
         donor = Donor.reflect_on_association(:donations)
@@ -43,14 +43,30 @@ require 'spec_helper'
 
       describe "#nomination_available?" do
         it "should check to see if there are nominations avaliable" do
-          donor = FactoryGirl.build(:donor)
-          available= donor.nomination_available?
+          @donor = FactoryGirl.build(:donor, name: "steve jobs")
+          @available= @donor.nomination_available?
 
-          available.should eq true
+          @available.should eq true
         end
       end
 
+      describe "#current_campaign_donation?" do
+        it "should show the campaign the donor has donated to if they have any " do
+          @campaign = FactoryGirl.create(:campaign)
+          @donor = FactoryGirl.create(:donor)
+          @donation = FactoryGirl.create(:donation)
+          @campaign.donations = [@donation]
+          @donor.donations = [@donation]
+
+          Campaign.stub(:current_campaign).and_return(@campaign)
+
+          @result = @donor.current_campaign_donation?
+
+          @result.should eq true
+        end
+      end
     end
   end
+
 
 

@@ -32,8 +32,8 @@ describe "Homepage" do
 
     within('footer') { expect(page).to have_content('Copyright') }
   end
-
 end
+
 
 
 

@@ -3,7 +3,7 @@ require 'spec_helper'
 
   describe Candidate do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should have one application" do
         candidate = Candidate.reflect_on_association(:application)
@@ -41,31 +41,19 @@ require 'spec_helper'
       it "should have a password" do
         FactoryGirl.build(:candidate, password: nil).should_not be_valid
       end
-
-      it "should have a phone number" do
-        FactoryGirl.build(:candidate, phone: nil).should_not be_valid
-      end
-
-      it "should have an address" do
-        FactoryGirl.build(:candidate, address1: nil).should_not be_valid
-      end
-
-      it "should be valid without a secondary address" do
-        FactoryGirl.build(:candidate, address2: nil).should be_valid
-      end
-
-      it "should have a city" do
-        FactoryGirl.build(:candidate, city: nil).should_not be_valid
-      end
-
-      it "should have a state" do
-        FactoryGirl.build(:candidate, state: nil).should_not be_valid
-      end
-
-      it "should have a zip" do
-        FactoryGirl.build(:candidate, zip: nil).should_not be_valid
-      end
-
     end
 
+    describe "#search" do
+
+      it "should return all candidates what match the query" do
+        @candidate = FactoryGirl.create(:candidate)
+        @query = Candidate.search("Kevin second")
+
+        @query.should eq [@candidate]
+      end
+    end
   end
+
+
+
+

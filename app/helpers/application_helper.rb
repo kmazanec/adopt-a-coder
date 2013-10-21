@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def current_campaign
-    @current_campaign ||= Campaign.includes(:candidate).find(1)
+    @current_campaign ||= Campaign.current_campaign
   end
 
   def recent_donations
