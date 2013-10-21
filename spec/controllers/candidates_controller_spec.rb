@@ -114,9 +114,9 @@ describe CandidatesController do
 
   end
 
-  describe "#index" do
+  describe "#update" do
 
-     it 'should update email' do
+     it 'should update mission statment for candidate' do
 
       controller.stub(:current_user).and_return(@candidate)
 
