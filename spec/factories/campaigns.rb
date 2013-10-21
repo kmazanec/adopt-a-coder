@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :campaign do |f|
-    f.candidate_id "3"
+    f.candidate_id "2"
     f.start_date "10-11-1111"
     f.end_date "09-12-1111"
     f.total "12099"
