@@ -75,7 +75,7 @@ describe DonorsController do
           "mission" => "become a great coder too", "profile_photo_id" => "2",
           "profile_video_id" => "2", "type" => "Candidate"} }.to_not change(Donor, :count).by(1)
 
-          flash[:notice].should_not be_nil
+          flash[:error].should_not be_nil
           response.should render_template(:new)
     end
   end
