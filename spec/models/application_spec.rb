@@ -22,20 +22,24 @@ require 'spec_helper'
       describe "#complete?" do
         it "should return false if the length of a response is less then 10 characters" do
           application = FactoryGirl.create(:application)
+          question = FactoryGirl.create(:question)
+          application.questions = [question]
           response = FactoryGirl.build(:response, body: "hello")
           application.responses = [response]
-          answer = application.complete?
 
-          answer.should eq false
+
+          application.complete?.should eq false
         end
 
         it "should return true if the length of a response is less then 10 characters" do
           application = FactoryGirl.create(:application)
+          question = FactoryGirl.create(:question)
+          application.questions = [question]
           response = FactoryGirl.build(:response)
           application.responses = [response]
-          answer = application.complete?
 
-          answer.should eq true
+
+          application.complete?.should eq true
         end
 
       end
