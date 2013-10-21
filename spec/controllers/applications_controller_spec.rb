@@ -21,11 +21,24 @@ describe ApplicationsController do
 
     it "should change the status of a users application to complete and have success flash notice" do
       post 'submit'
+      @application = FactoryGirl.create(:application)
 
 
 
       @candidate.reload.application.complete.should eq true
       flash[:success].should eq "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
+      response.should redirect_to edit_candidate_path(@candidate)
+    end
+
+    it "should not let application be submited if it isnt completely full" do
+      post 'submit'
+      @application_2 = FactoryGirl.build(:application)
+      @application_2.questions = []
+      @candidate.application = @application_2
+
+
+      @candidate.reload.application.complete.should eq false
+
       response.should redirect_to edit_candidate_path(@candidate)
     end
 
