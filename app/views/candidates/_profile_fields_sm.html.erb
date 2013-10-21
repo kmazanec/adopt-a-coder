@@ -4,7 +4,7 @@
       <td colspan=0><h4>Social Media</h4></td>
     </tr>
     <tr>
-      <td><%= link_to "Update Links" %></td>
+      <td><%= link_to "Update Social Media Information", edit_candidate_path(current_user) %></td>
     </tr>
     <tr>
       <td>Code Academy:</td>
@@ -41,3 +41,5 @@
       <td><%= link_to current_user.personal_url, target: '_blank' if current_user.personal_url %></td>
       <td></td>
     </tr>
+  </table>
+</div>
