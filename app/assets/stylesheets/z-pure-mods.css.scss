@@ -1,0 +1,183 @@
+
+* {
+    /* Add your font in here, whether it's a custom font or a normal font */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+$highlight-color: #AC0A3C;
+/* We use these to control header font styles */
+
+.login-nav{
+  width: 320px;
+  padding: 0 15px;
+  li {
+    padding: 2px;
+  }
+}
+
+.login-fields{
+  background-color: #111111;
+  margin: 0;
+  padding-top: 10px;
+  height: 180px;
+}
+
+.fixed {
+  height: 50px;
+}
+
+.lots-of-margin {
+  margin: 4% 0;
+}
+
+.little-bit-of-bottom-margin {
+  margin-bottom: 10px;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.tall {
+  height: 3em;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.dollars {
+  font-size: 2em;
+  margin: .2em 0.5em;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.image-square {
+  overflow: hidden;
+  max-width: 200px;
+  max-height: 300px;
+}
+
+.icon {
+  overflow: hidden;
+  max-height: 25px;
+  max-width: 100px;
+}
+
+
+.logo-type {
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 1.2em;
+}
+
+.dark {
+  background-color: #444;
+}
+
+.light {
+  background-color: #CCC;
+}
+
+.white {
+  background-color: #FFF;
+}
+
+.light-text {
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.magenta-text {
+  color: $highlight-color;
+}
+
+.no-border {
+  border: none;
+}
+
+/* MAIN PAGE  */
+
+#current_campaign {
+  background-color: white;
+}
+
+#about {
+  background-color: white;
+}
+
+#current_candidateds {
+  background-color: white;
+}
+
+#recent_donors {
+  background-color: white;
+}
+
+#past_campaigns {
+  background-color: white;
+}
+
+#faq {
+  background-color: white;
+}
+
+
+ul.countdown {
+  color: #AC0A3C;
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+ul.countdown li {
+  display: inline-block;
+}
+ul.countdown li span {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 40px;
+}
+ul.countdown li.seperator {
+  font-size: 40px;
+  line-height: 35px;
+  vertical-align: top;
+}
+ul.countdown li p {
+  color: #222;
+  font-size: 14px;
+}
+
+.candidate-title {
+  margin-bottom: 0.375em;
+}
+
+
+/*.social-container {
+  float: right;
+}*/
+
+/*.social {
+  margin: 0;
+  padding: 0;
+}*/
+
+/*.dollars {
+  font-size: 3em;
+  font-weight: 400;
+  margin: 0;
+}*/
