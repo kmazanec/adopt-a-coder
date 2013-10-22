@@ -215,9 +215,9 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // $fieldset-margin: emCalc(18px) 0;
 
 // We use these to style the legends when you use them
-// $legend-bg: #fff;
-// $legend-font-weight: bold;
-// $legend-padding: 0 emCalc(3px);
+$legend-bg: $secondary-color-light;
+$legend-font-weight: bold;
+$legend-padding: emCalc(5px) emCalc(5px);
 
 // We use these to style the prefix and postfix input elements
 // $input-prefix-bg: darken(#fff, 5%);
