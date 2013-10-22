@@ -48,7 +48,7 @@ def candidate_params
 end
 
 def  update_params
-  params.require(:candidate).permit(:address1, :address2, :city, :state, :zip, :twitter, :facebook, :linked_in, :codeacademy, :github, :blog, :personal_url, :mission, :biography,:currently_working_on)
+  params.require(:candidate).permit(:phone, :address1, :address2, :city, :state, :zip, :twitter, :facebook, :linked_in, :codeacademy, :github, :blog, :personal_url, :mission, :biography,:currently_working_on)
 end
 
 end

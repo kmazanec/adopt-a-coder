@@ -17,5 +17,4 @@ module ApplicationHelper
   end
 
 
-
 end

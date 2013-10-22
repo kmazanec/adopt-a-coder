@@ -7,12 +7,26 @@ $( "#dialog-confirm" ).dialog({
   modal: true,
   buttons: {
     "Confirm Nomination": function () {
-      $.post('/candidate/application/submit', function(){
+      $.post('/candidate/application/submit', function(response){
+        var return_data = $.parseJSON(response);
+        if (return_data['message'] === true){
+          $("#application-submitter").text("Submit Application")
+          $("")
+        }
+
+          else{
+
+          }
+
+
 
         $("#submit-application").remove();
-        $("#application-submitter").text("Submit Application")
+
         $("#application-status").text("Completed");
-      });
+      })
+      .fail(function() {
+        alert( "error" );
+      })
       $(this).dialog("close");
     },
     "Cancel": function () {
