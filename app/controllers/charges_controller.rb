@@ -35,9 +35,8 @@ class ChargesController < ApplicationController
           @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
           
           DonorMailer.donation_mailer(@donor).deliver
-          render :_donation_confirmation
-    
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+          render :_donation_confirmation
         else
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
           format.html { render :_donation_confirmation}
