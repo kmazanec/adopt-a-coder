@@ -11,7 +11,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def self.current_campaign
-    Campaign.includes(:candidate).find(1)
+    Campaign.includes(:candidate).first
   end
 
 end
