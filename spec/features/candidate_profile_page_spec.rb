@@ -4,7 +4,8 @@ include UserHelper
 describe "Profile Page for candidate" do
 
   before(:each) do
-    login_as_candidate
+
+    signup_as_candidate
   end
 
 

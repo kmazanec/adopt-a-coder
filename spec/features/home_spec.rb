@@ -4,6 +4,7 @@ include UserHelper
 describe "Homepage" do
 
   before(:each) do
+
   visit root_path
 
   end

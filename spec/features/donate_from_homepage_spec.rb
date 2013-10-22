@@ -4,11 +4,11 @@ include UserHelper
 describe "Donating from the homepage" do
 
   before(:each) do
-  visit root_path
 
+    visit root_path
   end
 
-  it "should have a button the donate now", :js => true do
+  it "should have a button the donate now that allows you to donate", :js => true do
 
     click_link "Donate", match: :first
       fill_in 'payment-name', with: 'Uncle Sam'
@@ -22,8 +22,8 @@ describe "Donating from the homepage" do
 
     click_button "Submit Transaction"
     page.should have_content "Thank You For Donating!"
-
-
   end
 
 end
+
+

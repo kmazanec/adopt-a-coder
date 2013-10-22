@@ -4,6 +4,7 @@ include UserHelper
 describe "Sign Up Page for candidate" do
 
   it "should let me sign up as a candidate" do
+
     visit root_path
     click_link "Sign Up!"
     click_link "Interested in applying?", match: :first
@@ -20,6 +21,7 @@ describe "Sign Up Page for candidate" do
   end
 
   it "should show the copyright" do
+
     visit root_path
     click_link "Sign Up!"
     click_link "Interested in applying?", match: :first

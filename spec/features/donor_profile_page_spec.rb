@@ -4,7 +4,8 @@ include UserHelper
 describe "Profile Page for donor" do
 
   before(:each) do
-    login_as_donor
+
+    signup_as_donor
 
   end
 
