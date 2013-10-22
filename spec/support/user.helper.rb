@@ -1,6 +1,6 @@
 module UserHelper
 
-  def login_as_donor
+  def signup_as_donor
     visit root_path
     click_link "Sign Up!"
     click_link "Interested in being a supporter?", match: :first
@@ -13,7 +13,7 @@ module UserHelper
       click_button "Create Donor"
   end
 
-  def login_as_candidate
+  def signup_as_candidate
     visit root_path
     click_link "Sign Up!"
     click_link "Interested in applying?", match: :first
@@ -25,6 +25,8 @@ module UserHelper
 
       click_button "Create Profile"
   end
+
+
 end
 
 

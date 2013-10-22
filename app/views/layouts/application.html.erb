@@ -32,7 +32,7 @@
 
 <%= render "home/nav" %>
 
-<div class="row">
+<div id="flash_notice" class="row">
     <% if flash[:notice] %>
       <div data-alert class="alert-box"><%= flash[:notice] %><a href class="close">x</a></div>
     <% elsif flash[:error] %>
