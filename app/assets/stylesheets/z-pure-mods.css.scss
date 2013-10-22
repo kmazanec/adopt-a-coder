@@ -5,22 +5,23 @@
 }
 
 $highlight-color: #AC0A3C;
+/*$secondary-color-light: lighten(#4D6F88, 50%);*/
 /* We use these to control header font styles */
 
-.login-nav{
-  width: 320px;
-  padding: 0 15px;
-  li {
-    padding: 2px;
-  }
+.top-bar {
+  /*border-bottom: 1px solid #C4D2DD;*/
 }
 
-.login-fields{
-  background-color: lighten(#4D6F88, 20%);
+.donate-nav {
+  margin: 8px 20px;
+}
+
+/*.login-fields{
+  background-color: $secondary-color-light;
   margin: 0;
   padding-top: 10px;
   height: 180px;
-}
+}*/
 
 .fixed {
   height: 50px;
@@ -188,6 +189,7 @@ ul.countdown li.seperator {
 ul.countdown li p {
   color: #222;
   font-size: 14px;
+  margin-bottom: 0.3em;
 }
 
 .candidate-title {

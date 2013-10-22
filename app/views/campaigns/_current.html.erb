@@ -2,8 +2,7 @@
 <div class="">
   <div class="row">
     <div class="small-12 columns">
-      <h4 class='no-margin'>Adopt-a-Coder</h4>
-      <h5 class='subheader no-margin'>Funding the future, one coder at a time.</h5>
+
     </div>
     <div class="small-12 columns">
       <div class="panel">
@@ -13,9 +12,29 @@
             </div>
           </div>
           <div class="small-12 large-4 columns">
-            <h5>Currently funding...</h5>
-            <h2 class="candidate-title"><%= current_campaign.candidate.name %></h2>
-            <h5 class="subheader"><%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "primary no-margin" %></h5>
+            <h5 class="subheader center">Currently funding</h5>
+            <h2 class="candidate-title center"><%= current_campaign.candidate.name %></h2>
+            <h5 class="subheader center">to change her life.</h5>
+            <div class="">
+              <h5 class="subheader center no-margin no-padding">Time Remaining</h5>
+              <ul class="countdown">
+                <li> <span class="days">00</span>
+                <p class="days_ref ">days</p>
+                </li>
+                <li class="seperator">.</li>
+                <li> <span class="hours">00</span>
+                <p class="hours_ref ">hours</p>
+                </li>
+                <li class="seperator">:</li>
+                <li> <span class="minutes">00</span>
+                <p class="minutes_ref ">minutes</p>
+                </li>
+                <li class="seperator">:</li>
+                <li> <span class="seconds">00</span>
+                <p class="seconds_ref ">seconds</p>
+                </li>
+              </ul>
+            </div>
 
             <div class="row">
               <div class="small-12 columns">   
@@ -30,7 +49,9 @@
           <div class="small-12 large-5 columns">
             <div class="">
               <blockquote><%= current_campaign.candidate.mission %></blockquote>
+              <h5 class="subheader"><%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "right no-margin" %></h5>
             </div>
+              
           </div>
         </div>
       </div>
@@ -43,27 +64,6 @@
       <div class="">
         <span class="dollars left">$ <%= current_campaign.total %></span>
         <span class="dollars right">$ <%= current_campaign.goal %></span>   
-      </div>
-
-      <div class=" ">
-        <h4>Time Remaining</h4>
-        <ul class="countdown">
-          <li> <span class="days">00</span>
-          <p class="days_ref ">days</p>
-          </li>
-          <li class="seperator">.</li>
-          <li> <span class="hours">00</span>
-          <p class="hours_ref ">hours</p>
-          </li>
-          <li class="seperator">:</li>
-          <li> <span class="minutes">00</span>
-          <p class="minutes_ref ">minutes</p>
-          </li>
-          <li class="seperator">:</li>
-          <li> <span class="seconds">00</span>
-          <p class="seconds_ref ">seconds</p>
-          </li>
-        </ul>
       </div>
 
       <div class="row">
