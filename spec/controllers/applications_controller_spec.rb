@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe ApplicationsController do
 
-
   describe "#submit" do
     before(:each) do
       @application = FactoryGirl.create(:application)

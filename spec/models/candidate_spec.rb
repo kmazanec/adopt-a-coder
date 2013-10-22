@@ -45,7 +45,7 @@ require 'spec_helper'
 
     describe "#search" do
 
-      it "should return all candidates what match the query" do
+      it "should return all candidates that match the query" do
         @candidate = FactoryGirl.create(:candidate)
         @query = Candidate.search("Kevin second")
 

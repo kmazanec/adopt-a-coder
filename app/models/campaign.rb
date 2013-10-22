@@ -15,7 +15,8 @@ class Campaign < ActiveRecord::Base
   end
 
   def self.current_campaign_percentage
-    self.current_campaign.total/current_campaign.goal.to_f*100
+    cur_campaign = self.current_campaign
+    cur_campaign.total/cur_campaign.goal.to_f*100
   end
 
 

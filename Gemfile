@@ -61,7 +61,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 # Use unicorn as the app server
