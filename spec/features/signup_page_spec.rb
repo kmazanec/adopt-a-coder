@@ -4,6 +4,7 @@ include UserHelper
 describe "Sign Up Page for donor" do
 
   it "should let you sign up as a donator" do
+
     visit root_path
     click_link "Sign Up!"
     click_link "Interested in being a supporter?", match: :first
@@ -19,6 +20,7 @@ describe "Sign Up Page for donor" do
   end
 
   it "should show the copyright" do
+
     visit root_path
     click_link "Sign Up!"
     click_link "Interested in being a supporter?", match: :first
