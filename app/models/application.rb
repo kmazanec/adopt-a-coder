@@ -21,7 +21,7 @@ class Application < ActiveRecord::Base
     true
   end
 
-  def response_percent_complete
+  def response_percent_completed
     (100  * completed_responses/(self.responses.count))
   end
 
