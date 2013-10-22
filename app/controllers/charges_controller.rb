@@ -8,14 +8,12 @@ class ChargesController < ApplicationController
   def create
 
     # Set your secret key: remember to change this to your live secret key in production
-  # See your keys here https://manage.stripe.com/account
+    # See your keys here https://manage.stripe.com/account
     Stripe.api_key = "sk_test_UiyLySwAvxuicW8WYNbBS8vr"
 
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
     
-
-
     @amount = params[:amount]
     @paid = (@amount.to_i * 100).to_s
 
@@ -28,7 +26,7 @@ class ChargesController < ApplicationController
         :description => "payinguser@example.com"
       )
       @charge_id = charge.id #This will store the token that is returned on a successful process of the car
-      @donor = Donor.find_by_name(params[:name])
+      @donor = Donor.find_by(email: params[:email])
       
         if @donor == nil
           temp_password = password_generator
@@ -39,10 +37,10 @@ class ChargesController < ApplicationController
           render :_donation_confirmation
         else
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
-          format.html { render :_donation_confirmation}
+          render :_donation_confirmation
         end
-      end
-      rescue Stripe::CardError => e
+
+    rescue Stripe::CardError => e
       # The card has been declined
       
     end

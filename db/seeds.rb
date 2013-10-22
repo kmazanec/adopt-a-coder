@@ -118,7 +118,7 @@ Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", 
 15.times do
   str = ""
   10.times { str << rand(97..122).chr }
-  Donation.create(token: str, amount: rand(10..500), donor_id: donor_ids.sample, campaign_id: 1)
+  Donation.create(token: str, amount: rand(10..500), donor_id: donor_ids.sample, campaign_id: Campaign.first.id)
 end
 
 Donor.all.each do |donor|
@@ -126,8 +126,8 @@ Donor.all.each do |donor|
   donor.save
 end
 
-Candidate.all.each {|c| c.profile_video_id = 3; c.save }
-Candidate.all.each {|c| c.profile_photo_id = 2; c.save }
+Candidate.all.each {|c| c.profile_video_id = Video.first.id; c.save }
+Candidate.all.each {|c| c.profile_photo_id = Image.first.id; c.save }
 
 @responses = ["I want to go to dbc to learn tons and help the world!",
               "I was able to attend the boys and girls club and it helped me",
