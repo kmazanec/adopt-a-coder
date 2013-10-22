@@ -23,16 +23,13 @@ class ApplicationsController < ApplicationController
     @application = current_user.application
     if @application.complete? && @application.candidate.profile_completed? && !@application.complete
       @application.update_attribute(:complete, true)
-      flash[:success] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
       ApplicationsMailer.applications_mailer(@application).deliver
-      render :json => { :message => true, :notice => "completed" }
+      render json: { message:true, notice:"completed" }
     else
       if @application.complete
-        flash[:error]= "You have already submitted an application."
-        render :json => { :message => false, :notice => "unable" }
+        render json: { message:false, notice:"unable" }
       else
-        flash[:error] = "Your submission was unsuccesful. Please ensure you have completed your profile and answered each question before submitting."
-        render :json => { :message => false, :notice => "error" }
+        render json: { message:false, notice:"error" }
       end
     end
   end

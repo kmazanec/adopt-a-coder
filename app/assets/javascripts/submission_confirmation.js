@@ -1,39 +1,38 @@
 $(function(){
 
-$( "#dialog-confirm" ).dialog({
-  autoOpen: false,
-  width: 500,
-  height: 400,
-  modal: true,
-  buttons: {
-    "Confirm Nomination": function () {
-      $.post('/candidate/application/submit', function(response){
-        var return_data = $.parseJSON(response);
-        if (return_data['message'] === true){
-          $("#application-submitter").text("Submit Application")
-          $("")
-        }
-
-          else{
-
+  $( "#dialog-confirm" ).dialog({
+    autoOpen: false,
+    width: 500,
+    height: 400,
+    modal: true,
+    buttons: {
+      "Confirm Nomination": function () {
+        $(this).dialog("close");
+        $.post('/candidate/application/submit', function(response){
+          var return_data = response;
+          if (return_data['message'] === true){
+            $("#application-submitter").text("Submit Application")
+            $("#application-status").text("Completed");
+            $("#flash_notice").html("<div data-alert class='alert-box success'>Your submission was successful!<a href class='close'>x</a></div>")
           }
+          else {
+            if (return_data['notice'] === 'unable'){
+              console.log('whatever')
+              $("#flash_notice").hmtl("<div data-alert class='alert-box alert'>You have already submitted an application.<a href class='close'>x</a></div>")
+            }
+            else {
+              console.log('nope')
+              $("#flash_notice").html("<div data-alert class='alert-box alert'>Your submission was unsuccessful.Please ensure you have completed your profile and answered each question before submitting.<a href class='close'>x</a></div>")
+            }
+          }
+        });
+      },
+      "Cancel": function () {
+        $(this).dialog("close");
+      }
 
-
-
-        $("#submit-application").remove();
-
-        $("#application-status").text("Completed");
-      })
-      .fail(function() {
-        alert( "error" );
-      })
-      $(this).dialog("close");
-    },
-    "Cancel": function () {
-      $(this).dialog("close");
     }
-  }
-});
+  });
 
 
   $("#submit-application").click(function(event){
