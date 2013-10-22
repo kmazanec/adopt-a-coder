@@ -47,7 +47,7 @@ require 'spec_helper'
           campaign.donations = [donation]
           total = campaign.total_donations
 
-          total.should eq 10
+          total.should eq donation.amount
         end
       end
     end
