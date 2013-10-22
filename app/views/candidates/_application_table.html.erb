@@ -2,35 +2,46 @@
   <table>
     <h6>Application Status</h6>
     <tr>
+      <td>Step:</td>
       <td>To Do:</td>
       <td>Status:</td>
     </tr>
-    <tr>
-      <td><%= link_to 'Profile', edit_candidate_path(current_user) %></td>
-      <td><%= number_to_percentage(current_user.profile_percent_completed, precision: 0) %> Complete</td>
-    </tr>
     <% if !current_application.complete %>
       <tr>
-        <td><%= link_to 'Application Form', edit_candidate_application_path(current_user, current_user.application) %></td>
+        <td>1</td>
+        <td><%= link_to 'Profile', edit_candidate_path(current_user) %></td>
+        <td><%= number_to_percentage(current_user.profile_percent_completed, precision: 0) %> Complete</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><%= link_to 'Complete Application', edit_candidate_application_path(current_user, current_user.application) %></td>
         <td><%= number_to_percentage(current_user.application.response_percent_completed, precision: 0) %> Complete</td>
       </tr>
       <tr>
-          <td id="application-submitter"><%= link_to 'Submit Application', "#", {id: 'submit-application'} %></td>
-          <td id="application-status">Not Submitted</td>
+        <td>3</td>
+        <td id="application-submitter"><%= link_to 'Submit Application', "#", {id: 'submit-application'} %></td>
+        <td id="application-status">Not Completed</td>
       </tr>
     <% else %>
       <tr>
+        <td>1</td>
+        <td>Profile</td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+        <td>2</td>
         <td><%= link_to 'Application', candidate_application_path(current_user, current_user.application) %></td>
         <td>Completed</td>
       </tr>
       <tr>
-          <td>Already</td>
-          <td>Submitted</td>
+        <td>3</td>
+        <td>Submit Application</td>
+        <td>Completed</td>
       </tr>
       <% end %>
   </table>
 </div>
 
 <div id="dialog-confirm" title="Confirm Submission?">
-  <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Please note an application cannot be edited once it has been submitted. Are you sure you want to submit your application?</p>
+  <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Please note an application cannot be edited after submission. Are you sure you want to submit your application?</p>
 </div>

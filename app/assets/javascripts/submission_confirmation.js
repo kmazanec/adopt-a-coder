@@ -10,8 +10,8 @@ $( "#dialog-confirm" ).dialog({
       $.post('/candidate/application/submit', function(){
 
         $("#submit-application").remove();
-        $("#application-submitter").text("Application")
-        $("#application-status").text("Submitted!");
+        $("#application-submitter").text("Submit Application")
+        $("#application-status").text("Completed");
       });
       $(this).dialog("close");
     },

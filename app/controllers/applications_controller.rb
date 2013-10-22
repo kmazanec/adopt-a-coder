@@ -21,7 +21,7 @@ class ApplicationsController < ApplicationController
 
   def submit
     @application = current_user.application
-    if @application.complete?
+    if @application.complete? && current_user.profile_completed?
       if @application.complete
         flash[:error]= "You have already submitted the application."
         redirect_to profile_candidate_path(current_user)
@@ -32,7 +32,7 @@ class ApplicationsController < ApplicationController
         redirect_to profile_candidate_path(current_user)
       end
     else
-      flash[:error] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
+      flash[:error] = "Your submission was unsuccesful. Please ensure you have completed your profile and answered each question before submitting."
       redirect_to profile_candidate_path(current_user)
     end
   end
