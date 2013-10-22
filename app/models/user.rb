@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
 
   def set_default_image
-    self.profile_image = Image.find(1) unless self.profile_image
+    self.profile_image = Image.first unless self.profile_image
     self.save
   end
 
