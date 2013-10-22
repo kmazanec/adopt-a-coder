@@ -28,10 +28,12 @@ $body-font-family: "Inconsolata" , "Source Sans Pro", "Helvetica", Helvetica, Ar
 // $text-direction: ltr;
 
 // We use these as default colors throughout
-$primary-color: lighten(#71A35A, 12%);
+$primary-color: lighten(#71A35A, 10%);
 $secondary-color: lighten(#4D6F88, 20%);
 $alert-color: #E36E40;
 $success-color: #B3D6AF;
+$primary-color-dark: #71A35A;
+$secondary-color-light: lighten(#4D6F88, 50%);
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -670,7 +672,7 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 //
 
 // We use these to control the background and border styles
-$panel-bg: lighten(#4D6F88, 50%);
+$panel-bg: $secondary-color-light;
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -968,39 +970,40 @@ $panel-bg: lighten(#4D6F88, 50%);
 //
 
 // Background color for the top bar
-$topbar-bg: #4D6F88;
+// $topbar-bg: #4D6F88;
+$topbar-bg: #FFF;
 // $topbar-bg: lighten(#4D6F88, 50%);
 
 // Height and margin
-$topbar-height: 50px;
+$topbar-height: 60px;
 // $topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: bold;
+$topbar-title-weight: normal;
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-weight: bold;
+$topbar-link-color: $primary-color-dark;
+$topbar-link-weight: normal;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #4D6F88;
-$topbar-dropdown-link-color: lighten(#4D6F88, 20%);
+$topbar-dropdown-bg: #FFF;
+$topbar-dropdown-link-color: $primary-color-dark;
 // $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: lighten(#4D6F88, 20%);
-// $topbar-dropdown-toggle-alpha: 0.5;
-// $dropdown-label-color: #555;
+$topbar-dropdown-toggle-color: $secondary-color-light;
+$topbar-dropdown-toggle-alpha: 0;
+$dropdown-label-color: $secondary-color-light;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
-// $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
+$topbar-menu-link-weight: normal;
+$topbar-menu-link-color: $primary-color-dark;
+$topbar-menu-icon-color: $primary-color-dark;
 // $topbar-menu-link-color-toggled: #888;
 // $topbar-menu-icon-color-toggled: #888;
 

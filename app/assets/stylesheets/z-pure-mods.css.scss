@@ -5,22 +5,31 @@
 }
 
 $highlight-color: #AC0A3C;
+/*$secondary-color-light: lighten(#4D6F88, 50%);*/
 /* We use these to control header font styles */
 
-.login-nav{
-  width: 320px;
-  padding: 0 15px;
-  li {
-    padding: 2px;
-  }
+.top-bar {
+  /*border-bottom: 1px solid #C4D2DD;*/
 }
 
-.login-fields{
-  background-color: lighten(#4D6F88, 20%);
+.donate-nav {
+  margin: 8px 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+small {
+  font-weight: 300;
+}
+
+/*.login-fields{
+  background-color: $secondary-color-light;
   margin: 0;
   padding-top: 10px;
   height: 180px;
-}
+}*/
 
 .fixed {
   height: 50px;
@@ -31,7 +40,7 @@ $highlight-color: #AC0A3C;
 }
 
 .little-bit-of-bottom-margin {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 .panel-color {
@@ -65,7 +74,7 @@ $highlight-color: #AC0A3C;
 }
 
 .no-margin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .no-padding {
@@ -188,6 +197,7 @@ ul.countdown li.seperator {
 ul.countdown li p {
   color: #222;
   font-size: 14px;
+  margin-bottom: 0.3em;
 }
 
 .candidate-title {
