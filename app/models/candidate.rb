@@ -15,8 +15,24 @@ class Candidate < User
     all(conditions: ["LOWER(name) like ?", "%#{query}%".downcase])
   end
 
-  def profile_complete?
+  def mandatory_attributes_completed
+    ([phone, address1, city, state, zip].compact.length / 5.0) * 100
+  end
 
+  def social_media_completed
+    ([facebook, twitter, linked_in, codeacademy, github, blog, personal_url]).compact.length != 0 ? 100 : 0
+  end
+
+  def about_me_completed
+    ([mission, biography, currently_working_on]).compact.length != 0 ? 100 : 0
+  end
+
+  def profile_percent_completed
+    ((about_me_completed + social_media_completed + mandatory_attributes_completed) / 300) * 100
+  end
+
+  def profile_completed?
+    profile_percent_completed == 100
   end
 
   protected
