@@ -38,12 +38,12 @@ describe ApplicationsController do
       response.should redirect_to profile_candidate_path(@candidate)
     end
 
-    it "should not let application be submited if it isnt completely full" do
+    it "should not let user submit multiple application" do
       @application.stub(:complete).and_return(true)
       post 'submit'
 
 
-      @candidate.reload.application.complete.should eq false
+      @candidate.application.complete.should eq true
       flash[:error].should eq "You have already submitted the application."
       response.should redirect_to profile_candidate_path(@candidate)
     end
