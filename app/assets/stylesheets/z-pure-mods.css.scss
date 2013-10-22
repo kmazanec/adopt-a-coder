@@ -43,6 +43,14 @@ small {
   margin-bottom: 10px !important;
 }
 
+.donate-button-auto-margin {
+  margin: 10% 0;
+}
+
+.progress-auto-margin {
+  margin: 5% 0;
+}
+
 .panel-color {
   background-color: lighten(#4D6F88, 50%);
 }
@@ -84,8 +92,8 @@ small {
 .crop{
   text-align: center;
   position:relative;
-  width:230px;
-  height:230px;
+  width:200px;
+  height:250px;
   border:1px solid #ccc;
   /*margin:.5em 10px .5em 0;*/
   margin: 0 auto;
@@ -96,7 +104,7 @@ small {
   position:absolute;
   top:0;
   left:0;
-  clip:rect(0px 230px 228px 0px);
+  clip:rect(0px 200px 248px 0px);
 } 
 
 

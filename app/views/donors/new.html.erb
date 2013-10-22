@@ -1,24 +1,30 @@
-<div class="">
-    <!-- <h5>Already Donated? <%#= link_to 'Click here to receive your password by email', session %></h5> -->
 
-  <h3>Signup to be a donor</h3>
+<div class="lots-of-margin"></div>
 
-  <%= form_for @donor do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Full Name" %>
+<div class="row">
+  <div class="small-12 large-6 large-centered columns panel">
+    <h3 class="center">Sign up to be a suporter!</h3>
 
-    <%= f.label :email %>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <%= form_for @donor do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Full Name" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: "Password" %>
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: "Email" %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password" %>
 
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+      
+      <div class="center">
+        <%= f.submit "Create Supporter Profile", class: "button" %>
+      </div>
 
-    <%= f.submit %>
+    <% end %>
 
-  <% end %>
-
+    <p><%= link_to "Looking to apply for a scholarship?", new_candidate_path %> </p>
+  </div>
 </div>
