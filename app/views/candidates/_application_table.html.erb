@@ -15,7 +15,7 @@
         <td><%= number_to_percentage(current_user.application.response_percent_complete, precision: 0) %> Complete</td>
       </tr>
       <tr>
-          <td id="application-submitter"><%= link_to 'Submit Application', candidate_application_submit_path, {id: 'submit-application', method: :post} %></td>
+          <td id="application-submitter"><%= link_to 'Submit Application', "#", {id: 'submit-application'} %></td>
           <td id="application-status">Not Submitted</td>
       </tr>
     <% else %>

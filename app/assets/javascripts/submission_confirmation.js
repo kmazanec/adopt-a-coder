@@ -7,11 +7,11 @@ $( "#dialog-confirm" ).dialog({
   modal: true,
   buttons: {
     "Confirm Nomination": function () {
-      $.post(link, function(){
+      $.post('/candidate/application/submit', function(){
 
         $("#submit-application").remove();
-        $("#application-submitter").text("Not")
-        $("#application-status").text("Submitted");
+        $("#application-submitter").text("Application")
+        $("#application-status").text("Submitted!");
       });
       $(this).dialog("close");
     },
@@ -25,6 +25,7 @@ $( "#dialog-confirm" ).dialog({
   $("#submit-application").click(function(event){
     event.preventDefault();
     var link = $(this).attr("href");
+    console.log('Hello')
     $( "#dialog-confirm" ).dialog( "open" );
     });
 });
