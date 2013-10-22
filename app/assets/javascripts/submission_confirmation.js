@@ -1,30 +1,33 @@
-$(function() {
-  $( "#dialog-confirm" ).dialog({
-    autoOpen: false,
-    resizable: false,
-    height:140,
-    modal: true,
-    buttons: {
-      "Confirm Nomination": function() {
-        $( this ).dialog( "close" );
-      },
-      Cancel: function() {
-        $( this ).dialog( "close" );
-      }
-    });
-  });
+$(function(){
 
-$(document).ready(function(){
-  $('#submit-application').click(function(e){
-    e.preventDefault();
+$( "#dialog-confirm" ).dialog({
+  autoOpen: false,
+  width: 500,
+  height: 400,
+  modal: true,
+  buttons: {
+    "Confirm Nomination": function () {
+      $.post(link, function(){
+
+        $("#submit-application").remove();
+        $("#application-submitter").text("Not")
+        $("#application-status").text("Submitted");
+      });
+      $(this).dialog("close");
+    },
+    "Cancel": function () {
+      $(this).dialog("close");
+    }
+  }
+});
+
+
+  $("#submit-application").click(function(event){
+    event.preventDefault();
+    var link = $(this).attr("href");
     $( "#dialog-confirm" ).dialog( "open" );
     });
-  });
-
-
-
-
-
+});
 
 
 
