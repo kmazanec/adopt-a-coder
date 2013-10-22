@@ -6,7 +6,7 @@
     <% @candidates.each do |candidate| %>
       <li>
         <div class="panel">
-          <%= image_tag Image.find(candidate.profile_photo_id).url, class: "image-square", size: "180" %>
+          <%= image_tag candidate.profile_image.url, class: "image-square", size: "180" %>
           <%= candidate.name %>
           <br>
           <div class="tiny button round">

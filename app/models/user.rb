@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :videos
 
-  has_one :profile_video, class_name: "Video"
-  has_one :profile_image, class_name: "Image"
+  belongs_to :profile_video, class_name: Video, foreign_key: :profile_video_id
+  belongs_to :profile_image, class_name: Image, foreign_key: :profile_photo_id
 
   after_create :set_default_image
 
