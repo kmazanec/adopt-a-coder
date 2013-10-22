@@ -11,7 +11,7 @@
   <% if @candidates && @candidates.any? %>
     <% @candidates.each do |candidate| %>
       <div>
-        <%= link_to image_tag(candidate.profile_image.url), size: "350", alt: "Image of #{candidate.name}"), candidate_path(candidate) %>
+        <%= link_to (image_tag candidate.profile_image.url, size: "350", alt: "Image of #{candidate.name}"), candidate_path(candidate) %>
         <h4><%= link_to candidate.name, candidate_path(candidate) %></h4>
         <h6><%= candidate.mission %></h6>
         <p><%= candidate.biography %></p>
