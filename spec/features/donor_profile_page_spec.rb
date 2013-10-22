@@ -24,7 +24,7 @@ describe "Profile Page for donor" do
   it "should let you return to homepage" do
 
 
-    page.should have_link "Home"
+    page.should have_link "Adopt-a-Coder"
   end
 
   it "should show copyright" do
