@@ -21,12 +21,12 @@ require 'spec_helper'
 
       it "should have one profile picture" do
         user = User.reflect_on_association(:profile_image)
-        user.macro.should == :has_one
+        user.macro.should == :belongs_to
       end
 
       it "should have one profile video" do
         user = User.reflect_on_association(:profile_video)
-        user.macro.should == :has_one
+        user.macro.should == :belongs_to
       end
     end
   end
