@@ -12,6 +12,10 @@ module ApplicationHelper
     @past_campaigns ||= Campaign.includes(:candidate).order("id DESC").limit(3)
   end
 
+  def current_campaign_percentage
+    @current_campaign_percentage ||= Campaign.current_campaign_percentage
+  end
+
 
 
 end
