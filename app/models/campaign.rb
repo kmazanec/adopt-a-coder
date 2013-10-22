@@ -18,4 +18,5 @@ class Campaign < ActiveRecord::Base
     self.current_campaign.total/current_campaign.goal.to_f*100
   end
 
+
 end

@@ -16,6 +16,14 @@ $highlight-color: #AC0A3C;
   margin: 8px 20px;
 }
 
+.full-width {
+  width: 100%;
+}
+
+small {
+  font-weight: 300;
+}
+
 /*.login-fields{
   background-color: $secondary-color-light;
   margin: 0;
@@ -32,7 +40,7 @@ $highlight-color: #AC0A3C;
 }
 
 .little-bit-of-bottom-margin {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 .panel-color {
@@ -66,7 +74,7 @@ $highlight-color: #AC0A3C;
 }
 
 .no-margin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .no-padding {

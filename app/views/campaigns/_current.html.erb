@@ -10,12 +10,15 @@
           <div class="small-12 large-3 columns">
             <div class="crop"><p><%= image_tag current_campaign.candidate.profile_image.url, width: "100%" %></p>
             </div>
+            <a href="#" class="button radius full-width" data-reveal-id="payment-modal">Donate</a>
           </div>
           <div class="small-12 large-4 columns">
-            <h5 class="subheader center">Currently funding</h5>
-            <h2 class="candidate-title center"><%= current_campaign.candidate.name %></h2>
-            <h5 class="subheader center">to change her life.</h5>
-            <div class="">
+            <div class="panel">
+              <h5 class="subheader center no-margin">Currently supporting</h5>
+              <h2 class="candidate-title center no-margin"><%= current_campaign.candidate.name %></h2>
+              <h5 class="subheader center">to change her life.</h5>
+            </div>
+            <div class="panel">
               <h5 class="subheader center no-margin no-padding">Time Remaining</h5>
               <ul class="countdown">
                 <li> <span class="days">00</span>
@@ -36,14 +39,7 @@
               </ul>
             </div>
 
-            <div class="row">
-              <div class="small-12 columns">   
-                <div class="progress primary round">
-                  <span class="meter" style="width: <%= current_campaign_percentage %>%"><span style="margin-left: 70%"><%= current_campaign_percentage.to_i %>%</span></span>
 
-                </div>
-              </div>
-            </div>
 
           </div>
           <div class="small-12 large-5 columns">
@@ -51,27 +47,39 @@
               <blockquote><%= current_campaign.candidate.mission %></blockquote>
               <h5 class="subheader"><%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "right no-margin" %></h5>
             </div>
-              
+
+            <div class="row">
+              <div class="small-12 columns">   
+                <div class="progress primary round">
+                  <span class="meter" style="width: <%= current_campaign_percentage %>%"><span style="margin-left: 70%"><%= current_campaign_percentage.to_i %>%</span></span>
+                  <p class="no-margin no-padding center">of $<%= current_campaign.goal.to_comma %> needed</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     
     <!-- CONTENT CONTAINER -->
-    <div class="small-12 large-6 push-6 columns">
-      <div class="panel ">
+    <div class="small-12 large-5 push-7 columns">
+      <div class="panel">
+        <div class="row">
 
-      <div class="">
-        <span class="dollars left">$ <%= current_campaign.total %></span>
-        <span class="dollars right">$ <%= current_campaign.goal %></span>   
-      </div>
+          <div class="small-12 columns">
+            <h2 class="little-bit-of-bottom-margin">$<%= (current_campaign.goal - current_campaign.total).to_comma %><small> to go!</small></h2>
+            <h3 class="little-bit-of-bottom-margin">$<%= current_campaign.total.to_comma %><small> contributed so far</small></h3>
+            <h3 class="little-bit-of-bottom-margin">$<%= current_campaign.goal.to_comma %><small> will change <%= current_campaign.candidate.name %>'s life!</small></h3>
 
-      <div class="row">
-        <div class="small-12 large-4 large-uncentered columns little-bit-of-bottom-margin ">
-          <a href="#" class="button radius no-margin" data-reveal-id="payment-modal">Donate</a>
-        </div>
+            <h4 class="subheader"><strong><%= current_campaign.donations.count %></strong> contributions have been made by <strong><%= current_campaign.donors.uniq.count %></strong> people.</h4>
+          </div>
+
+          <div class="small-12 columns little-bit-of-bottom-margin">
+            <a href="#" class="button radius no-margin" data-reveal-id="payment-modal">Contribute</a>
+          </div>
+
         <!-- SOCIAL CONTAINER -->
-        <div class="small-12 large-8 columns little-bit-of-bottom-margin ">
+        <div class="small-12 small-centered columns">
           <ul class="button-group center no-padding">
 
             <!-- TWITTER -->
@@ -108,18 +116,18 @@
                 <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site    http://localhost:3000" title="Share by Email"><%= image_tag 'mail.png', size: "15" %></a>
               </div>
             </li>
+
           </ul>
-        </div>
-        <!-- END SOCIAL CONTAINER -->
-      </div>
 
+        </div><!-- END SOCIAL CONTAINER -->
 
-    </div>
-    </div>
+      </div><!-- END ROW -->
+    </div><!-- END PANEL -->
+  </div>
     <!-- END CONTENT CONTAINER -->
 
     <!-- VIDEO CONTAINER -->
-    <div class="small-12 large-6 pull-6 columns">
+    <div class="small-12 large-7 pull-5 columns">
       <div class=" ">
       <div class="flex-video">
       <iframe src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
