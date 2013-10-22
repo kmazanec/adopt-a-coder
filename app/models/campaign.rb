@@ -14,4 +14,8 @@ class Campaign < ActiveRecord::Base
     Campaign.includes(:candidate).first
   end
 
+  def self.current_campaign_percentage
+    self.current_campaign.total/current_campaign.goal.to_f*100
+  end
+
 end
