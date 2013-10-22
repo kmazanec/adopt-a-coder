@@ -1,18 +1,21 @@
 <!-- Current Campaign Partial -->
 <div class="">
   <div class="row">
+    <div class="small-12 columns">
+      <h1>Adopt-a-Coder</h1>
+    </div>
     
     <!-- CONTENT CONTAINER -->
     <div class="small-12 large-5 push-7 columns">
-      <div class="panel radius">
+      <div class="panel ">
 
-      <div class="panel callout radius">
+      <div class="panel callout ">
         <h5>Currently funding...</h5>
         <h1 class="candidate-title"><%= current_campaign.candidate.name %></h1>
         <h5 class="subheader"><%= link_to 'Read my story >', candidate_path(current_campaign.candidate), class: "light-text primary no-margin" %></h5>
       </div>
 
-      <div class=" radius">
+      <div class=" ">
         <h4>Time Remaining</h4>
         <ul class="countdown">
           <li> <span class="days">00</span>
@@ -34,12 +37,12 @@
       </div>
 
       <div class="row">
-        <div class="small-4 columns">
+        <div class="small-12 large-4 large-uncentered columns little-bit-of-bottom-margin ">
           <a href="#" class="button radius no-margin" data-reveal-id="payment-modal">Donate</a>
         </div>
         <!-- SOCIAL CONTAINER -->
-        <div class="small-8 columns">
-          <ul class="button-group right">
+        <div class="small-12 large-8 columns little-bit-of-bottom-margin ">
+          <ul class="button-group center">
 
             <!-- TWITTER -->
             <li class="small button secondary">
@@ -87,7 +90,7 @@
 
     <!-- VIDEO CONTAINER -->
     <div class="small-12 large-7 pull-5 columns">
-      <div class=" radius">
+      <div class=" ">
       <div class="flex-video">
       <iframe src="http://www.youtube.com/embed/<%= Video.find(current_campaign.candidate.profile_video_id).you_tube_code %>?modestbranding=1&&color=white&&rel=0&&showinfo=0&&autohide=1" frameborder="0"></iframe>
       </div>
@@ -104,7 +107,7 @@
     <div class="small-12 columns">
       <span class="dollars left">$ <%= current_campaign.total %></span>
       <span class="dollars right">$ <%= current_campaign.goal %></span>      
-      <div class="tall progress primary radius">
+      <div class="tall progress primary round">
         <span class="meter" style="width: <%=current_campaign.total/current_campaign.goal.to_f*100%>%"></span>
       </div>
     </div>

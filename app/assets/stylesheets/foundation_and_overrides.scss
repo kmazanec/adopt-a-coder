@@ -28,7 +28,7 @@ $body-font-family: "Inconsolata" , "Source Sans Pro", "Helvetica", Helvetica, Ar
 // $text-direction: ltr;
 
 // We use these as default colors throughout
-$primary-color: lighten(#71A35A, 15%);
+$primary-color: lighten(#71A35A, 12%);
 $secondary-color: lighten(#4D6F88, 20%);
 $alert-color: #E36E40;
 $success-color: #B3D6AF;
@@ -971,7 +971,7 @@ $panel-bg: lighten(#4D6F88, 50%);
 $topbar-bg: #4D6F88;
 
 // Height and margin
-$topbar-height: 45px;
+$topbar-height: 50px;
 // $topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
@@ -988,9 +988,9 @@ $topbar-height: 45px;
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: #4D6F88;
-// $topbar-dropdown-link-color: #fff;
+$topbar-dropdown-link-color: lighten(#4D6F88, 20%);
 // $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
+$topbar-dropdown-toggle-color: lighten(#4D6F88, 20%);
 // $topbar-dropdown-toggle-alpha: 0.5;
 // $dropdown-label-color: #555;
 
@@ -1004,8 +1004,8 @@ $topbar-dropdown-bg: #4D6F88;
 // $topbar-menu-icon-color-toggled: #888;
 
 // Transitions and breakpoint styles
-// $topbar-transition-speed: 300ms;
-// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
+$topbar-transition-speed: 200ms;
+$topbar-breakpoint: 10px; // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
 

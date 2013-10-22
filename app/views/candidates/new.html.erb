@@ -1,22 +1,26 @@
 <div class="container">
 
-  <h3>Signup to be a candidate!</h3>
+  <div class="row">
+    <div class="small-12 large-6 large-centered columns">
+      <h3>Signup to be a candidate!</h3>
 
-  <%= form_for @candidate do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Full Name" %>
+      <%= form_for @candidate do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Full Name" %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email, placeholder:"Email" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder:"Email" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder:"Password" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder:"Password" %>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
 
-    <%= f.submit %>
+        <%= f.submit "Create Profile", class: "button" %>
 
-  <% end %>
+      <% end %>
+    </div>
+  </div>
 
 </div>
