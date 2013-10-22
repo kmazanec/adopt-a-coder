@@ -14,8 +14,6 @@ class ChargesController < ApplicationController
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
     
-
-
     @amount = params[:amount]
     @paid = (@amount.to_i * 100).to_s
 
