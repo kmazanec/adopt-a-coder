@@ -22,11 +22,15 @@ class ApplicationsController < ApplicationController
   def submit
     @application = current_user.application
     if @application.complete?
-      @application.update_attribute(:complete, true)
-      @application.save
+      if @application.complete
+        flash[:error]= "You have already submitted the application."
+        redirect_to profile_candidate_path(current_user)
+      else
+        @application.update_attribute(:complete, true)
         flash[:success] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
         ApplicationsMailer.applications_mailer(@application).deliver
         redirect_to profile_candidate_path(current_user)
+      end
     else
       flash[:error] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
       redirect_to profile_candidate_path(current_user)
