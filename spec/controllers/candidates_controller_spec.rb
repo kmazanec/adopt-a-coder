@@ -125,10 +125,10 @@ describe CandidatesController do
       @candidate.reload.mission.should eq "become a coder"
       response.should redirect_to(profile_candidate_path(@candidate))
     end
-
-
   end
-
-
-
 end
+
+
+
+
+

@@ -1,3 +1,5 @@
+Image.create(url: "thinker.jpg")
+
 donor_ids = []
 candidate_ids = []
 
@@ -124,8 +126,8 @@ Donor.all.each do |donor|
   donor.save
 end
 
-Candidate.all.each {|c| c.profile_video_id = 2; c.save }
-Candidate.all.each {|c| c.profile_photo_id = 1; c.save }
+Candidate.all.each {|c| c.profile_video_id = 3; c.save }
+Candidate.all.each {|c| c.profile_photo_id = 2; c.save }
 
 @responses = ["I want to go to dbc to learn tons and help the world!",
               "I was able to attend the boys and girls club and it helped me",

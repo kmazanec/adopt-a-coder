@@ -10,4 +10,8 @@ class Campaign < ActiveRecord::Base
     self.donations.sum(:amount)
   end
 
+  def self.current_campaign
+    Campaign.includes(:candidate).find(1)
+  end
+
 end

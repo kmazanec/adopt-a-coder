@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>An application has been submitted by <%= @application.candidate.name %></h1>
+    <p>
+      The application was submitted at <%= @application.updated_at %> <br>
+      The candidate email is: <%= @application.candidate.email %>.<br/>
+    </p>
+  </body>
+</html>

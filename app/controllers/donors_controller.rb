@@ -7,14 +7,19 @@ class DonorsController < ApplicationController
   def create
 
       @donor = Donor.create(donor_params)
+      respond_to do |format|
       if @donor.id
         session[:id] = @donor.id
-        redirect_to donor_path(@donor)
+        DonorMailer.welcome_email(@donor).deliver
+        format.html { redirect_to(@donor) }
+
+        # redirect_to donor_path(@donor)
       else
         flash[:error] = "There was an error, please try again"
-        render :new
+        format.html { render action: 'new' }
+        # render :new
       end
-
+    end
   end
 
   def show

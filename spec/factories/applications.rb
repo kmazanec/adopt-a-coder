@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :application do |f|
     f.candidate_id "2"
     f.complete false
-
   end
 end
+

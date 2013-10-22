@@ -12,8 +12,7 @@ describe ApplicationController do
 
       temp_password.should_not eql(temp_2)
     end
-
   end
-
 end
+
 

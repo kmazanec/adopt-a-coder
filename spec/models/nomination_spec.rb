@@ -2,7 +2,7 @@ require 'spec_helper'
 
   describe Nomination do
 
-    context "Validations and Associations" do
+    describe "Validations and Associations" do
 
       it "should belong to a campaign" do
         nomination = Nomination.reflect_on_association(:campaign)
@@ -18,7 +18,7 @@ require 'spec_helper'
         nomination = Nomination.reflect_on_association(:donor)
         nomination.macro.should == :belongs_to
       end
-
     end
   end
+
 
