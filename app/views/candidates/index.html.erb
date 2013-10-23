@@ -28,7 +28,7 @@
         </td>
         <td>
           <div>
-            <%= link_to 'Nominate!', nominations_path(candidate), method: :post, data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' }, class: "small button round" %>
+      <%= link_to 'Nominate!', nominate_candidate_path(candidate), method: :post, class: "small button round" %>
           </div>
         </td>
       </tr>

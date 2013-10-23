@@ -11,8 +11,7 @@ class Donor < User
   validates :password, presence: true, :on => :create
 
   def nomination_available?
-    cur_id = Campaign.current_campaign.id
-    self.donations.pluck(:campaign_id).last == cur_id && self.nominations.pluck(:campaign_id).last < cur_id
+    true
   end
 
   def current_campaign_donation?
