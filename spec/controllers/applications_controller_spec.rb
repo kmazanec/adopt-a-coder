@@ -19,32 +19,40 @@ describe ApplicationsController do
     end
 
     it "should change the status of a users application to complete and have success flash notice" do
-      post 'submit'
+      xhr :post, :submit
+      response.should be_success
 
+      @parsed_body = JSON.parse(response.body)
 
       @candidate.reload.application.complete.should eq true
-      flash[:success].should eq "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
-      response.should redirect_to profile_candidate_path(@candidate)
+
+      @parsed_body["notice"].should eq 'completed'
+      @parsed_body["message"].should eq true
     end
 
     it "should not let application be submited if it isnt completely full" do
       @application.stub(:complete?).and_return(false)
-      post 'submit'
+      xhr :post, :submit
+      response.should be_success
+
+      @parsed_body = JSON.parse(response.body)
 
 
       @candidate.reload.application.complete.should eq false
-      flash[:error].should eq "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
-      response.should redirect_to profile_candidate_path(@candidate)
+      @parsed_body["notice"].should eq 'error'
+      @parsed_body["message"].should eq false
     end
 
     it "should not let user submit multiple application" do
       @application.stub(:complete).and_return(true)
-      post 'submit'
+      xhr :post, :submit
+      response.should be_success
 
+      @parsed_body = JSON.parse(response.body)
 
       @candidate.application.complete.should eq true
-      flash[:error].should eq "You have already submitted the application."
-      response.should redirect_to profile_candidate_path(@candidate)
+      @parsed_body["notice"].should eq 'unable'
+      @parsed_body["message"].should eq false
     end
 
   end
