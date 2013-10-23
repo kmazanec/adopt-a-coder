@@ -38,7 +38,6 @@ $(function(){
   $("#submit-application").click(function(event){
     event.preventDefault();
     var link = $(this).attr("href");
-    console.log('Hello')
     $( "#dialog-confirm" ).dialog( "open" );
     });
 });
