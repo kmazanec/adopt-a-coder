@@ -1,10 +1,14 @@
 class Application < ActiveRecord::Base
+  include ActiveModel::Dirty
+
   belongs_to :candidate
   has_many :responses
   has_many :questions, through: :responses
   accepts_nested_attributes_for :responses
 
   after_create :create_responses
+
+  before_save :submit_date
 
   def self.save_application(input)
     input[:responses_attributes].each_value do |params_hash|
@@ -41,5 +45,10 @@ class Application < ActiveRecord::Base
     end
   end
 
+  def submit_date
+    if self.complete_changed? && self.complete == true
+      self.submitted_at = Time.now
+    end
+  end
 
 end
