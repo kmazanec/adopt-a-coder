@@ -3,38 +3,52 @@
 <div class="row">
   <div class="small-12 large-4 large-centered columns">
     <%= form_tag(candidates_path, :method => "get", id: "search-form") do %>
-      <div>
-        <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Candidates" %>
-        <button class="button success center" type="submit">Search</button>
+      <div class="row collapse">
+        <div class="small-9 columns">
+          <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Candidates by Name" %>
+        </div>
+        <div class="small-3 columns">
+          <button class="button success prefix" type="submit"><i class="icon-search"></i> Search</button>
+        </div>
       </div>
     <% end %>
   </div>
 
   <div class="row">
-    <% if @candidates && @candidates.any? %>
-    <table>
-      <% @candidates.each do |candidate| %>
-      <tr>
-        <td>
-          <divg class="crop-thumb">
-            <p><%= link_to (image_tag candidate.profile_image.url, size: "75", alt: "Image of #{candidate.name}"), candidate_path(candidate) %></p>
-          </div>
-        </td>
-        <td>
-          <h4><%= link_to candidate.name, candidate_path(candidate) %></h4>
-        </td>
-        <td>
-          <h6><%= candidate.mission %></h6>
-        </td>
-        <td>
-          <div>
-      <%= link_to 'Nominate!', nominate_candidate_path(candidate), method: :post, class: "small button round submit-nomination" %>
-          </div>
-        </td>
-      </tr>
+    <div class="small-12 large-9 large-centered columns">
+      <% if @candidates && @candidates.any? %>
+        <table class="full-width">
+          <thead>
+            <td class="center">Photo</td>
+            <td>Name</td>
+            <td>Mission</td>
+            <td class="center">Nominate!</td>
+          </thead>
+          <% @candidates.each do |candidate| %>
+          <tr>
+            <td>
+              <div class="crop-tiny">
+                <p><%= link_to (image_tag candidate.profile_image.url, size: "75", alt: "Image of #{candidate.name}"), candidate_path(candidate) %></p>
+              </div>
+            </td>
+            <td>
+              <h4><%= link_to candidate.name, candidate_path(candidate) %></h4>
+            </td>
+            <td>
+              <h6><%= candidate.mission %></h6>
+            </td>
+            <td>
+              <div class="center">
+              <%= link_to nominate_candidate_path(candidate), method: :post, class: "small button success submit-nomination" do %>
+                <i class="icon-trophy icon-medium"></i> Nominate!
+              <% end %>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </table>
       <% end %>
-    </table>
-    <% end %>
+    </div>
   </div>
 
   <div id="dialog-nomination-submit" title="Confirm Nomination?">
