@@ -215,9 +215,9 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // $fieldset-margin: emCalc(18px) 0;
 
 // We use these to style the legends when you use them
-// $legend-bg: #fff;
-// $legend-font-weight: bold;
-// $legend-padding: 0 emCalc(3px);
+$legend-bg: $secondary-color-light;
+$legend-font-weight: bold;
+$legend-padding: emCalc(5px) emCalc(5px);
 
 // We use these to style the prefix and postfix input elements
 // $input-prefix-bg: darken(#fff, 5%);
@@ -254,7 +254,7 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // $button-font-tny: emCalc(11px);
 // $button-font-sml: emCalc(13px);
 // $button-font-lrg: emCalc(20px);
-// $button-font-weight: bold;
+$button-font-weight: normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -902,13 +902,13 @@ $panel-bg: $secondary-color-light;
 //
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9;
+$table-bg: $secondary-color-light;
+$table-even-row-bg: #f9f9f9;
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
+$table-border-size: 1px;
+$table-border-color: #ddd;
 
 // These control the table head styles
 // $table-head-bg: #f5f5f5;
@@ -925,7 +925,7 @@ $panel-bg: $secondary-color-light;
 
 // These are for controlling the display and margin of tables
 // $table-display: table-cell;
-// $table-margin-bottom: emCalc(20px);
+$table-margin-bottom: emCalc(30px);
 
 //
 // Image Thumbnail Variables
