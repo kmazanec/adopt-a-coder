@@ -41,19 +41,6 @@ require 'spec_helper'
       end
     end
 
-      describe "#total_donations" do
-
-        it "should give the total donations" do
-          @campaign = FactoryGirl.create(:campaign)
-          Campaign.stub(:current_campaign).and_return(@campaign)
-          @donation = FactoryGirl.create(:donation)
-          @campaign.donations = [@donation]
-          @total = @campaign.total_donations
-
-          @total.should eq 10
-        end
-      end
-
       describe "#current_campaign_percentage" do
 
         it "should return the percent compelete" do
