@@ -113,7 +113,7 @@ c.update_attributes(profile_video_id: m.id)
 
 c = Candidate.first
 
-Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12000)
+Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12500, current_campaign: true)
 
 15.times do
   str = ""
