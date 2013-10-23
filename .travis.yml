@@ -5,12 +5,12 @@ rvm:
 env:
   - DB=postgresql
 
+script:
+  - bundle exec rake spec
 before_script:
   - bundle exec rake db:create RAILS_ENV=test
-  - bundle exec rake db:migrate RAILS_ENV=test
-  - bundle exec rake db:seed RAILS_ENV=test
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare
-
+bundler_args: --binstubs=./bundler_stubs
 
 # RAILS_ENV=test rake db:seed

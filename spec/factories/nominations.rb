@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :nomination do |f|
-    f.campaign_id "2"
+    f.campaign_id "1"
     f.donor_id "1"
-    f.candidate_id "2"
+    f.candidate_id "1"
   end
 end
