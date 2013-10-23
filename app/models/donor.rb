@@ -12,7 +12,10 @@ class Donor < User
 
   def nomination_available?
     cur_id = Campaign.current_campaign.id
-    self.donations.pluck(:campaign_id).last == cur_id && self.nominations.pluck(:campaign_id).last < cur_id
+    dons = self.donations.pluck(:campaign_id)
+    noms = self.nominations.pluck(:campaign_id)
+    return false if dons.empty?
+    dons.last == cur_id && (noms.last.nil? || noms.last < cur_id)
   end
 
   def current_campaign_donation?
