@@ -1,12 +1,18 @@
-<div class="">
+<div class="row">
 
 <nav class="top-bar no-margin">
-  <ul class="title-area hide-for-small">
-    <li class="name"><h1><%= link_to "Adopt-a-Coder", root_path, class: "logo-type" %></h1></li>
-  </ul>
+  <div class="small-12 large-4 columns">
+    <%= link_to root_path, class: "magenta-text" do %>
+      <h4 class='no-margin'>Adopt-a-Coder</h4>
+      <h5 class='subheader no-margin'>Funding the future, one coder at a time.</h5>
+    <% end %>
+  </div>
+
+  <div class="small-12 large-8 columns">
+
   <section class="top-bar-section">
   <ul class="right">
-      <li><a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a></li>
+      <li class="donate-nav"><a href class="button success" data-reveal-id="payment-modal">Contribute</a></li>
   <% if logged_in? %>
     <% if current_user_candidate %>
       <li><%= link_to current_user.name, candidate_path(current_user) %></li>
@@ -21,23 +27,25 @@
     <% end %>
       <li><%= link_to "Logout", logout_path %></li>
   <% else %>
-      <li class="has-dropdown"><a href>Login</a>
-        <ul class="dropdown">
-          <div class="login-fields">
-          <%= form_tag login_path, class: "login-nav" do %>
-            <li><%= label_tag :email %></li>
-            <li><%= email_field_tag :email, nil, placeholder: "email@example.com" %></li>
-            <li><%= label_tag :password %></li>
-            <li><%= password_field_tag :password, nil, placeholder: "password" %></li>
-            <li><%= submit_tag "Login", class: "button radius" %></li>
-          <% end %>
-        </div>
-        </ul>
-      </li>
+      <li><a href data-reveal-id="login-modal">Login</a></li>
       <li><%= link_to "Sign Up!", signup_path, "data-reveal-id" => "signup-modal" %></li>
   <% end %>
     </ul>
   </section>
+  </div>
+
 </nav>
 
 </div>
+
+<% unless logged_in? %>
+  <div id="login-modal" class="reveal-modal medium">
+    <%= form_tag login_path, class: "" do %>
+      <%= label_tag :email %>
+      <%= email_field_tag :email, nil, placeholder: "email@example.com" %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, placeholder: "password" %>
+      <%= submit_tag "Login", class: "button radius" %>
+    <% end %>
+  </div>
+<% end %>

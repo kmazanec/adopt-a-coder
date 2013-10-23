@@ -50,6 +50,19 @@ require 'spec_helper'
           total.should eq 10
         end
       end
+
+      describe "#current_campaign_percentage" do
+
+        it "should return the percent compelete" do
+          @campaign = FactoryGirl.create(:campaign)
+          Campaign.stub(:current_campaign).and_return(@campaign)
+          @campaign.total = "1200"
+          @campaign.goal = "12000"
+          percent = Campaign.current_campaign_percentage
+
+          percent.should eq 10.0
+        end
+      end
     end
   end
 

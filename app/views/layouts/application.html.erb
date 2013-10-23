@@ -32,13 +32,15 @@
 
 <%= render "home/nav" %>
 
-<% if flash[:notice] %>
-  <div data-alert class="alert-box"><%= flash[:notice] %><a href class="close">x</a></div>
-<% elsif flash[:error] %>
-  <div data-alert class="alert-box alert"><%= flash[:error] %><a href class="close">x</a></div>
-<% elsif flash[:success] %>
-  <div data-alert class="alert-box success"><%= flash[:success] %><a href class="close">x</a></div>
-<% end %>
+<div id="flash_notice" class="row">
+    <% if flash[:notice] %>
+      <div data-alert class="alert-box"><%= flash[:notice] %><a href class="close">x</a></div>
+    <% elsif flash[:error] %>
+      <div data-alert class="alert-box alert"><%= flash[:error] %><a href class="close">x</a></div>
+    <% elsif flash[:success] %>
+      <div data-alert class="alert-box success"><%= flash[:success] %><a href class="close">x</a></div>
+    <% end %>
+</div>
 
 <%= render "home/donate_form"  %>
 <%= render "home/signup" %>

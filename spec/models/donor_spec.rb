@@ -43,20 +43,19 @@ require 'spec_helper'
 
       describe "#nomination_available?" do
         it "should check to see if there are nominations avaliable" do
+          # donor with nominations for campaigns other than the current
           @donor = FactoryGirl.build(:donor, name: "steve jobs")
-          @available= @donor.nomination_available?
+          @available = @donor.nomination_available?
 
           @available.should eq true
         end
       end
 
       describe "#current_campaign_donation?" do
-        it "should show the campaign the donor has donated to if they have any " do
-          @campaign = FactoryGirl.create(:campaign)
+        it "returns true if they have donated to Campaign.current_campaign" do
           @donor = FactoryGirl.create(:donor)
-          @donation = FactoryGirl.create(:donation)
-          @campaign.donations = [@donation]
-          @donor.donations = [@donation]
+          @campaign = FactoryGirl.create(:campaign)
+          @donation = FactoryGirl.create(:donation, donor: @donor, campaign: @campaign)
 
           Campaign.stub(:current_campaign).and_return(@campaign)
 

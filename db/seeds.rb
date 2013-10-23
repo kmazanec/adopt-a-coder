@@ -10,8 +10,7 @@ life_questions = ["Briefly introduce yourself with any information you think is 
 
 tech_questions = ["What is it about technology or coding that excites you?",
                   "Tell us your understanding of how the internet works in 200 words or less.",
-                  "Tell us how you will use the internet to change the world?",
-                  "Include a few links below that demonstrate your current interest in coding (github account, codeacademy profile, ect.)."]
+                  "Tell us how you will use the internet to change the world?"]
 
 need_questions = ["How will you stay motivated for 9 weeks in an intensive learning environment?",
                   "How will an experience like this improve your life for the better?",
@@ -41,10 +40,11 @@ donor_ids << d.id
 d = Donor.create(email: "rich@rich.biz", password: "test", password_confirmation: "test")
 donor_ids << d.id
 
-c = Candidate.create(name: "Kevin Another", email: "kevin@another.com", phone: "123-456-7890",
+c = Candidate.create(name: "Jennifer Another", email: "jen@another.com", phone: "123-456-7890",
                 password: "test", password_confirmation: "test", address1: "123 State St",
                 city: "Chicago", state: "IL", zip: "60600", twitter: "http://www.twitter.com/kevinAnother22",
-                facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com")
+                facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com",
+                mission: "Becoming a software engineer has been my lifelong dream.  I want to create the technology that powers people's lives.  This scholarship will allow me to pursue my dreams while supporting my family.")
 candidate_ids << c.id
 
 m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
@@ -113,7 +113,7 @@ c.update_attributes(profile_video_id: m.id)
 
 c = Candidate.first
 
-Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12000)
+Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12500, current_campaign: true)
 
 15.times do
   str = ""
@@ -133,14 +133,13 @@ Candidate.all.each {|c| c.profile_photo_id = Image.first.id; c.save }
               "I was able to attend the boys and girls club and it helped me",
               "I once created a community garden",
               "I would teach youth how to code",
-              "I like to create things and deploy to the internets",
-              "It is like files and servers and facebook",
-              "I dunno maybe make a cool app",
-              "THIS NEEDS TO BE UPDATED",
-              "I JUST WILL YOU HEARD?",
-              "It will allow me to have a good job",
-              "A lot but mostly my awesomeness",
-              "I dunno maybe fix your profile update social media input stuff"]
+              "I like to create things and deploy to the internet",
+              "It is a network of users and information that connects the world and makes efficiencies.",
+              "I would connect coders with the non-coding, under resourced youth to bridge the gap and give the youth valuable skills",
+              "My experience teaching myself front-end coding demonstrates I have the will power and motivation to make it through the program. I just want to learn!",
+              "It will allow me to build cool things and make a difference doing so.",
+              "My motivation and desires are all there. Unfortunately, the high price tag and inability to live without my job prevents me from attending",
+              "Fix your profile update to include social media links"]
 
 Application.all.each do |application|
   application.responses.each_with_index do |response, index|

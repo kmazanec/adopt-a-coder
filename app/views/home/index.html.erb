@@ -1,62 +1,65 @@
-<div class="container">
-  <div data-magellan-destination="home" id="home" class="row">
-    <div id="current_campaign" class="little-bit-of-bottom-margin">
-      <%= render "campaigns/current" %>
+
+<!--   <div class="">
+    <dl class="sub-nav fixed">
+      <dd data-magellan-arrival="home" class="active"><a href="#">Home</a></dd>
+      <dd data-magellan-arrival="about" class><a href="#about">How it works</a></dd>
+      <dd data-magellan-arrival="current_candidates" class><a href="#current_candidates" >Aspiring Coders</a></dd>
+      <dd data-magellan-arrival="recent_donors" class><a href="#recent_donors" >Recent Donors</a></dd>
+      <dd data-magellan-arrival="past_campaigns" class><a href="#past_campaigns" >Lives Changed</a></dd>
+      <dd data-magellan-arrival="faq" class><a href="#faq">FAQ</a></dd>
+    </dl>
+  </div> -->
+
+
+
+  <div class="container">
+    <div data-magellan-destination="home" id="home" class="row">
+      <div id="current_campaign" class="little-bit-of-bottom-margin">
+        <%= render "campaigns/current" %>
+      </div>
     </div>
   </div>
-</div>
 
-  <div class="row">
-      <div data-magellan-expedition="fixed">
-      <dl class="sub-nav sub-nav-padding">
-        <dd data-magellan-arrival="home" class="active"><a href="#">Home</a></dd>
-        <dd data-magellan-arrival="about" class><a href="#about">How it works</a></dd>
-        <dd data-magellan-arrival="current_candidates" class><a href="#current_candidates" >Aspiring Coders</a></dd>
-        <dd data-magellan-arrival="recent_donors" class><a href="#recent_donors" >Recent Donors</a></dd>
-        <dd data-magellan-arrival="past_campaigns" class><a href="#past_campaigns" >Lives Changed</a></dd>
-        <dd data-magellan-arrival="faq" class><a href="#faq">FAQ</a></dd>
-      </dl>
-      </div>
-  </div>
+
 
   <div data-magellan-destination="about" id="about">
   </div>
   <hr class="lots-of-margin">
 
-<div class="container">
-  <div class="row">
-    <%= render "about" %>
+  <div class="container">
+    <div class="row">
+      <%= render "about" %>
+    </div>
   </div>
-</div>
 
   <hr data-magellan-destination="current_candidates" id="current_candidates" class="lots-of-margin">
 
-<div class="container">
-  <div class="row">
-    <%= render "candidates/group_six" %>
+  <div class="container">
+    <div class="row">
+      <%= render "candidates/group_six" %>
+    </div>
   </div>
-</div>
 
   <hr data-magellan-destination="recent_donors" id="recent_donors" class="lots-of-margin">
 
-<div class="container">
-  <div class="row">
-    <%= render "donors/recent" %>
+  <div class="container">
+    <div class="row">
+      <%= render "donors/recent" %>
+    </div>
   </div>
-</div>
 
   <hr data-magellan-destination="past_campaigns" id="past_campaigns" class="lots-of-margin">
 
-<div class="container">
-  <div class="row">
-    <%= render "campaigns/past" %>
+  <div class="container">
+    <div class="row">
+      <%= render "campaigns/past" %>
+    </div>
   </div>
-</div>
 
   <hr data-magellan-destination="faq" id="faq" class="lots-of-margin">
 
-<div class="container">
-  <div class="row">
-    <%= render "faq" %>
+  <div class="container">
+    <div class="row">
+      <%= render "faq" %>
+    </div>
   </div>
-</div>

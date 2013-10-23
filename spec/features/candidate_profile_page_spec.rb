@@ -4,18 +4,26 @@ include UserHelper
 describe "Profile Page for candidate" do
 
   before(:each) do
-    login_as_candidate
+
+    signup_as_candidate
   end
 
 
   it "should let you start your application" do
 
-    page.should have_link "Application Form"
+    page.should have_link "My Application"
   end
 
-  it "should let you sumbit your application" do
+  it "should let you logout" do
 
-    page.should have_link "Submit Application"
+    click_link "Logout"
+    page.should have_link "Sign Up!"
+  end
+
+  it "should let you return to homepage" do
+
+
+    page.should have_link "Adopt-a-Coder"
   end
 
   it "should show copyright" do
@@ -23,6 +31,7 @@ describe "Profile Page for candidate" do
     within('footer') { expect(page).to have_content('Copyright') }
   end
 end
+
 
 
 

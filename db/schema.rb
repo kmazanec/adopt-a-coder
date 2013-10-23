@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018192626) do
+ActiveRecord::Schema.define(version: 20131023003129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "complete",     default: false
+    t.datetime "submitted_at"
   end
+
+  add_index "applications", ["candidate_id"], name: "index_applications_on_candidate_id", using: :btree
 
   create_table "campaigns", force: true do |t|
     t.integer  "candidate_id"
@@ -31,7 +34,10 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.integer  "goal"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "current_campaign", default: false
   end
+
+  add_index "campaigns", ["candidate_id"], name: "index_campaigns_on_candidate_id", using: :btree
 
   create_table "donations", force: true do |t|
     t.string   "token"
@@ -42,6 +48,9 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.datetime "updated_at"
   end
 
+  add_index "donations", ["campaign_id"], name: "index_donations_on_campaign_id", using: :btree
+  add_index "donations", ["donor_id"], name: "index_donations_on_donor_id", using: :btree
+
   create_table "media", force: true do |t|
     t.string   "url"
     t.string   "type"
@@ -50,6 +59,8 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.datetime "updated_at"
   end
 
+  add_index "media", ["user_id"], name: "index_media_on_user_id", using: :btree
+
   create_table "nominations", force: true do |t|
     t.integer  "campaign_id"
     t.integer  "donor_id"
@@ -57,6 +68,10 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "nominations", ["campaign_id"], name: "index_nominations_on_campaign_id", using: :btree
+  add_index "nominations", ["candidate_id"], name: "index_nominations_on_candidate_id", using: :btree
+  add_index "nominations", ["donor_id"], name: "index_nominations_on_donor_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "body"
@@ -71,6 +86,9 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "responses", ["application_id"], name: "index_responses_on_application_id", using: :btree
+  add_index "responses", ["question_id"], name: "index_responses_on_question_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -98,5 +116,7 @@ ActiveRecord::Schema.define(version: 20131018192626) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end

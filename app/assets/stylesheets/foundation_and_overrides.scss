@@ -28,10 +28,12 @@ $body-font-family: "Inconsolata" , "Source Sans Pro", "Helvetica", Helvetica, Ar
 // $text-direction: ltr;
 
 // We use these as default colors throughout
-$primary-color: lighten(#71A35A, 12%);
+$primary-color: lighten(#71A35A, 10%);
 $secondary-color: lighten(#4D6F88, 20%);
 $alert-color: #E36E40;
 $success-color: #B3D6AF;
+$primary-color-dark: #71A35A;
+$secondary-color-light: lighten(#4D6F88, 48%);
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -88,7 +90,7 @@ $success-color: #B3D6AF;
 $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: 700;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: #222;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -105,6 +107,7 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
 // $subheader-font-color: lighten($header-font-color, 30%);
+$subheader-font-color: #222;
 // $subheader-font-weight: 300;
 // $subheader-top-margin: .2em;
 // $subheader-bottom-margin: .5em;
@@ -213,9 +216,9 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // $fieldset-margin: emCalc(18px) 0;
 
 // We use these to style the legends when you use them
-// $legend-bg: #fff;
-// $legend-font-weight: bold;
-// $legend-padding: 0 emCalc(3px);
+$legend-bg: $secondary-color-light;
+$legend-font-weight: bold;
+$legend-padding: emCalc(5px) emCalc(5px);
 
 // We use these to style the prefix and postfix input elements
 // $input-prefix-bg: darken(#fff, 5%);
@@ -252,7 +255,7 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // $button-font-tny: emCalc(11px);
 // $button-font-sml: emCalc(13px);
 // $button-font-lrg: emCalc(20px);
-// $button-font-weight: bold;
+$button-font-weight: normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -670,7 +673,7 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 //
 
 // We use these to control the background and border styles
-$panel-bg: lighten(#4D6F88, 50%);
+$panel-bg: $secondary-color-light;
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -900,13 +903,13 @@ $panel-bg: lighten(#4D6F88, 50%);
 //
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9;
+$table-bg: $secondary-color-light;
+$table-even-row-bg: #f9f9f9;
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
+$table-border-size: 1px;
+$table-border-color: #ddd;
 
 // These control the table head styles
 // $table-head-bg: #f5f5f5;
@@ -923,7 +926,7 @@ $panel-bg: lighten(#4D6F88, 50%);
 
 // These are for controlling the display and margin of tables
 // $table-display: table-cell;
-// $table-margin-bottom: emCalc(20px);
+$table-margin-bottom: emCalc(30px);
 
 //
 // Image Thumbnail Variables
@@ -968,38 +971,40 @@ $panel-bg: lighten(#4D6F88, 50%);
 //
 
 // Background color for the top bar
-$topbar-bg: #4D6F88;
+// $topbar-bg: #4D6F88;
+$topbar-bg: #FFF;
+// $topbar-bg: lighten(#4D6F88, 50%);
 
 // Height and margin
-$topbar-height: 50px;
+$topbar-height: 60px;
 // $topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: bold;
+$topbar-title-weight: normal;
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-weight: bold;
+$topbar-link-color: $primary-color-dark;
+$topbar-link-weight: normal;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #4D6F88;
-$topbar-dropdown-link-color: lighten(#4D6F88, 20%);
+$topbar-dropdown-bg: #FFF;
+$topbar-dropdown-link-color: $primary-color-dark;
 // $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: lighten(#4D6F88, 20%);
-// $topbar-dropdown-toggle-alpha: 0.5;
-// $dropdown-label-color: #555;
+$topbar-dropdown-toggle-color: $secondary-color-light;
+$topbar-dropdown-toggle-alpha: 0;
+$dropdown-label-color: $secondary-color-light;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
-// $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
+$topbar-menu-link-weight: normal;
+$topbar-menu-link-color: $primary-color-dark;
+$topbar-menu-icon-color: $primary-color-dark;
 // $topbar-menu-link-color-toggled: #888;
 // $topbar-menu-icon-color-toggled: #888;
 

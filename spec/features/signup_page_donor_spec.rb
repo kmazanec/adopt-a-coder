@@ -4,9 +4,10 @@ include UserHelper
 describe "Sign Up Page for donor" do
 
   it "should let you sign up as a donator" do
+
     visit root_path
     click_link "Sign Up!"
-    click_link "Interested in being a supporter?"
+    click_link "Interested in being a supporter?", match: :first
 
       fill_in 'Name', with: 'Scott'
       fill_in 'donor_email', with: 'pippen@gmail.com'
@@ -20,9 +21,10 @@ describe "Sign Up Page for donor" do
   end
 
   it "should show the copyright" do
+
     visit root_path
     click_link "Sign Up!"
-    click_link "Interested in being a supporter?"
+    click_link "Interested in being a supporter?", match: :first
 
     within('footer') { expect(page).to have_content('Copyright') }
   end

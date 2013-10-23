@@ -5,22 +5,31 @@
 }
 
 $highlight-color: #AC0A3C;
+/*$secondary-color-light: lighten(#4D6F88, 50%);*/
 /* We use these to control header font styles */
 
-.login-nav{
-  width: 320px;
-  padding: 0 15px;
-  li {
-    padding: 2px;
-  }
+.top-bar {
+  /*border-bottom: 1px solid #C4D2DD;*/
 }
 
-.login-fields{
-  background-color: lighten(#4D6F88, 20%);
+.donate-nav {
+  margin: 8px 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+small {
+  font-weight: 300;
+}
+
+/*.login-fields{
+  background-color: $secondary-color-light;
   margin: 0;
   padding-top: 10px;
   height: 180px;
-}
+}*/
 
 .fixed {
   height: 50px;
@@ -31,7 +40,35 @@ $highlight-color: #AC0A3C;
 }
 
 .little-bit-of-bottom-margin {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
+}
+
+.donate-button-auto-margin {
+  margin: 10% 0;
+}
+
+.progress-auto-margin {
+  margin: 5% 0;
+}
+
+.panel-color {
+  background-color: lighten(#4D6F88, 50%);
+}
+
+.full-height {
+  height: 100% !important;
+}
+
+
+.special {
+  background-color: lighten(#71A35A, 20%);
+
+  a {
+    color: #222;
+  }
+  a:hover {
+    color: #555;
+  }
 }
 
 .container {
@@ -61,12 +98,57 @@ $highlight-color: #AC0A3C;
 }
 
 .no-margin {
-  margin: 0;
+  margin: 0 !important;
 }
+
+.no-padding {
+  padding: 0;
+}
+
+.crop{
+  text-align: center;
+  position:relative;
+  width:200px;
+  height:250px;
+  border:1px solid #ccc;
+  /*margin:.5em 10px .5em 0;*/
+  margin: 0 auto;
+}
+
+.crop p{
+  margin:0;
+  position:absolute;
+  top:0;
+  left:0;
+  clip:rect(0px 200px 248px 0px);
+}
+
+.crop-small {
+  text-align: center;
+  position:relative;
+  width:160px;
+  height:160px;
+  border:1px solid #ccc;
+  /*margin:.5em 10px .5em 0;*/
+  margin: 0 auto;
+}
+
+.crop-small p {
+  margin:0;
+  position:absolute;
+  top:0;
+  left:0;
+  clip:rect(0px 160px 158px 0px);  
+}
+
+.user-card {
+  height: 450px
+}
+
 
 .image-square {
   overflow: hidden;
-  max-width: 200px;
+  width: 100%;
   max-height: 300px;
 }
 
@@ -103,6 +185,9 @@ $highlight-color: #AC0A3C;
 
 .magenta-text {
   color: $highlight-color;
+}
+.magenta {
+  background-color: $highlight-color;
 }
 
 .no-border {
@@ -160,6 +245,7 @@ ul.countdown li.seperator {
 ul.countdown li p {
   color: #222;
   font-size: 14px;
+  margin-bottom: 0.3em;
 }
 
 .candidate-title {

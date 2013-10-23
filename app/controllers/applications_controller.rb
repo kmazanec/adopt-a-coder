@@ -21,15 +21,16 @@ class ApplicationsController < ApplicationController
 
   def submit
     @application = current_user.application
-    if @application.complete?
+    if @application.complete? && @application.candidate.profile_completed? && !@application.complete
       @application.update_attribute(:complete, true)
-      @application.save
-        flash[:success] = "Your submission was successful! Please expect an introduction email regarding the selection process within the next 48 hours."
-        ApplicationsMailer.applications_mailer(@application).deliver
-        redirect_to profile_candidate_path(current_user)
+      ApplicationsMailer.applications_mailer(@application).deliver
+      render json: { message:true, notice:"completed" }
     else
-      flash[:error] = "Your submission was unsuccesful. Please ensure you have completed each question before submitting."
-      redirect_to profile_candidate_path(current_user)
+      if @application.complete
+        render json: { message:false, notice:"unable" }
+      else
+        render json: { message:false, notice:"error" }
+      end
     end
   end
 
@@ -41,5 +42,10 @@ class ApplicationsController < ApplicationController
 
 end
 
+# respond_to do |format|
+#       format.json { }
+#       format.html { render :html => "HTML" }
+#     end
 
+# render { render :html => "HTML"}
 

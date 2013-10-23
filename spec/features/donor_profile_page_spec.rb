@@ -4,7 +4,8 @@ include UserHelper
 describe "Profile Page for donor" do
 
   before(:each) do
-    login_as_donor
+
+    signup_as_donor
 
   end
 
@@ -24,7 +25,7 @@ describe "Profile Page for donor" do
   it "should let you return to homepage" do
 
 
-    page.should have_link "Home"
+    page.should have_link "Adopt-a-Coder"
   end
 
   it "should show copyright" do
