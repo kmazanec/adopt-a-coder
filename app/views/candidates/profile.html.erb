@@ -1,29 +1,32 @@
-<div class="row">
-  <div class="small-12 columns">
-    <h2><%= current_user.name %></h2>
-  </div>
+<div class="lots-of-margin"></div>
 
-  <div>
+<div class="row little-bit-of-bottom-margin">
+  <div class="small-12 large-8 large-centered columns little-bit-of-bottom-margin">
+    <h2 class="little-bit-of-bottom-margin"><%= current_user.name %></h2>
     <%= link_to 'View Public Profile', candidate_path(current_user) %>
   </div>
+</div>
 
-  <div>
+<div class="row">
+  <div class="small-12 large-8 large-centered columns">
     <%= render 'candidates/application_table' %>
   </div>
 
-  <div>
+  <div class="small-12 large-8 large-centered columns">
+    <%= render 'candidates/profile_fields_am' %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 large-8 large-centered columns">
     <%= render 'candidates/profile_fields_sm' %>
   </div>
 
-  <div>
-    <%= render 'candidates/profile_fields_am' %>
-  </div>
 
-  <div>
+  <div class="small-12 large-8 large-centered columns">
     <%= render 'candidates/profile_fields_pi' %>
   </div>
 
-  <div>
+  <div class="small-12 large-8 large-centered columns">
     <%= render 'candidates/profile_media_files' %>
   </div>
 

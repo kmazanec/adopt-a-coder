@@ -902,13 +902,13 @@ $panel-bg: $secondary-color-light;
 //
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9;
+$table-bg: $secondary-color-light;
+$table-even-row-bg: #f9f9f9;
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
+$table-border-size: 1px;
+$table-border-color: #ddd;
 
 // These control the table head styles
 // $table-head-bg: #f5f5f5;
@@ -925,7 +925,7 @@ $panel-bg: $secondary-color-light;
 
 // These are for controlling the display and margin of tables
 // $table-display: table-cell;
-// $table-margin-bottom: emCalc(20px);
+$table-margin-bottom: emCalc(30px);
 
 //
 // Image Thumbnail Variables
