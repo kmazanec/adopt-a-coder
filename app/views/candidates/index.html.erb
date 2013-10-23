@@ -28,7 +28,7 @@
         </td>
         <td>
           <div>
-      <%= link_to 'Nominate!', nominate_candidate_path(candidate), method: :post, class: "small button round" %>
+      <%= link_to 'Nominate!', nominate_candidate_path(candidate), method: :post, class: "small button round", id: "submit-nomination" %>
           </div>
         </td>
       </tr>
@@ -36,4 +36,9 @@
     </table>
     <% end %>
   </div>
+
+  <div id="dialog-nomination-submit" title="Confirm Nomination?">
+    <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to nominate this candidate for the next campaign? Please note you are only allowed one nomination per campaign.</p>
+  </div>
+
 </div>
