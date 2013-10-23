@@ -1,29 +1,25 @@
 $(function(){
-
-  $( "#dialog-confirm" ).dialog({
+  $( "#dialog-application-submit" ).dialog({
     autoOpen: false,
     width: 500,
     height: 400,
     modal: true,
     buttons: {
-      "Confirm Nomination": function () {
+      "Confirm Application Submission": function () {
         $(this).dialog("close");
-        $.post('/candidate/application/submit', function(response){
+        var path = $(this).data('link').href;
+        $.post(path, function(response){
           var return_data = response;
-          if (return_data['message'] === true){
-            $("#application-submitter").text("Submit Application")
+          if (return_data['message'] === 'completed'){
+            $("#application-submitter").text("Submit Application");
             $("#application-status").text("Completed");
             $("#flash_notice").html("<div data-alert class='alert-box success'>Your submission was successful!<a href class='close'>x</a></div>")
           }
+          else if (return_data['message'] === 'unable'){
+              $("#flash_notice").html("<div data-alert class='alert-box alert'>You have already submitted an application.<a href class='close'>x</a></div>")
+          }
           else {
-            if (return_data['notice'] === 'unable'){
-              console.log('whatever')
-              $("#flash_notice").hmtl("<div data-alert class='alert-box alert'>You have already submitted an application.<a href class='close'>x</a></div>")
-            }
-            else {
-              console.log('nope')
               $("#flash_notice").html("<div data-alert class='alert-box alert'>Your submission was unsuccessful.Please ensure you have completed your profile and answered each question before submitting.<a href class='close'>x</a></div>")
-            }
           }
         });
       },
@@ -37,9 +33,54 @@ $(function(){
 
   $("#submit-application").click(function(event){
     event.preventDefault();
-    var link = $(this).attr("href");
-    $( "#dialog-confirm" ).dialog( "open" );
+    $( "#dialog-application-submit" )
+        .data('link', this)
+        .dialog( "open" );
     });
+
+
+
+
+  $( "#dialog-nomination-submit" ).dialog({
+    autoOpen: false,
+    width: 500,
+    height: 400,
+    modal: true,
+    buttons: {
+      "Confirm Nomination": function () {
+        $(this).dialog("close");
+        var path = $(this).data('link').href;
+        $.post(path, function(response){
+          var return_data = response;
+          if (return_data['message'] === 'completed'){
+            $("#flash_notice").html("<div data-alert class='alert-box success'>Thank you for making a nomination! Stay tuned to see who wins!<a href class='close'>x</a></div>")
+          }
+          else if (return_data['message'] === 'unable'){
+              $("#flash_notice").html("<div data-alert class='alert-box alert'>Sorry, you do not have a nomination available for this campaign.<a href class='close'>x</a></div>")
+          }
+          else {
+              $("#flash_notice").html("<div data-alert class='alert-box alert'>We are sorry but your nomination was unsuccessful.<a href class='close'>x</a></div>")
+          }
+        });
+      },
+      "Cancel": function () {
+        $(this).dialog("close");
+      }
+
+    }
+  });
+
+
+  $(".submit-nomination").click(function(event){
+    event.preventDefault();
+
+    $( "#dialog-nomination-submit" )
+      .data('link', this)
+      .dialog( "open" );
+      return false;
+    });
+
+
 });
 
 

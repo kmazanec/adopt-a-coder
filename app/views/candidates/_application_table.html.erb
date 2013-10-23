@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td>3</td>
-        <td id="application-submitter"><%= link_to 'Submit Application', "#", {id: 'submit-application'} %></td>
+        <td id="application-submitter"><%= link_to 'Submit Application', candidate_application_submit_path, {id: 'submit-application'} %></td>
         <td id="application-status">Not Completed</td>
       </tr>
     <% else %>
@@ -44,6 +44,6 @@
   </table>
 </div>
 
-<div id="dialog-confirm" title="Confirm Submission?">
+<div id="dialog-application-submit" title="Confirm Submission?">
   <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Please note an application cannot be edited after submission. Are you sure you want to submit your application?</p>
 </div>

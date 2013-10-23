@@ -39,17 +39,7 @@ require 'spec_helper'
       it "should need to have a goal" do
          FactoryGirl.build(:campaign, goal: nil).should_not be_valid
       end
-
-      describe "#total_donations" do
-        it "should give the total donations" do
-          campaign = FactoryGirl.create(:campaign)
-          donation = FactoryGirl.create(:donation)
-          campaign.donations = [donation]
-          total = campaign.total_donations
-
-          total.should eq 10
-        end
-      end
+    end
 
       describe "#current_campaign_percentage" do
 
@@ -58,12 +48,11 @@ require 'spec_helper'
           Campaign.stub(:current_campaign).and_return(@campaign)
           @campaign.total = "1200"
           @campaign.goal = "12000"
-          percent = Campaign.current_campaign_percentage
+          @percent = Campaign.current_campaign_percentage
 
-          percent.should eq 10.0
+          @percent.should eq 10.0
         end
       end
-    end
   end
 
 

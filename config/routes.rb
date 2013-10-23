@@ -24,7 +24,7 @@ AdoptACoder::Application.routes.draw do
 
   post '/candidate/application/submit' => 'applications#submit'
 
-  post '/nominations' => 'nominations#create'
+  post 'candidates/:id/nomination' => 'nominations#create', :as => 'nominate_candidate'
 
   get '/candidates/:id/profile' => 'candidates#profile', :as => 'profile_candidate'
 

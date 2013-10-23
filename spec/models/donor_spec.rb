@@ -41,16 +41,6 @@ require 'spec_helper'
         FactoryGirl.build(:donor, password: nil).should_not be_valid
       end
 
-      describe "#nomination_available?" do
-        it "should check to see if there are nominations avaliable" do
-          # donor with nominations for campaigns other than the current
-          @donor = FactoryGirl.build(:donor, name: "steve jobs")
-          @available = @donor.nomination_available?
-
-          @available.should eq true
-        end
-      end
-
       describe "#current_campaign_donation?" do
         it "returns true if they have donated to Campaign.current_campaign" do
           @donor = FactoryGirl.create(:donor)
@@ -64,8 +54,56 @@ require 'spec_helper'
           @result.should eq true
         end
       end
+
+      describe "#nomination_available?" do
+
+        it "should return true if the donor has a nomination available" do
+          @campaign = FactoryGirl.create(:campaign)
+          Campaign.stub(:current_campaign).and_return(@campaign)
+          @donation = FactoryGirl.create(:donation, campaign: @campaign)
+          @donor = FactoryGirl.create(:donor)
+          @donor.donations = [@donation]
+
+          @result = @donor.nomination_available?
+
+          @result.should eq true
+        end
+
+        it "should return false if the donor has already nominationed a donor" do
+          @campaign = FactoryGirl.create(:campaign)
+          Campaign.stub(:current_campaign).and_return(@campaign)
+          @candidate = FactoryGirl.create(:candidate)
+          @donation = FactoryGirl.create(:donation, campaign: @campaign)
+          @donor = FactoryGirl.create(:donor)
+          @nomination = FactoryGirl.create(:nomination, campaign: @campaign, donor: @donor, candidate: @candidate)
+          @donor.donations = [@donation]
+          @donor.nominations = [@nomination]
+
+          @result = @donor.nomination_available?
+
+          @result.should eq false
+        end
+
+        it "should return false if the donor has never donated" do
+          @campaign = FactoryGirl.create(:campaign)
+          Campaign.stub(:current_campaign).and_return(@campaign)
+          @donation = FactoryGirl.create(:donation, campaign: @campaign)
+          @donor = FactoryGirl.create(:donor)
+
+          @result = @donor.nomination_available?
+
+          @result.should eq false
+        end
+      end
     end
   end
+
+
+
+
+
+
+
 
 
 
