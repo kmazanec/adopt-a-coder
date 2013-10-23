@@ -4,9 +4,9 @@
   <% recent_donations.each do |donation| %>
     <li>
       <% if donation.amount >= 100 %>
-      <div class="panel callout">
+      <div class="panel callout full-height">
       <% else %>
-      <div class="panel">
+      <div class="panel full-height">
       <% end %>
         <span class="right"><%= donation.created_at.strftime("%m/%d/%Y") %></span>
         <h4>$<%= donation.amount %></h4>
