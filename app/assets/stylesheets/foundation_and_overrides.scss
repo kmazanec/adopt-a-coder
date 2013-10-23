@@ -33,7 +33,7 @@ $secondary-color: lighten(#4D6F88, 20%);
 $alert-color: #E36E40;
 $success-color: #B3D6AF;
 $primary-color-dark: #71A35A;
-$secondary-color-light: lighten(#4D6F88, 50%);
+$secondary-color-light: lighten(#4D6F88, 48%);
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -90,7 +90,7 @@ $secondary-color-light: lighten(#4D6F88, 50%);
 $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: 700;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: #222;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -107,6 +107,7 @@ $header-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
 // $subheader-font-color: lighten($header-font-color, 30%);
+$subheader-font-color: #222;
 // $subheader-font-weight: 300;
 // $subheader-top-margin: .2em;
 // $subheader-bottom-margin: .5em;
