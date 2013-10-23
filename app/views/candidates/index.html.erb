@@ -16,7 +16,7 @@
       <% @candidates.each do |candidate| %>
       <tr>
         <td>
-          <div class="crop-thumb">
+          <divg class="crop-thumb">
             <p><%= link_to (image_tag candidate.profile_image.url, size: "75", alt: "Image of #{candidate.name}"), candidate_path(candidate) %></p>
           </div>
         </td>
