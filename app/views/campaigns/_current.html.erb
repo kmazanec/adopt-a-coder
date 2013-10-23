@@ -140,5 +140,21 @@
   </div>
   <!-- END OF ROW -->
 
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="panel">
+        <h5>Recent Contributions</h5>
+        <ul class="inline-list">
+        <% recent_donations.each do |donation| %>
+          <li>
+            <span><strong>$<%= donation.amount %> </strong> courtesy of...</span>
+            <h6><%= donation.donor.name %></h6>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 
 </div>
