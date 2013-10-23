@@ -57,15 +57,12 @@ require 'spec_helper'
 
       describe "#nomination_available?" do
 
-        it "should return the nominations from the donor" do
+        it "should return true or false if the donor has a nomination available" do
           @campaign = FactoryGirl.create(:campaign)
           Campaign.stub(:current_campaign).and_return(@campaign)
           @donation = FactoryGirl.create(:donation, campaign: @campaign)
-          @candidate = FactoryGirl.create(:candidate)
-          @nomination = FactoryGirl.create(:nomination, candidate: @candidate)
           @donor = FactoryGirl.create(:donor)
           @donor.donations = [@donation]
-          @donor.nominations = [@nomination]
 
           @result = @donor.nomination_available?
 
@@ -74,6 +71,9 @@ require 'spec_helper'
       end
     end
   end
+
+
+
 
 
 
