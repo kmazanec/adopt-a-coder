@@ -14,7 +14,7 @@ require 'spec_helper'
         nomination.macro.should == :belongs_to
       end
 
-      it "should have a candidate" do
+      it "should have a donor" do
         nomination = Nomination.reflect_on_association(:donor)
         nomination.macro.should == :belongs_to
       end

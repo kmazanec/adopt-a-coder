@@ -6,10 +6,6 @@ class Campaign < ActiveRecord::Base
   has_many :nominations
   validates :goal, :end_date, :start_date, presence: true
 
-  def total_donations
-    self.donations.sum(:amount)
-  end
-
   def self.current_campaign
     Campaign.find_by(current_campaign: true)
   end
@@ -21,3 +17,5 @@ class Campaign < ActiveRecord::Base
 
 
 end
+
+
