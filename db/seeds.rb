@@ -40,10 +40,11 @@ donor_ids << d.id
 d = Donor.create(email: "rich@rich.biz", password: "test", password_confirmation: "test")
 donor_ids << d.id
 
-c = Candidate.create(name: "Kevin Another", email: "kevin@another.com", phone: "123-456-7890",
+c = Candidate.create(name: "Jennifer Another", email: "jen@another.com", phone: "123-456-7890",
                 password: "test", password_confirmation: "test", address1: "123 State St",
                 city: "Chicago", state: "IL", zip: "60600", twitter: "http://www.twitter.com/kevinAnother22",
-                facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com")
+                facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com",
+                mission: "Becoming a software engineer has been my lifelong dream.  I want to create the technology that powers people's lives.  This scholarship will allow me to pursue my dreams while supporting my family.")
 candidate_ids << c.id
 
 m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
@@ -112,7 +113,7 @@ c.update_attributes(profile_video_id: m.id)
 
 c = Candidate.first
 
-Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12000)
+Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12500, current_campaign: true)
 
 15.times do
   str = ""

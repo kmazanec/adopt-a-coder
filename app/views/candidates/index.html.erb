@@ -1,24 +1,39 @@
-<div class="container">
-  <%= form_tag(candidates_path, :method => "get", id: "search-form") do %>
-    <div>
-      <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Candidates" %>
-      <!-- In order to have the "search" icon int the button, we need to use plain HTML instead
-           of using a Rails form helper -->
-      <button class="btn" type="submit">Search</button>
-    </div>
-  <% end %>
+<div class="lots-of-margin"></div>
 
-  <% if @candidates && @candidates.any? %>
-    <% @candidates.each do |candidate| %>
+<div class="row">
+  <div class="small-12 large-4 large-centered columns">
+    <%= form_tag(candidates_path, :method => "get", id: "search-form") do %>
       <div>
-        <%= link_to (image_tag candidate.profile_image.url, size: "350", alt: "Image of #{candidate.name}"), candidate_path(candidate) %>
-        <h4><%= link_to candidate.name, candidate_path(candidate) %></h4>
-        <h6><%= candidate.mission %></h6>
-        <p><%= candidate.biography %></p>
-        <div>
-          <%= link_to 'Nominate!', nominations_path(candidate), method: :post, data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' } %>
-        </div>
+        <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Candidates" %>
+        <button class="button success center" type="submit">Search</button>
       </div>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="row">
+    <% if @candidates && @candidates.any? %>
+    <table>
+      <% @candidates.each do |candidate| %>
+      <tr>
+        <td>
+          <div class="crop-thumb">
+            <p><%= link_to (image_tag candidate.profile_image.url, size: "75", alt: "Image of #{candidate.name}"), candidate_path(candidate) %></p>
+          </div>
+        </td>
+        <td>
+          <h4><%= link_to candidate.name, candidate_path(candidate) %></h4>
+        </td>
+        <td>
+          <h6><%= candidate.mission %></h6>
+        </td>
+        <td>
+          <div>
+            <%= link_to 'Nominate!', nominations_path(candidate), method: :post, data: { confirm: 'Are you sure? You are only allowed 1 nomination per campaign.' }, class: "small button round" %>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <% end %>
+  </div>
 </div>

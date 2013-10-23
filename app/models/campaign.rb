@@ -7,7 +7,7 @@ class Campaign < ActiveRecord::Base
   validates :goal, :end_date, :start_date, presence: true
 
   def self.current_campaign
-    Campaign.includes(:candidate).first
+    Campaign.find_by(current_campaign: true)
   end
 
   def self.current_campaign_percentage
