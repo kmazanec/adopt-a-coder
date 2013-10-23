@@ -1,9 +1,18 @@
 AdoptACoder::Application.routes.draw do
 
+
+  # get "password_resets/new"
   root "home#index"
 
   resources "charges"
   resources "donors"
+  # resources :password_resets
+
+  get '/password_resets' => 'password_resets#new'
+  post '/password_resets' => 'password_resets#create'
+  get 'password_resets/:token' => 'password_resets#edit', as: 'password_resets_verify_token'
+  post 'password_resets/:token' => 'password_resets#update', as: 'password_resets_verified'
+
 
   resources "candidates" do
     resources "applications"
