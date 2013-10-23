@@ -4,12 +4,12 @@ class NominationsController < ApplicationController
     if current_user_donor && current_user.nomination_available?
       nomination = Nomination.create(donor_id: current_user.id, campaign_id: current_campaign.id, candidate_id: params[:id])
       if nomination.valid?
-        render json: { message:true, notice:"completed" }
+        render json: { message:"completed" }
       else
-        render json: { message:false, notice:"error"}
+        render json: { message:"error"}
       end
     else
-      render json: { message:false, notice:"unable"}
+      render json: { message:"unable"}
     end
 
   end

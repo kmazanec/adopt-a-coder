@@ -1,5 +1,4 @@
 $(function(){
-
   $( "#dialog-application-submit" ).dialog({
     autoOpen: false,
     width: 500,
@@ -8,20 +7,19 @@ $(function(){
     buttons: {
       "Confirm Application Submission": function () {
         $(this).dialog("close");
-        $.post('/candidate/application/submit', function(response){
+        var path = $(this).data('link').href;
+        $.post(path, function(response){
           var return_data = response;
-          if (return_data['message'] === true){
-            $("#application-submitter").text("Submit Application")
+          if (return_data['message'] === 'completed'){
+            $("#application-submitter").text("Submit Application");
             $("#application-status").text("Completed");
             $("#flash_notice").html("<div data-alert class='alert-box success'>Your submission was successful!<a href class='close'>x</a></div>")
           }
-          else {
-            if (return_data['notice'] === 'unable'){
+          else if (return_data['message'] === 'unable'){
               $("#flash_notice").html("<div data-alert class='alert-box alert'>You have already submitted an application.<a href class='close'>x</a></div>")
-            }
-            else {
+          }
+          else {
               $("#flash_notice").html("<div data-alert class='alert-box alert'>Your submission was unsuccessful.Please ensure you have completed your profile and answered each question before submitting.<a href class='close'>x</a></div>")
-            }
           }
         });
       },
@@ -35,7 +33,9 @@ $(function(){
 
   $("#submit-application").click(function(event){
     event.preventDefault();
-    $( "#dialog-application-submit" ).dialog( "open" );
+    $( "#dialog-application-submit" )
+        .data('link', this)
+        .dialog( "open" );
     });
 
 
@@ -50,19 +50,16 @@ $(function(){
       "Confirm Nomination": function () {
         $(this).dialog("close");
         var path = $(this).data('link').href;
-        console.log(path)
         $.post(path, function(response){
           var return_data = response;
-          if (return_data['message'] === true){
+          if (return_data['message'] === 'completed'){
             $("#flash_notice").html("<div data-alert class='alert-box success'>Thank you for making a nomination! Stay tuned to see who wins!<a href class='close'>x</a></div>")
           }
-          else {
-            if (return_data['notice'] === 'unable'){
+          else if (return_data['message'] === 'unable'){
               $("#flash_notice").html("<div data-alert class='alert-box alert'>Sorry, you do not have a nomination available for this campaign.<a href class='close'>x</a></div>")
-            }
-            else {
+          }
+          else {
               $("#flash_notice").html("<div data-alert class='alert-box alert'>We are sorry but your nomination was unsuccessful.<a href class='close'>x</a></div>")
-            }
           }
         });
       },
@@ -74,7 +71,7 @@ $(function(){
   });
 
 
-  $("#submit-nomination").click(function(event){
+  $(".submit-nomination").click(function(event){
     event.preventDefault();
 
     $( "#dialog-nomination-submit" )
