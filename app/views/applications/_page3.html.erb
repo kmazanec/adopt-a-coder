@@ -1,12 +1,14 @@
-<%= form_for current_application, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
-  <%= field_set_tag "Part 3", class: "panel" do %>
-    <% current_application.responses.order("id ASC").slice(8,4).each do |response| %>
-      <%= f.fields_for :responses, response do |r| %>
-        <%= r.label :body, "#{response.question.body}" %>
-        <%= r.text_area :body %>
+<div id="application_page_3" hidden>
+  <%= form_for current_application, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
+    <%= field_set_tag "Part 3", class: "panel" do %>
+      <% current_application.responses.order("id ASC").slice(8,4).each do |response| %>
+        <%= f.fields_for :responses, response do |r| %>
+          <%= r.label :body, "#{response.question.body}" %>
+          <%= r.text_area :body %>
+        <% end %>
       <% end %>
+      <%= f.submit "Save and Return to Profile", name: "save_and_exit", class: "small button success" %>
+      <%= f.submit "Back", name: "back", class: "small button success" %>
     <% end %>
-    <%= f.submit "Save and Return to Profile", name: "save_and_exit", class: "small button success" %>
-    <%= f.submit "Back", name: "back", class: "small button success" %>
   <% end %>
-<% end %>
+</div>
