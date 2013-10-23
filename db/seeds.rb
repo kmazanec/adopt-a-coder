@@ -93,9 +93,9 @@ m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
 c.update_attributes(profile_video_id: m.id)
 
 c = Candidate.create(name: "Maria Lopez", email: "maria@lopez.com", phone: "928-356-1535",
-                password: "test", password_confirmation: "test", address1: "87 West North Ave",
-                city: "Gainesville", state: "FL", zip: "34535", facebook: "https://www.facebook.com/oprahwinfrey",
-                twitter: "https://twitter.com/Oprah", linked_in: "http://www.linkedin.com/pub/lebron-james/37/901/43a?trk=pub-pbmap",
+                password: "test", password_confirmation: "test", address1: "87 West Highland Ave",
+                city: "Sandusky", state: "OH", zip: "34535", facebook: "https://www.facebook.com/marialopez",
+                twitter: "https://twitter.com/Oprah", linked_in: "http://http://www.linkedin.com/pub/maria-lopez/1b/291/a17",
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "Go to DBC!",
