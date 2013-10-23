@@ -1,43 +1,36 @@
 <div>
   <table>
-    <tr>
-      <td colspan=0><h4>Social Media</h4></td>
-    </tr>
+    <th>
+      <td colspan=2><i class="icon-edit"><h4>Social Media</h4></i></td>
+    </th>
     <tr>
       <td><%= link_to "Update Links" %></td>
     </tr>
     <tr>
       <td>Code Academy:</td>
       <td><%= link_to current_user.codeacademy, current_user.codeacademy, target: '_blank' if current_user.codeacademy %></td>
-      <td></td>
     </tr>
     <tr>
       <td>LinkedIn:</td>
       <td><%= link_to current_user.linked_in, target: '_blank' if current_user.linked_in %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Github:</td>
       <td><%= link_to current_user.github, target: '_blank' if current_user.github %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Twitter:</td>
       <td><%= link_to current_user.twitter, target: '_blank' if current_user.twitter %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Facebook:</td>
       <td><%= link_to current_user.facebook, target: '_blank' if current_user.facebook %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Personal Blog:</td>
       <td><%= link_to current_user.blog, target: '_blank' if current_user.blog %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Personal Url:</td>
       <td><%= link_to current_user.personal_url, target: '_blank' if current_user.personal_url %></td>
-      <td></td>
     </tr>

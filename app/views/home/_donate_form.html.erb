@@ -3,7 +3,7 @@
 
 <h5 class="center">Make a donation to support <%= current_campaign.candidate.name %></h5>
 
-<%= form_tag charges_path, :id => 'payment-form', class: "no-margin" do %>
+<%= form_tag charges_path, id: 'payment-form', class: "no-margin" do %>
 
   <% if flash[:error] %>
     <span data-alert class="payment-errors alert-box alert"><%= flash[:error] %></span>
