@@ -52,7 +52,7 @@
           </tr>
         <% @nominations.each do |nomination| %>
           <tr>
-            <td><%= nomination.created_at %></td>
+            <td><%= nomination.created_at.strftime("%m/%d/%y") %></td>
             <td><%= link_to nomination.candidate.name, candidate_path(nomination.candidate) %></td>
           </tr>
         <% end %>
