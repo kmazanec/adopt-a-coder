@@ -11,7 +11,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def self.current_campaign
-    Campaign.includes(:candidate).first
+    Campaign.find_by(current_campaign: true)
   end
 
   def self.current_campaign_percentage
