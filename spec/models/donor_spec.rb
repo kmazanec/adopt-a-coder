@@ -57,7 +57,7 @@ require 'spec_helper'
 
       describe "#nomination_available?" do
 
-        it "should return true or false if the donor has a nomination available" do
+        it "should return true if the donor has a nomination available" do
           @campaign = FactoryGirl.create(:campaign)
           Campaign.stub(:current_campaign).and_return(@campaign)
           @donation = FactoryGirl.create(:donation, campaign: @campaign)
@@ -67,6 +67,32 @@ require 'spec_helper'
           @result = @donor.nomination_available?
 
           @result.should eq true
+        end
+
+        it "should return false if the donor has already nominationed a donor" do
+          @campaign = FactoryGirl.create(:campaign)
+          Campaign.stub(:current_campaign).and_return(@campaign)
+          @candidate = FactoryGirl.create(:candidate)
+          @donation = FactoryGirl.create(:donation, campaign: @campaign)
+          @donor = FactoryGirl.create(:donor)
+          @nomination = FactoryGirl.create(:nomination, campaign: @campaign, donor: @donor, candidate: @candidate)
+          @donor.donations = [@donation]
+          @donor.nominations = [@nomination]
+
+          @result = @donor.nomination_available?
+
+          @result.should eq false
+        end
+
+        it "should return false if the donor has never donated" do
+          @campaign = FactoryGirl.create(:campaign)
+          Campaign.stub(:current_campaign).and_return(@campaign)
+          @donation = FactoryGirl.create(:donation, campaign: @campaign)
+          @donor = FactoryGirl.create(:donor)
+
+          @result = @donor.nomination_available?
+
+          @result.should eq false
         end
       end
     end
