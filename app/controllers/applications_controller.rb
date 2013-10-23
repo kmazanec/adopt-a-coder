@@ -24,12 +24,12 @@ class ApplicationsController < ApplicationController
     if @application.complete? && @application.candidate.profile_completed? && !@application.complete
       @application.update_attribute(:complete, true)
       ApplicationsMailer.applications_mailer(@application).deliver
-      render json: { message:true, notice:"completed" }
+      render json: { message:"completed" }
     else
       if @application.complete
-        render json: { message:false, notice:"unable" }
+        render json: { message:"unable" }
       else
-        render json: { message:false, notice:"error" }
+        render json: { message:"error" }
       end
     end
   end

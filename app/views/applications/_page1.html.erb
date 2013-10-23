@@ -1,3 +1,4 @@
+<div id="application_page_2">
   <%= form_for current_application, url: candidate_application_path(current_user,current_application), html: { method: "PATCH" } do |f| %>
     <%= field_set_tag "Part 1", class: "panel" do %>
       <% current_application.responses.order("id ASC").slice(0,4).each do |response| %>
@@ -7,6 +8,7 @@
         <% end %>
       <% end %>
       <%= f.submit "Save and Continue Editing", name: "save_and_continue", class: "small button success" %>
-      <%= f.submit "Next", name: "next", class: "small button success" %>
+      <%= f.submit "Save and Next Page", name: "next", class: "small button success" %>
     <% end %>
   <% end %>
+</div>
