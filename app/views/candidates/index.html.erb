@@ -22,7 +22,7 @@
             <td class="center">Photo</td>
             <td>Name</td>
             <td>Mission</td>
-            <td class="center">Nominate!</td>
+            <td class="center"></td>
           </thead>
           <% @candidates.each do |candidate| %>
           <tr>
@@ -39,8 +39,10 @@
             </td>
             <td>
               <div class="center">
-              <%= link_to nominate_candidate_path(candidate), method: :post, class: "small button success submit-nomination" do %>
-                <i class="icon-trophy icon-medium"></i> Nominate!
+              <% if logged_in? %>
+                <%= link_to nominate_candidate_path(candidate), method: :post, class: "small button success submit-nomination" do %>
+                  <i class="icon-trophy icon-medium"></i> Nominate!
+                <% end %>
               <% end %>
               </div>
             </td>
