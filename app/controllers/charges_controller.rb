@@ -16,6 +16,7 @@ class ChargesController < ApplicationController
     
     @amount = params[:amount]
     @paid = (@amount.to_i * 100).to_s
+   
 
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
