@@ -5,7 +5,7 @@ describe DonorMailer do
   describe "#donation_mailer" do
 
     before(:each) do
-      @donor = FactoryGirl.build(:donor, email: "newemail@gmail.com")
+      @donor = FactoryGirl.build(:donor, email: "newemail@gmail.com", password_reset_token: "somthing")
       @mail = DonorMailer.donation_mailer(@donor).deliver
 
     end
@@ -25,7 +25,7 @@ describe DonorMailer do
     it "should be sent from adopt a coder" do
 
 
-      @mail.from.should eq ['adopt.a.coder@gmail.com']
+      @mail.from.should eq ['dbcadoptacoder@gmail.com']
     end
 
     it 'ensure that the donors name is in the email body' do
@@ -58,7 +58,7 @@ describe DonorMailer do
     it "should be sent from adopt a coder" do
 
 
-      @mail.from.should eq ['adopt.a.coder@gmail.com']
+      @mail.from.should eq ['dbcadoptacoder@gmail.com']
     end
 
     it 'ensure that the donors name is in the thankyou email body' do
