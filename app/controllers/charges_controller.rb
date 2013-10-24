@@ -28,16 +28,19 @@ class ChargesController < ApplicationController
       )
       @charge_id = charge.id #This will store the token that is returned on a successful process of the car
       @donor = Donor.find_by(email: params[:email])
+      @candidate = current_campaign.candidate
       
         if @donor == nil
           temp_password = password_generator
           @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
           
-          DonorMailer.donation_mailer(@donor).deliver
+          @donor.send_password_set
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
           render :_donation_confirmation
         else
+          @donor = Donor.find_by(email: params[:email])
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+          DonationMailer.existing_donor_mailer(@donor, @candidate).deliver
           render :_donation_confirmation
         end
 
