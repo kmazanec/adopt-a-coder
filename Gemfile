@@ -31,6 +31,7 @@ gem 'turbolinks'
 
 
 
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -58,7 +59,7 @@ gem 'coveralls', require: false
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'faker'
+ gem "faker", "~> 1.2.0"
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'

@@ -3,7 +3,7 @@ class CandidateMailer < ActionMailer::Base
 
   def candidate_mailer(candidate)
     @candidate = candidate
-    @url = 'http://localhost:3000'
+
     delivery_options = { user_name: "adopt.a.coder@gmail.com",
                          password: "damnittravis",
                          address: "smtp.gmail.com" }
