@@ -1,13 +1,20 @@
-<div>
-<!--   <h4>Profile Media</h4>
-    <%= form_for(current_user, html: {multipart: true}) do |f| %>
-      <%= f.label :images, "Profile Image" %>
-      <%= image_tag current_user.profile_image %>
-      <%= f.file_field :images, :multiple => true %>
-      <%= f.url_field :images %>
-      <%= f.submit %>
-    <% end %>
- -->
-
-
+<div class="">
+  <table class="full-width full-height">
+    <thead>
+      <td colspan=2>
+        <%= link_to edit_candidate_path(current_user) do %>
+          <i class="icon-edit icon-medium dark-text right icon-margin"></i>
+        <% end %>
+        <h4>Media Files</h4>
+      </td>
+    </thead>
+    <tr>
+      <td>Profile Photo:</td>
+      <td><%= current_user.profile_image.url if current_user.profile_image %></td>
+    </tr>
+    <tr>
+      <td>Profile Video:</td>
+      <td><%= current_user.profile_video.url if current_user.profile_video %></td>
+    </tr>
+  </table>
 </div>
