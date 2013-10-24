@@ -10,14 +10,15 @@
           <div class="small-12 large-3 columns">
             <div class="crop"><p><%= image_tag current_campaign.candidate.profile_image.url, width: "100%" %></p>
             </div>
-            <a href="#" class="button success full-width donate-button-auto-margin" data-reveal-id="payment-modal">Contribute</a>
+            
           </div>
           <div class="small-12 large-4 columns">
             <div class="panel">
               <h5 class="subheader center no-margin">Currently crowd-funding a scholarship for</h5>
               <h2 class="candidate-title center no-margin"><%= current_campaign.candidate.name %></h2>
-              <h5 class="subheader center">to learn to code.</h5>
+              <h5 class="subheader center">to attend Dev Bootcamp.</h5>
             </div>
+
             <div class="panel">
               <h5 class="subheader center no-margin no-padding">Time Remaining</h5>
               <ul class="countdown">
@@ -56,6 +57,7 @@
                   <p class="no-margin no-padding center">of $<%= current_campaign.goal.to_comma %> needed</p>
                 </div>
               </div>
+              <a href="#" class="button success full-width donate-button-auto-margin" data-reveal-id="payment-modal">Contribute</a>
             </div>
           </div>
         </div>
