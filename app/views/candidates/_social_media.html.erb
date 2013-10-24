@@ -1,12 +1,53 @@
 <div>
-  <h3>Social Media</h3>
+  <h4 class="center">Social</h4>
   <ul class="side-nav center">
-    <li><%= link_to image_tag("codeacademy.png", class: "codeacademy_icon icon", alt: "CodeAcademy"), @candidate.codeacademy, target: '_blank' if @candidate.codeacademy %></li>
-    <li><%= link_to image_tag("facebook.svg", class: "facebook_icon icon", alt: "Facebook"), @candidate.facebook, target: '_blank' if @candidate.facebook %></li>
-    <li><%= link_to image_tag("twitter.svg", class: "twitter_icon icon", alt: "Twitter"), @candidate.twitter, target: '_blank' if @candidate.twitter %></li>
-    <li><%= link_to image_tag("github_alt.svg", class: "github_icon icon", alt: "Github"), @candidate.github, target: '_blank' if @candidate.github %></li>
-    <li><%= link_to image_tag("linkedin.svg", class: "linkedin_icon icon", alt: "LinkedIn"), @candidate.linked_in, target: '_blank' if @candidate.linked_in %></li>
-    <li><%= link_to "#{@candidate.name}'s personal blog", "#{@candidate.blog}", target: '_blank' if @candidate.blog %></li>
-    <li><%= link_to "#{@candidate.name}'s personal website", "#{@candidate.personal_url}", target: '_blank' if @candidate.personal_url %></li>
+    <% if @candidate.codeacademy %>
+      <li><%= link_to @candidate.codeacademy do %>
+      <i class="icon-code icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if @candidate.facebook %>
+      <li><%= link_to @candidate.facebook do %>
+      <i class="icon-facebook icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if @candidate.twitter %>
+      <li><%= link_to @candidate.twitter do %>
+        <i class="icon-twitter icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if @candidate.github %>
+      <li><%= link_to @candidate.github do %>
+        <i class="icon-github icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if @candidate.linked_in %>
+      <li><%= link_to @candidate.linked_in do %>
+        <i class="icon-linkedin icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if @candidate.blog %>
+      <li><%= link_to "#{@candidate.blog}" do %>
+        <i class="icon-quote-left icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if @candidate.personal_url %>
+      <li><%= link_to @candidate.personal_url do %>
+        <i class="icon-home icon-large dark-text"></i>
+      <% end %>
+    </li>
+    <% end %>
   </ul>
 </div>
