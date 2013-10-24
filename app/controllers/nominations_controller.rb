@@ -11,12 +11,7 @@ class NominationsController < ApplicationController
     else
       render json: { message:"unable"}
     end
-
   end
-
-
-  # def nomination_params
-  #   params.require(:nomination).permit(:candidate)
-  # end
-
 end
+
+

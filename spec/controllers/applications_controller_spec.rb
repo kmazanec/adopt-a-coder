@@ -26,8 +26,8 @@ describe ApplicationsController do
 
       @candidate.reload.application.complete.should eq true
 
-      @parsed_body["notice"].should eq 'completed'
-      @parsed_body["message"].should eq true
+
+      @parsed_body["message"].should eq "completed"
     end
 
     it "should not let application be submited if it isnt completely full" do
@@ -39,8 +39,8 @@ describe ApplicationsController do
 
 
       @candidate.reload.application.complete.should eq false
-      @parsed_body["notice"].should eq 'error'
-      @parsed_body["message"].should eq false
+
+      @parsed_body["message"].should eq "error"
     end
 
     it "should not let user submit multiple application" do
@@ -51,8 +51,8 @@ describe ApplicationsController do
       @parsed_body = JSON.parse(response.body)
 
       @candidate.application.complete.should eq true
-      @parsed_body["notice"].should eq 'unable'
-      @parsed_body["message"].should eq false
+
+      @parsed_body["message"].should eq "unable"
     end
 
   end
