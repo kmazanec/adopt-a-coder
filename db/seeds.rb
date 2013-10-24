@@ -1,6 +1,6 @@
 require 'faker'
 
-Image.create(url: "thinker.jpg")
+# Image.create(url: "thinker.jpg")
 
 donor_ids = []
 candidate_ids = []
@@ -44,7 +44,7 @@ c = Candidate.create(name: "Lindsay James", email: "lindsay_james@hotmail.com", 
                 biography: Faker::Lorem.paragraph(15))
 candidate_ids << c.id
 
-m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+m = Media.create(url: "Adigo_small.jpg",
              type: "Image", user_id: c.id)
 c.update_attributes(profile_photo_id: m.id)
 
@@ -99,7 +99,7 @@ c = Candidate.create(name: "Maria Lopez", email: "maria@lopez.com", phone: "928-
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am a self-motivated, mother of two who wants to change the world.  Through this experience, I will have the ability to not only change my family's lives, but change the lives of people all over the planet.",
                 biography: Faker::Lorem.paragraph(15))
 
-m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+m = Media.create(url: "Jen_small.jpg",
              type: "Image", user_id: c.id)
 c.update_attributes(profile_photo_id: m.id)
 
@@ -121,6 +121,9 @@ candidate_ids << c.id
                 biography: Faker::Lorem.paragraph(15))
 
   candidate_ids << d.id
+  m = Media.create(url: "Alex_small.jpg",
+             type: "Image", user_id: d.id)
+d.update_attributes(profile_photo_id: m.id)
 
   d = Candidate.create(name: "Kamille Ullrich", email: "kamille_ullrich@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -132,6 +135,10 @@ candidate_ids << c.id
                 biography: Faker::Lorem.paragraph(15))
   candidate_ids << d.id
 
+    m = Media.create(url: "Tara_small.jpg",
+             type: "Image", user_id: d.id)
+d.update_attributes(profile_photo_id: m.id)
+
    d = Candidate.create(name: "Mary Flatley", email: "mary_flatley@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
                 city: Faker::Address.city, state: Faker::Address.state_abbr, zip: Faker::Address.zip_code, facebook: "https://www.facebook.com/marialopez",
@@ -142,6 +149,10 @@ candidate_ids << c.id
                 biography: Faker::Lorem.paragraph(15))
   candidate_ids << d.id
 
+    m = Media.create(url: "Jane_small.jpg",
+             type: "Image", user_id: d.id)
+d.update_attributes(profile_photo_id: m.id)
+
    d = Candidate.create(name: "Josh Brooks", email: "josh_brooks@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
                 city: Faker::Address.city, state: Faker::Address.state_abbr, zip: Faker::Address.zip_code, facebook: "https://www.facebook.com/marialopez",
@@ -151,6 +162,9 @@ candidate_ids << c.id
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "For my entire life, I have wanted to make a difference in the world. This scholarship will give me the opportunity to achieve my dreams and change the world.",
                 biography: Faker::Lorem.paragraph(15))
   candidate_ids << d.id
+    m = Media.create(url: "Harry_small.jpg",
+             type: "Image", user_id: d.id)
+d.update_attributes(profile_photo_id: m.id)
 
 
 
@@ -171,7 +185,7 @@ Donor.all.each do |donor|
 end
 
 Candidate.all.each {|c| c.profile_video_id = Video.first.id; c.save }
-Candidate.all.each {|c| c.profile_photo_id = Image.first.id; c.save }
+# Candidate.all.each {|c| c.profile_photo_id = Image.first.id; c.save }
 
 @responses = [
               Faker::Lorem.paragraph(3),
