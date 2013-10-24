@@ -1,40 +1,36 @@
 <div class="">
   <table class="full-width full-height">
-    <tr>
-      <td colspan=0><h4>Personal Information</h4></td>
-    </tr>
-    <tr>
-      <td><%= link_to "Update Personal Information", edit_candidate_path(current_user) %></td>
-    </tr>
+    <thead>
+      <td colspan=2>
+        <%= link_to edit_candidate_path(current_user) do %>
+          <i class="icon-edit icon-medium dark-text right icon-margin"></i>
+        <% end %>
+        <h4>Personal Information</h4>
+      </td>
+    </thead>
     <tr>
       <td>Phone:</td>
       <td><%= current_user.phone %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Address1:</td>
       <td><%= current_user.address1 %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Address2:</td>
       <td><%= current_user.address2 %></td>
-      <td></td>
     </tr>
     <tr>
       <td>City:</td>
       <td><%= current_user.city %></td>
-      <td></td>
     </tr>
     <tr>
       <td>State:</td>
       <td><%= current_user.state %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Zip:</td>
       <td><%= current_user.zip %></td>
-      <td></td>
     </tr>
   </table>
 </div>

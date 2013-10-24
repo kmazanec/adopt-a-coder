@@ -10,7 +10,7 @@
           <div class="small-12 large-3 columns">
             <div class="crop"><p><%= image_tag current_campaign.candidate.profile_image.url, width: "100%" %></p>
             </div>
-            
+            <a href="#" class="button success full-width donate-button-auto-margin" data-reveal-id="payment-modal">Contribute</a>
           </div>
           <div class="small-12 large-4 columns">
             <div class="panel">
@@ -53,11 +53,15 @@
             <div class="row">
               <div class="small-12 columns">   
                 <div class="progress primary round progress-auto-margin">
-                  <span class="meter" style="width: <%= current_campaign_percentage %>%"><span style="margin-left: 70%"><%= current_campaign_percentage.to_i %>%</span></span>
-                  <p class="no-margin no-padding center">of $<%= current_campaign.goal.to_comma %> needed</p>
+                  <% if current_campaign_percentage < 100 %>
+                    <span class="meter" style="width: <%= current_campaign_percentage %>%"><span style="margin-left: 75%"><%= current_campaign_percentage.to_i %>%</span></span>
+                    <p class="no-margin no-padding center">of $<%= current_campaign.goal.to_comma %> needed</p>
+                  <% else %>
+                    <span class="meter" style="width: 100%"><span style="margin-left: 90%"><%= current_campaign_percentage.to_i %>%</span></span>
+                    <p class="no-margin no-padding center">of $<%= current_campaign.goal.to_comma %> needed</p>
+                  <% end %>
                 </div>
               </div>
-              <a href="#" class="button success full-width donate-button-auto-margin" data-reveal-id="payment-modal">Contribute</a>
             </div>
           </div>
         </div>

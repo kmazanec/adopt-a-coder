@@ -13,6 +13,7 @@ class DonorMailer < ActionMailer::Base
 
   def donation_mailer(donor)
     @donor = donor
+    @current_campagin = Campaign.current_campaign
 
     delivery_options = { user_name: "adopt.a.coder@gmail.com",
                          password: "damnittravis",

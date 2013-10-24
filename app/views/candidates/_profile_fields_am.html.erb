@@ -1,25 +1,24 @@
 <div class="">
   <table class="full-width full-height">
+    <thead>
+      <td colspan=2>
+        <%= link_to edit_candidate_path(current_user) do %>
+          <i class="icon-edit icon-medium dark-text right icon-margin"></i>
+        <% end %>
+        <h4>About Me</h4>
+      </td>
+    </thead>
     <tr>
-      <td colspan=0><h4>About Me</h4></td>
-    </tr>
-    <tr>
-      <td><%= link_to "Update About Me Information", edit_candidate_path(current_user) %></td>
+      <td>Current Project:</td>
+      <td><%= current_user.currently_working_on %></td>
     </tr>
     <tr>
       <td>Mission Statement:</td>
       <td><%= current_user.mission %></td>
-      <td></td>
     </tr>
     <tr>
       <td>Biography:</td>
       <td><%= current_user.biography %></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Current Project:</td>
-      <td><%= current_user.currently_working_on %></td>
-      <td></td>
     </tr>
   </table>
 </div>

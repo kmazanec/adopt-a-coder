@@ -51,6 +51,10 @@ table {
   margin: 4% 0;
 }
 
+.icon-margin {
+  margin: 0.5em !important;
+}
+
 .little-bit-of-bottom-margin {
   margin-bottom: 10px !important;
 }
@@ -205,6 +209,13 @@ table {
 
 .dark {
   background-color: #444;
+}
+.dark-text {
+  color: #222;
+
+  &:hover {
+    color: #666;
+  }
 }
 
 .light {
