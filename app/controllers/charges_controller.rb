@@ -46,7 +46,8 @@ class ChargesController < ApplicationController
         end
 
     rescue Stripe::CardError => e
-      # The card has been declined
+      flash[:error] = "Your card could not be verified, please try a different form of payment."
+      redirect_to root_path
       
     end
   end
