@@ -96,7 +96,7 @@ c = Candidate.create(name: "Maria Lopez", email: "maria@lopez.com", phone: "928-
                 twitter: "https://twitter.com/Oprah", linked_in: "http://http://www.linkedin.com/pub/maria-lopez/1b/291/a17",
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
-                personal_url: "http://www.dolekemp96.org/main.htm", mission: "Go to DBC!",
+                personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am a self-motivated, mother of two who wants to change the world.  Through this experience, I will have the ability to not only change my family's lives, but change the lives of people all over the planet.",
                 biography: Faker::Lorem.paragraph(15))
 
 m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
