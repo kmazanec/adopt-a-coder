@@ -1,5 +1,5 @@
 class ApplicationsMailer < ActionMailer::Base
-  default from: "adopt.a.coder@gmail.com"
+  default from: "dbcadoptacoder@gmail.com"
 
   def applications_mailer(application)
     @application = application

@@ -31,7 +31,7 @@ need_questions.each do |question|
   Question.create(body: question)
 end
 
-5.times do 
+5.times do
 d = Donor.create(name: Faker::Name.name, email: Faker::Internet.free_email, password: "test", password_confirmation: "test")
 donor_ids << d.id
 end
@@ -110,7 +110,7 @@ c.update_attributes(profile_video_id: m.id)
 
 candidate_ids << c.id
 
- 
+
   d = Candidate.create(name: "Fredy Klein", email: "fredy_klein@hotmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
                 city: Faker::Address.city, state: Faker::Address.state_abbr, zip: Faker::Address.zip_code, facebook: "https://www.facebook.com/marialopez",
@@ -118,9 +118,9 @@ candidate_ids << c.id
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am highly motivated to create extraordinary things. This experience will provide me the perfect introduction into this wonderful industry. I will use those experience to harness my craft and bring happiness to people.",
-                biography: Faker::Lorem.paragraph(15)) 
+                biography: Faker::Lorem.paragraph(15))
 
-  candidate_ids << d.id  
+  candidate_ids << d.id
 
   d = Candidate.create(name: "Kamille Ullrich", email: "kamille_ullrich@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -129,8 +129,8 @@ candidate_ids << c.id
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have always been someone who loves to interact with computers and the internet. This scholarship will not only allow me to create amazing things but also create a better community and world.",
-                biography: Faker::Lorem.paragraph(15)) 
-  candidate_ids << d.id 
+                biography: Faker::Lorem.paragraph(15))
+  candidate_ids << d.id
 
    d = Candidate.create(name: "Mary Flatley", email: "mary_flatley@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -139,8 +139,8 @@ candidate_ids << c.id
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have so many ideas and there is no better way to express them than through computer programming. This experience could change my life and let me reach my full potential.",
-                biography: Faker::Lorem.paragraph(15)) 
-  candidate_ids << d.id 
+                biography: Faker::Lorem.paragraph(15))
+  candidate_ids << d.id
 
    d = Candidate.create(name: "Josh Brooks", email: "josh_brooks@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -149,8 +149,8 @@ candidate_ids << c.id
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "For my entire life, I have wanted to make a difference in the world. This scholarship will give me the opportunity to achieve my dreams and change the world.",
-                biography: Faker::Lorem.paragraph(15)) 
-  candidate_ids << d.id  
+                biography: Faker::Lorem.paragraph(15))
+  candidate_ids << d.id
 
 
 

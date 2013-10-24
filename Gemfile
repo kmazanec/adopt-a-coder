@@ -59,13 +59,16 @@ gem 'coveralls', require: false
 
 group :test, :development do
   gem 'rspec-rails'
- gem "faker", "~> 1.2.0"
+  gem "faker", "~> 1.2.0"
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'
+  gem 'jasmine'
+  gem 'jasmine-jquery-rails'
+  gem 'jasmine-rails'
 end
 
 # Use unicorn as the app server
