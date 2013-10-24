@@ -1,16 +1,13 @@
 <div class="">
   <table class="full-width full-height">
-    <th>
+    <thead>
       <td colspan=2>
         <%= link_to edit_candidate_path(current_user) do %>
-          <i class="icon-edit"></i>
+          <i class="icon-edit icon-medium dark-text right icon-margin"></i>
         <% end %>
-        <h4 class="inline">Social Media</h4>
+        <h4>Social Media</h4>
       </td>
-    </th>
-    <tr>
-      <td></td>
-    </tr>
+    </thead>
     <tr>
       <td>Code Academy:</td>
       <td><%= link_to current_user.codeacademy, current_user.codeacademy, target: '_blank' if current_user.codeacademy %></td>
