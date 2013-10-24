@@ -4,6 +4,13 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+$primary-color: lighten(#71A35A, 10%);
+$secondary-color: lighten(#4D6F88, 20%);
+$alert-color: #E36E40;
+$success-color: #B3D6AF;
+$primary-color-dark: #71A35A;
+$secondary-color-light: lighten(#4D6F88, 48%);
+
 $highlight-color: #AC0A3C;
 /*$secondary-color-light: lighten(#4D6F88, 50%);*/
 /* We use these to control header font styles */
@@ -22,6 +29,11 @@ $highlight-color: #AC0A3C;
 
 small {
   font-weight: 300;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /*.login-fields{
@@ -141,6 +153,26 @@ small {
   clip:rect(0px 160px 158px 0px);
 }
 
+
+.crop-tiny {
+  text-align: center;
+  position:relative;
+  width:50px;
+  height:50px;
+  border:1px solid #ccc;
+  /*margin:.5em 10px .5em 0;*/
+  margin: 0 auto;
+}
+
+.crop-tiny p {
+  margin:0;
+  position:absolute;
+  top:0;
+  left:0;
+  clip:rect(0px 50px 48px 0px);  
+}
+
+
 .user-card {
   height: 450px
 }
@@ -152,10 +184,17 @@ small {
   max-height: 300px;
 }
 
-.icon {
-  overflow: hidden;
-  max-height: 25px;
-  max-width: 100px;
+
+.icon-large {
+  font-size: 2em;
+}
+
+.icon-medium {
+  font-size: 1.5em;
+}
+
+.icon-giant {
+  font-size: 4em;
 }
 
 
