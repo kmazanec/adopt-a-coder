@@ -2,8 +2,11 @@
 <div class="row">
   <div class="small-12 large-8 large-centered columns">
     <h2><%= @donor.name %></h2>
+    <%= link_to 'View current campaign', :root %>
+    <%= link_to 'View all candidates', candidates_path %>
+    <%= link_to 'View current candidate profile', candidate_path(current_campaign.candidate) %>
     <div class="panel">
-      <h3>Current Campaign</h3>
+      <h3>Current Nomination</h3>
       <% if @donor.nomination_available? %>
         <h6><%= link_to "You have a nomination available, nominate someone!", candidates_path %></h6>
       <% else %>
