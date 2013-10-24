@@ -223,7 +223,7 @@ DEPENDENCIES
   coveralls
   cucumber-rails
   factory_girl_rails
-  faker
+  faker (~> 1.2.0)
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
