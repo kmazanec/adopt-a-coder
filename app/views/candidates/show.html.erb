@@ -8,6 +8,8 @@
     <div class="center">
       <% if @candidate == current_campaign.candidate %>
         <a href="#" class="full-width button success no-margin" data-reveal-id="payment-modal">Contribute</a>
+      <% elsif current_user.nil? %>
+        <p></p>
       <% else %>
         <%= link_to 'Nominate!', nominate_candidate_path(@candidate), method: :post, class: "small button round submit-nomination" %>
       <% end %>
