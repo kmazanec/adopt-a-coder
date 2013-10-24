@@ -6,10 +6,12 @@
     <% @candidates.each do |candidate| %>
       <li>
         <div class="panel">
-          <%= image_tag candidate.profile_image.url, class: "image-square", size: "180" %>
-          <%= candidate.name %>
-          <br>
+          <div class="crop">
+            <p><%= image_tag candidate.profile_image.url, class: "", size: "200" %></p>
+          </div>
           <div class="center">
+            <%= candidate.name %>
+            <br>
             <%= link_to 'Read my story', candidate_path(candidate), class: "tiny button round" %>
           </div>
         </div>
@@ -17,5 +19,5 @@
     <% end %>
     </ul>
   <% end %>
-  <%= link_to "See All Candidates...", candidates_path, class: "button" %>
+  <%= link_to "See All #{Candidate.count - 1} Candidates...", candidates_path, class: "button right" %>
 </div>

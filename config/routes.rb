@@ -28,6 +28,10 @@ AdoptACoder::Application.routes.draw do
 
   get '/candidates/:id/profile' => 'candidates#profile', :as => 'profile_candidate'
 
+
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
+  get '/faq' => 'home#faq'
+
 
 end

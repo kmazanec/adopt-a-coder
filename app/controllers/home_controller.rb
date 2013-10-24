@@ -2,11 +2,15 @@
 class HomeController < ApplicationController
 
   def index
-    @candidates = Candidate.order("RANDOM()").limit(4)
+    cid = current_campaign.candidate.id
+    @candidates = Candidate.where('id' != cid).order('random()').limit(4)
   end
 
   def signup
     render :_signup
+  end
+
+  def faq
   end
 
 end

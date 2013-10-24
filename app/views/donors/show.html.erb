@@ -2,22 +2,23 @@
 <div class="row">
   <div class="small-12 large-8 large-centered columns">
     <h2><%= @donor.name %></h2>
-    <div>
-      <%= link_to 'View current campaign', :root, class: 'button success no-margin' %>
-      <%= link_to 'View all candidates', candidates_path, class: 'button success no-margin' %>
-      <%= link_to 'View current candidate profile', candidate_path(current_campaign.candidate), class: 'button success no-margin' %>
-      <a href="#" class="button success no-margin" data-reveal-id="payment-modal">Contribute Now!</a>
+    <div class="row little-bit-of-bottom-margin">
+      <div class="small-12 columns center">
+        <%= link_to 'View current campaign', :root, class: 'small button success no-margin' %>
+        <%= link_to 'View all candidates', candidates_path, class: 'small button success no-margin' %>
+        <%= link_to 'View current candidate profile', candidate_path(current_campaign.candidate), class: 'small button success no-margin' %>
+      </div>
     </div>
     <div class="panel">
-      <h3>Current Nomination</h3>
+      <h3 class="no-margin">Your Nominee</h3>
+      <h3><small>Each contributor receives one nomination per campaign</small></h3>
+      <hr>
       <% if @donor.nomination_available? %>
         <h6><%= link_to "You have a nomination available, nominate someone!", candidates_path %></h6>
       <% else %>
         <% if !@donor.current_campaign_donation? %>
-          <h5>You have no donation for the current campaign. Please make a donation for this campaign in order to nominate the next scholarship recipient!</h5>
-          <div class="small-6 columns">
-            <a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a>
-          </div>
+          <h5 class="subheader">Please make a contribution to the current campaign in order to nominate someone for the next campaign!</h5>
+            <p class="center"><a href="#" class="button success" data-reveal-id="payment-modal">Contribute</a></p>
         <% else %>
           <h6>You have already nominated someone for this campaign!</h6>
           <p><%= link_to "Visit Your Nominee's Profile Now", candidate_path(@donor.nominations.last.candidate) %></p>
@@ -26,7 +27,9 @@
     </div>
 
     <div class="panel">
-      <h3>Recent Donations</h3>
+      <h3 class="no-margin">Contributon History</h3>
+      <h3><small>Look here to see all your previous contributions</small></h3>
+      <hr>
       <% if @donations && @donations.any? %>
         <table class="full-width">
           <tr>
@@ -43,13 +46,16 @@
         <% end %>
         </table>
       <% else %>
-      <h4>It looks like you haven't donated yet...</h4>
-      <div>Donate Now</div>
+      <h5 class="subheader">It looks like you haven't made any contributions yet...</h5>
+      <p class="center"><a href="#" class="button success" data-reveal-id="payment-modal">Contribute</a></p>
       <% end %>
     </div>
 
     <div class="panel">
-      <h3>Candidates You've Nominated</h3>
+      <h3 class="no-margin">Your Previous Nominees</h3>
+      <h3><small>See what the candidates you've nominated in previous rounds are doing now.</small></h3>
+      <hr>
+
       <% if @nominations && @nominations.any? %>
         <table class="full-width">
           <tr>
@@ -64,14 +70,12 @@
         <% end %>
         </table>
       <% else %>
-      <h4>It looks like you haven't nominated anyone yet...</h4>
+      <h5 class="subheader">It looks like you haven't nominated anyone yet...</h5>
         <% if @donor.nomination_available? %>
           <%= link_to "Checkout the candidates and nominate someone!", candidates_path %>
         <% else %>
-          <h5>Please make a donation for this campaign in order to nominate the next scholarship recipient!</h5>
-          <div class="small-6 columns">
-            <a href="#" class="button success radius" data-reveal-id="payment-modal">Donate</a>
-          </div>
+          <h5 class="subheader">Please make a donation for this campaign in order to nominate the next scholarship recipient!</h5>
+            <p class="center"><a href="#" class="button success" data-reveal-id="payment-modal">Contribute</a></p>
         <% end %>
       <% end %>
     </div>

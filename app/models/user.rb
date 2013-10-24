@@ -27,6 +27,13 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver
   end
 
+   def send_password_set
+    self.password_reset_token = generate_token
+    self.password_reset_sent_at = Time.zone.now
+    self.save!
+    DonorMailer.donation_mailer(self).deliver
+  end
+
   private
 
   def generate_token

@@ -13,15 +13,19 @@
   <section class="top-bar-section">
   <ul class="right">
       <li class="donate-nav"><a href class="button success" data-reveal-id="payment-modal">Contribute</a></li>
+      <li><%= link_to "All Candidates", candidates_path %></li>
   <% if logged_in? %>
     <% if current_user_candidate %>
-      <li><%= link_to current_user.name, candidate_path(current_user) %></li>
-      <li><%= link_to "My Account", profile_candidate_path(current_user) %></li>
-      <% if current_user.application.complete %>
-      <li><%= link_to "My Application", candidate_application_path(current_user, current_user.application) %></li>
-      <% else %>
-      <li><%= link_to "My Application", edit_candidate_application_path(current_user, current_user.application) %></li>
-      <% end %>
+      <li class="has-dropdown"><%= link_to current_user.name, candidate_path(current_user) %>
+        <ul class="dropdown">
+          <li><%= link_to "My Account", profile_candidate_path(current_user) %></li>
+          <% if current_user.application.complete %>
+          <li><%= link_to "My Application", candidate_application_path(current_user, current_user.application) %></li>
+          <% else %>
+          <li><%= link_to "My Application", edit_candidate_application_path(current_user, current_user.application) %></li>
+          <% end %>
+        </ul>
+      </li>
     <% else %>
       <li><%= link_to current_user.name, donor_path(current_user) %></li>
     <% end %>

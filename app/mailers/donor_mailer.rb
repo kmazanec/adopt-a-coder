@@ -4,8 +4,8 @@ class DonorMailer < ActionMailer::Base
   def welcome_email(donor)
     @donor = donor
 
-    delivery_options = { user_name: "adopt.a.coder@gmail.com",
-                         password: "damnittravis",
+    delivery_options = { user_name: "dbcadoptacoder@gmail.com",
+                         password: "igeekallweek",
                          address: "smtp.gmail.com" }
     mail(to: @donor.email, subject: 'Welcome to Adopt.a.Coder.com',
        delivery_method_options: delivery_options)
@@ -15,8 +15,8 @@ class DonorMailer < ActionMailer::Base
     @donor = donor
     @current_campagin = Campaign.current_campaign
 
-    delivery_options = { user_name: "adopt.a.coder@gmail.com",
-                         password: "damnittravis",
+    delivery_options = { user_name: "dbcadoptacoder@gmail.com",
+                         password: "igeekallweek",
                          address: "smtp.gmail.com" }
     mail(to: @donor.email, subject: 'Thank you for Donating',
       delivery_method_options: delivery_options)
