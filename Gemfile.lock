@@ -225,8 +225,8 @@ DEPENDENCIES
   coveralls
   cucumber-rails
   factory_girl_rails
-  font-awesome-sass
   faker (~> 1.2.0)
+  font-awesome-sass
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
