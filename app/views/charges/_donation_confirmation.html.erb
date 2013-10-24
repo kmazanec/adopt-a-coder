@@ -2,6 +2,7 @@
   <div class="small-12 large-8 large-centered columns">
     <h2>Donation Receipt</h2>
 
+
     <h4>Donation Information:</h4>
     <p>Donated to: <%= current_campaign.candidate.name  %> </p>
     <p>Amount Donated: $<%= @donation.amount  %> </p>
@@ -12,6 +13,7 @@
 
     <p>Thanks again,</p>
     <p><%=  current_campaign.candidate.name %></p>
+
 
     <h4>What Now?</h4>
     <p>Now that you have made a donation to our current campaign for <%= current_campaign.candidate.name  %>, we would like to invite you to nominate one of  current candidates for our next campaign.  Follow the link below to see a list of the current candidates and view their profile page to help narrow down who you would like to nominate.  </p>

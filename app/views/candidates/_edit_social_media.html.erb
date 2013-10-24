@@ -3,19 +3,19 @@
       <h3>Update Social Media Info</h3>
       <%= form_for current_user do |f| %>
         <%= f.label :twitter %>
-        <%= f.url_field :twitter %>
+        <%= f.text_field :twitter %>
         <%= f.label :facebook %>
-        <%= f.url_field :facebook %>
+        <%= f.text_field :facebook %>
         <%= f.label :linked_in %>
-        <%= f.url_field :linked_in %>
+        <%= f.text_field :linked_in %>
         <%= f.label :codeacademy %>
-        <%= f.url_field :codeacademy %>
+        <%= f.text_field :codeacademy %>
         <%= f.label :github %>
-        <%= f.url_field :github %>
+        <%= f.text_field :github %>
         <%= f.label :blog %>
-        <%= f.url_field :blog %>
+        <%= f.text_field :blog %>
         <%= f.label :personal_url %>
-        <%= f.url_field :personal_url %>
+        <%= f.text_field :personal_url %>
         <%= f.submit "Update Social Media" %>
       <% end %>
     </div>
