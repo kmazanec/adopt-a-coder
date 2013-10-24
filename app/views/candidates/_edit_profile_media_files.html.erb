@@ -1,14 +1,9 @@
 <div id= "profile_media_files_edit" class="small-12 columns">
   <div class="panel">
     <h3>Profile  Media Files</h3>
-    <%= form_for current_user do |f| %>
-      <%= f.label :mission %>
-      <%= f.text_area :mission %>
-      <%= f.label :biography %>
-      <%= f.text_area :biography %>
-      <%= f.label :currently_working_on %>
-      <%= f.text_area :currently_working_on %>
-      <%= f.submit "Update Media Files" %>
+    <%= form_tag current_user do |f| %>
+
+      <%= submit_tag "Update Media Files" %>
     <% end %>
   </div>
 </div>
