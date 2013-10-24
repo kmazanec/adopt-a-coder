@@ -139,6 +139,24 @@ table {
   clip:rect(0px 200px 248px 0px);
 }
 
+.crop-large{
+  text-align: center;
+  position:relative;
+  width:220px;
+  height:300px;
+  border:1px solid #ccc;
+  /*margin:.5em 10px .5em 0;*/
+  margin: 0 auto;
+}
+
+.crop-large p{
+  margin:0;
+  position:absolute;
+  top:0;
+  left:0;
+  clip:rect(0px 220px 298px 0px);
+}
+
 .crop-small {
   text-align: center;
   position:relative;

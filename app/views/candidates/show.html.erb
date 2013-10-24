@@ -4,7 +4,9 @@
   </div>
 
   <div class="small-12 large-3 columns">
-    <%= image_tag(Image.find(@candidate.profile_image).url, size: "350", alt: "Image of #{@candidate.name}") %>
+    <div class="crop-large">
+      <p><%= image_tag(Image.find(@candidate.profile_image).url, size: "350", alt: "Image of #{@candidate.name}") %></p>
+    </div>
     <div class="center">
       <% if @candidate == current_campaign.candidate %>
         <a href="#" class="full-width button success no-margin" data-reveal-id="payment-modal">Contribute</a>
@@ -17,18 +19,18 @@
   </div>
 
   <div class="small-12 large-7 columns">
-    <div class="panel">
+    <div class="panel callout">
       <h3>Mission Statement</h3>
       <p><%= @candidate.mission %></p>
     </div>
 
-    <div class="">
+    <div class="panel">
       <h3>Biography</h3>
       <p><%= @candidate.biography %></p>
     </div>
 
 
-    <div class="">
+    <div class="panel">
       <%= render "application_highlights" %>
     </div>
   </div>
