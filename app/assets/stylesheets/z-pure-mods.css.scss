@@ -138,7 +138,7 @@ small {
   position:absolute;
   top:0;
   left:0;
-  clip:rect(0px 160px 158px 0px);  
+  clip:rect(0px 160px 158px 0px);
 }
 
 .user-card {
@@ -252,6 +252,9 @@ ul.countdown li p {
   margin-bottom: 0.375em;
 }
 
+.flash-box {
+  background-color: lighten(#B3D6AF, 5%);
+}
 
 /*.social-container {
   float: right;

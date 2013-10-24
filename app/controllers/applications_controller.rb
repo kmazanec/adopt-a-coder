@@ -8,11 +8,24 @@ class ApplicationsController < ApplicationController
 
   def update
     Application.save_application(update_params)
-    if params[:save_and_exit]
-      redirect_to profile_candidate_path(current_user)
-    else
-      redirect_to edit_candidate_application_path(current_user, current_application)
+    respond_to do |format|
+      format.js { render json: { message:"error" } }
+      format.html {
+        puts "hello world"
+        if params[:save_and_exit]
+          redirect_to profile_candidate_path(current_user)
+        else
+          redirect_to edit_candidate_application_path(current_user, current_application)
+        end
+      }
     end
+
+    #
+    # end
+    #   redirect_to
+    #   redirect_to
+    # else
+    # end
   end
 
   def edit
