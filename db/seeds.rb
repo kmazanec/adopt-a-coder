@@ -1,6 +1,6 @@
 require 'faker'
 
-Image.create(url: "thinker.jpg")
+# Image.create(url: "thinker.jpg")
 
 donor_ids = []
 candidate_ids = []
@@ -44,13 +44,13 @@ c = Candidate.create(name: "Lindsay James", email: "lindsay_james@hotmail.com", 
                 biography: Faker::Lorem.paragraph(15))
 candidate_ids << c.id
 
-m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+m = Media.create(url: "https://secure.gravatar.com/avatar/bd1a911f623a2d346c9f6fca9a9e5af0.png?r=PG&d=mm&s=150",
              type: "Image", user_id: c.id)
 c.update_attributes(profile_photo_id: m.id)
 
-m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
+f = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
              type: "Video", user_id: c.id)
-c.update_attributes(profile_video_id: m.id)
+c.update_attributes(profile_video_id: f.id)
 
 
 
@@ -120,7 +120,10 @@ candidate_ids << c.id
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am highly motivated to create extraordinary things. This experience will provide me the perfect introduction into this wonderful industry. I will use those experience to harness my craft and bring happiness to people.",
                 biography: Faker::Lorem.paragraph(15)) 
 
-  candidate_ids << d.id  
+  candidate_ids << c.id  
+  m = Media.create(url: "https://secure.gravatar.com/avatar/89fdc9c668c274cf1fb98d5a26549ca7.png?r=PG&d=mm&s=98",
+             type: "Image", user_id: c.id)
+  d.update_attributes(profile_photo_id: m.id)
 
   d = Candidate.create(name: "Kamille Ullrich", email: "kamille_ullrich@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -131,6 +134,9 @@ candidate_ids << c.id
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have always been someone who loves to interact with computers and the internet. This scholarship will not only allow me to create amazing things but also create a better community and world.",
                 biography: Faker::Lorem.paragraph(15)) 
   candidate_ids << d.id 
+  m = Media.create(url: "https://secure.gravatar.com/avatar/b9dcbe494f998ae2d18cdbb79740c121.png?r=PG&d=mm&s=98",
+             type: "Image", user_id: c.id)
+d.update_attributes(profile_photo_id: m.id)
 
    d = Candidate.create(name: "Mary Flatley", email: "mary_flatley@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -141,6 +147,10 @@ candidate_ids << c.id
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have so many ideas and there is no better way to express them than through computer programming. This experience could change my life and let me reach my full potential.",
                 biography: Faker::Lorem.paragraph(15)) 
   candidate_ids << d.id 
+ m = Media.create(url: "https://secure.gravatar.com/avatar/1cfffebc32d4c7065a23d10ecbb6e91d.png?r=PG&d=mm&s=98",
+             type: "Image", user_id: c.id)
+d.update_attributes(profile_photo_id: m.id)
+
 
    d = Candidate.create(name: "Josh Brooks", email: "josh_brooks@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -152,7 +162,9 @@ candidate_ids << c.id
                 biography: Faker::Lorem.paragraph(15)) 
   candidate_ids << d.id  
 
-
+ m = Media.create(url: "https://secure.gravatar.com/avatar/1ba50c7ecfe17e27d931a1148cb6e256.png?r=PG&d=mm&s=98",
+             type: "Image", user_id: c.id)
+d.update_attributes(profile_photo_id: m.id)
 
 
 c = Candidate.first
@@ -171,7 +183,7 @@ Donor.all.each do |donor|
 end
 
 Candidate.all.each {|c| c.profile_video_id = Video.first.id; c.save }
-Candidate.all.each {|c| c.profile_photo_id = Image.first.id; c.save }
+# Candidate.all.each {|c| c.profile_photo_id = Image.first.id; c.save }
 
 @responses = [
               Faker::Lorem.paragraph(3),
