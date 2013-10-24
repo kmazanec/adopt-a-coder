@@ -28,6 +28,6 @@ AdoptACoder::Application.routes.draw do
 
   get '/candidates/:id/profile' => 'candidates#profile', :as => 'profile_candidate'
 
-
+  get '/faq' => 'home#faq'
 
 end
