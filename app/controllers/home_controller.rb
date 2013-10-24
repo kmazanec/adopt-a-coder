@@ -10,4 +10,7 @@ class HomeController < ApplicationController
     render :_signup
   end
 
+  def faq
+  end
+
 end
