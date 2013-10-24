@@ -1,13 +1,20 @@
-<h1>Reset Password</h1>  
-  
-<%= form_for password_resets_verified_path(params[:token]) do %>    
-  <div class="field">  
-    <%= label_tag :password %>  
-    <%= password_field_tag :password %>  
-  </div>  
-  <div class="field">  
-    <%= label_tag :password_confirmation %>  
-    <%= password_field_tag :password_confirmation %>  
-  </div>  
-  <div class="actions"><%= submit_tag "Update Password" %></div>  
-<% end %> 
+
+<div class="lots-of-margin"></div>
+
+<div class="row"><div class="row">
+  <div class="small-12 large-6 large-centered columns panel">
+    <h3>Reset Password</h3>
+    <%= form_for password_resets_verified_path(params[:token]) do %>    
+      <div class="field">  
+        <%= label_tag :password %>  
+        <%= password_field_tag :password %>  
+      </div>  
+      <div class="field">  
+        <%= label_tag :password_confirmation %>  
+        <%= password_field_tag :password_confirmation %>  
+      </div>  
+      <div class="actions center"><%= submit_tag "Update Password", class: "small button success" %></div>  
+    <% end %> 
+
+  </div>
+</div>
