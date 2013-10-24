@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
     delivery_options = { user_name: "dbcadoptacoder@gmail.com",
                          password: "igeekallweek",
                          address: "smtp.gmail.com" }
-    mail (:to => @user.email, :subject => "Password Reset", delivery_method_options: delivery_options)
+    mail(to: @user.email, subject: "Password Reset", delivery_method_options: delivery_options)
 
   end
 end

@@ -33,15 +33,10 @@ class ChargesController < ApplicationController
         if @donor == nil
           temp_password = password_generator
           @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
-          
-          @donor.send_password_set
-          @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
-          render :_donation_confirmation
-        else
-          @donor = Donor.find_by(email: params[:email])
           session[:id] = @donor.id
-          DonorMailer.donation_mailer(@donor).deliver
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
+          @donor.send_password_set
+          DonationMailer.existing_donor_mailer(@donor, @candidate, @donation).deliver
           render :_donation_confirmation
         else
           flash[:success] = "Your donation was successful!  Thank you!  Please log in to make a nomination."
