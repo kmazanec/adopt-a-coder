@@ -61,6 +61,7 @@ describe ApplicationsController do
 
     it 'should render the edit page' do
       @candidate = FactoryGirl.create(:candidate)
+      controller.stub(:current_user).and_return(@candidate)
       @app = @candidate.application
       controller.stub(:current_application).and_return(@candidate.application)
 
