@@ -259,8 +259,13 @@ table {
 }
 
 .no-border {
-  border: none;
+  border: none !important;
 }
+
+.social-tiny {
+  border-radius: 1000px !important;
+}
+
 
 /* MAIN PAGE  */
 
