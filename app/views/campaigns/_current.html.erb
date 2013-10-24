@@ -10,7 +10,7 @@
           <div class="small-12 large-3 columns">
             <div class="crop"><p><%= image_tag current_campaign.candidate.profile_image.url, width: "100%" %></p>
             </div>
-            
+
           </div>
           <div class="small-12 large-4 columns">
             <div class="panel">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="row">
-              <div class="small-12 columns">   
+              <div class="small-12 columns">
                 <div class="progress primary round progress-auto-margin">
                   <span class="meter" style="width: <%= current_campaign_percentage %>%"><span style="margin-left: 70%"><%= current_campaign_percentage.to_i %>%</span></span>
                   <p class="no-margin no-padding center">of $<%= current_campaign.goal.to_comma %> needed</p>
@@ -63,7 +63,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- CONTENT CONTAINER -->
     <div class="small-12 large-5 push-7 columns">
       <div class="panel">
@@ -80,9 +80,11 @@
           <div class="small-12 columns little-bit-of-bottom-margin">
             <a href="#" class="button success no-margin" data-reveal-id="payment-modal">Contribute</a>
           </div>
+        </div>
+        <div class="row">
 
         <!-- SOCIAL CONTAINER -->
-        <div class="small-12 small-centered columns">
+        <div class="small-12 large-8 large-centered columns">
           <ul class="button-group center no-padding">
 
             <!-- TWITTER -->
