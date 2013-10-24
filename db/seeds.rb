@@ -31,7 +31,7 @@ need_questions.each do |question|
   Question.create(body: question)
 end
 
-5.times do 
+5.times do
 d = Donor.create(name: Faker::Name.name, email: Faker::Internet.free_email, password: "test", password_confirmation: "test")
 donor_ids << d.id
 end
@@ -44,7 +44,8 @@ c = Candidate.create(name: "Lindsay James", email: "lindsay_james@hotmail.com", 
                 biography: Faker::Lorem.paragraph(15))
 candidate_ids << c.id
 
-m = Media.create(url: "https://secure.gravatar.com/avatar/bd1a911f623a2d346c9f6fca9a9e5af0.png?r=PG&d=mm&s=150",
+
+m = Media.create(url: "Adigo_small.jpg",
              type: "Image", user_id: c.id)
 c.update_attributes(profile_photo_id: m.id)
 
@@ -99,7 +100,7 @@ c = Candidate.create(name: "Maria Lopez", email: "maria@lopez.com", phone: "928-
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am a self-motivated, mother of two who wants to change the world.  Through this experience, I will have the ability to not only change my family's lives, but change the lives of people all over the planet.",
                 biography: Faker::Lorem.paragraph(15))
 
-m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
+m = Media.create(url: "Jen_small.jpg",
              type: "Image", user_id: c.id)
 c.update_attributes(profile_photo_id: m.id)
 
@@ -110,7 +111,7 @@ c.update_attributes(profile_video_id: m.id)
 
 candidate_ids << c.id
 
- 
+
   d = Candidate.create(name: "Fredy Klein", email: "fredy_klein@hotmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
                 city: Faker::Address.city, state: Faker::Address.state_abbr, zip: Faker::Address.zip_code, facebook: "https://www.facebook.com/marialopez",
@@ -118,12 +119,14 @@ candidate_ids << c.id
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am highly motivated to create extraordinary things. This experience will provide me the perfect introduction into this wonderful industry. I will use those experience to harness my craft and bring happiness to people.",
-                biography: Faker::Lorem.paragraph(15)) 
+                biography: Faker::Lorem.paragraph(15))
 
-  candidate_ids << c.id  
-  m = Media.create(url: "https://secure.gravatar.com/avatar/89fdc9c668c274cf1fb98d5a26549ca7.png?r=PG&d=mm&s=98",
-             type: "Image", user_id: c.id)
-  d.update_attributes(profile_photo_id: m.id)
+
+  candidate_ids << d.id
+  m = Media.create(url: "Alex_small.jpg",
+             type: "Image", user_id: d.id)
+d.update_attributes(profile_photo_id: m.id)
+
 
   d = Candidate.create(name: "Kamille Ullrich", email: "kamille_ullrich@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -134,8 +137,10 @@ candidate_ids << c.id
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have always been someone who loves to interact with computers and the internet. This scholarship will not only allow me to create amazing things but also create a better community and world.",
                 biography: Faker::Lorem.paragraph(15)) 
   candidate_ids << d.id 
-  m = Media.create(url: "https://secure.gravatar.com/avatar/b9dcbe494f998ae2d18cdbb79740c121.png?r=PG&d=mm&s=98",
-             type: "Image", user_id: c.id)
+
+    m = Media.create(url: "Tara_small.jpg",
+             type: "Image", user_id: d.id)
+
 d.update_attributes(profile_photo_id: m.id)
 
    d = Candidate.create(name: "Mary Flatley", email: "mary_flatley@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
@@ -145,10 +150,11 @@ d.update_attributes(profile_photo_id: m.id)
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have so many ideas and there is no better way to express them than through computer programming. This experience could change my life and let me reach my full potential.",
-                biography: Faker::Lorem.paragraph(15)) 
-  candidate_ids << d.id 
- m = Media.create(url: "https://secure.gravatar.com/avatar/1cfffebc32d4c7065a23d10ecbb6e91d.png?r=PG&d=mm&s=98",
-             type: "Image", user_id: c.id)
+                biography: Faker::Lorem.paragraph(15))
+  candidate_ids << d.id
+
+    m = Media.create(url: "Jane_small.jpg",
+             type: "Image", user_id: d.id)
 d.update_attributes(profile_photo_id: m.id)
 
 
@@ -159,12 +165,12 @@ d.update_attributes(profile_photo_id: m.id)
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "For my entire life, I have wanted to make a difference in the world. This scholarship will give me the opportunity to achieve my dreams and change the world.",
-                biography: Faker::Lorem.paragraph(15)) 
-  candidate_ids << d.id  
-
- m = Media.create(url: "https://secure.gravatar.com/avatar/1ba50c7ecfe17e27d931a1148cb6e256.png?r=PG&d=mm&s=98",
-             type: "Image", user_id: c.id)
+                biography: Faker::Lorem.paragraph(15))
+  candidate_ids << d.id
+    m = Media.create(url: "Harry_small.jpg",
+             type: "Image", user_id: d.id)
 d.update_attributes(profile_photo_id: m.id)
+
 
 
 c = Candidate.first

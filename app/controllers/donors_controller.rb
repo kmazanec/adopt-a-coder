@@ -1,5 +1,7 @@
 class DonorsController < ApplicationController
 
+  before_filter :require_donor_login, except: [:new, :create]
+
   def new
     @donor = Donor.new
   end

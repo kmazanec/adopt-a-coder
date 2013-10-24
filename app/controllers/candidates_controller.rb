@@ -1,4 +1,7 @@
 class CandidatesController < ApplicationController
+
+  before_filter :require_candidate_login, except: [:new, :index, :show, :create]
+
   def new
     @candidate = Candidate.new
   end

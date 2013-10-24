@@ -2,6 +2,7 @@ class ApplicationsController < ApplicationController
 ####
 ####        REMEMBER THIS IS FOR CANDIDATE APPLICATIONS!
 ####
+  before_filter :require_candidate_login, except: [:create]
 
   def create
   end
@@ -11,7 +12,7 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       format.js { render json: { message:"error" } }
       format.html {
-        puts "hello world"
+
         if params[:save_and_exit]
           redirect_to profile_candidate_path(current_user)
         else
@@ -19,13 +20,6 @@ class ApplicationsController < ApplicationController
         end
       }
     end
-
-    #
-    # end
-    #   redirect_to
-    #   redirect_to
-    # else
-    # end
   end
 
   def edit
@@ -55,10 +49,7 @@ class ApplicationsController < ApplicationController
 
 end
 
-# respond_to do |format|
-#       format.json { }
-#       format.html { render :html => "HTML" }
-#     end
 
-# render { render :html => "HTML"}
+
+
 

@@ -1,5 +1,5 @@
 class DonorMailer < ActionMailer::Base
-  default from: "adopt.a.coder@gmail.com"
+  default from: "dbcadoptacoder@gmail.com"
 
   def welcome_email(donor)
     @donor = donor

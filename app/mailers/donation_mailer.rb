@@ -1,9 +1,9 @@
 class DonationMailer < ActionMailer::Base
-  default from: "adopt.a.coder@gmail.com"
+  default from: "dbcadoptacoder@gmail.com"
 
     def existing_donor_mailer(donor, candidate, donation)
-    @donation = donation  
-    @candidate = candidate  
+    @donation = donation
+    @candidate = candidate
     @donor = donor
     @url = 'http://localhost:3000/candidates'
 

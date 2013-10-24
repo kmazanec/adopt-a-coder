@@ -12,7 +12,7 @@ describe UserMailer do
     it "send user password reset url" do
       @mail.subject.should eq "Password Reset"
       @mail.to.should eq [@user.email]
-      @mail.from.should eq ["adopt.a.coder@gmail.com"]
+      @mail.from.should eq ["dbcadoptacoder@gmail.com"]
       @mail.body.encoded.should match(password_resets_verify_token_url(@user.password_reset_token))
     end
   end
