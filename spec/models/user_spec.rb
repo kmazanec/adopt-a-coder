@@ -54,7 +54,7 @@ require 'spec_helper'
 
       describe "#send_password_set" do
         before(:each) do
-          @user = FactoryGirl.create(:user, type: "Donor")
+          @user = FactoryGirl.create(:donor)
         end
 
         it "generates a unique password_reset_token each time" do
