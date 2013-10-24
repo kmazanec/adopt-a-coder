@@ -4,14 +4,14 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1><%= @donor.name %>,  Thank you for Donating through AdoptaCoder.org</h1>
+    <h2><%= @donor.name %>,  Thank you for Donating through AdoptaCoder.org</h2>
     <p>
       A profile has been created for you to track your donations and keep updated with the candidates you have supported.<br><br>
       Your username is: <%= @donor.email %>.<br><br>
-      To finalize the creation of your profile, please follow this link <%= @url %> and create a password for your account.
+      To finalize the creation of your profile, please follow this link <%= password_resets_verify_token_url(@donor.password_reset_token) %>  and create a password for your account.
     </p>
    
     <p>Thanks again for your Donation and Support! </p>
-    <p><%= Campaign.current_campaign.candidate.name %></p>
+    <p>Adopt a Coder Staff</p>
   </body>
 </html>

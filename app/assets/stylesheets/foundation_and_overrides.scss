@@ -995,8 +995,8 @@ $topbar-link-weight: normal;
 $topbar-dropdown-bg: #FFF;
 $topbar-dropdown-link-color: $primary-color-dark;
 // $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: $secondary-color-light;
-$topbar-dropdown-toggle-alpha: 0;
+$topbar-dropdown-toggle-color: $primary-color;
+$topbar-dropdown-toggle-alpha: 0.8;
 $dropdown-label-color: $secondary-color-light;
 
 // Top menu icon styles

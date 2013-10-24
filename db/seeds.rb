@@ -40,7 +40,8 @@ c = Candidate.create(name: "Lindsay James", email: "lindsay_james@hotmail.com", 
                 password: "test", password_confirmation: "test", address1: "123 State St",
                 city: "Chicago", state: "IL", zip: "60600", twitter: "http://www.twitter.com/kevinAnother22",
                 facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com",
-                mission: "Becoming a software engineer has been my lifelong dream.  I want to create the technology that powers people's lives.  This scholarship will allow me to pursue my dreams while supporting my family.")
+                mission: "Becoming a software engineer has been my lifelong dream.  I want to create the technology that powers people's lives.  This scholarship will allow me to pursue my dreams while supporting my family.",
+                biography: Faker::Lorem.paragraph(15))
 candidate_ids << c.id
 
 m = Media.create(url: "http://kaynou.files.wordpress.com/2011/01/oprah-winfrey-named-petas-person-of-the-5283.jpg",
