@@ -3,7 +3,7 @@ class ApplicationsMailer < ActionMailer::Base
 
   def applications_mailer(application)
     @application = application
-    @url = 'http://localhost:3000'
+
     delivery_options = { user_name: "adopt.a.coder@gmail.com",
                          password: "damnittravis",
                          address: "smtp.gmail.com" }

@@ -3,7 +3,7 @@ class DonorMailer < ActionMailer::Base
 
   def welcome_email(donor)
     @donor = donor
-    @url = 'http://localhost:3000'
+
     delivery_options = { user_name: "adopt.a.coder@gmail.com",
                          password: "damnittravis",
                          address: "smtp.gmail.com" }
@@ -13,7 +13,7 @@ class DonorMailer < ActionMailer::Base
 
   def donation_mailer(donor)
     @donor = donor
-    @url = 'http://localhost:3000'
+
     delivery_options = { user_name: "adopt.a.coder@gmail.com",
                          password: "damnittravis",
                          address: "smtp.gmail.com" }

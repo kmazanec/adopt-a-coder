@@ -3,10 +3,10 @@
     <% current_application.responses.order("id ASC").slice(8,4).each do |response| %>
       <%= f.fields_for :responses, response do |r| %>
         <%= r.label :body, "#{response.question.body}" %>
-        <%= r.text_area :body %>
+        <%= r.text_area :body, class: "application-form-field" %>
       <% end %>
     <% end %>
+    <%= f.submit "Prev Page", name: "prev", class: "small button success prev-app-page" %>
     <%= f.submit "Save and Return to Profile", name: "save_and_exit", class: "small button success" %>
-    <%= f.submit "Back", name: "back", class: "small button success" %>
   <% end %>
 <% end %>
