@@ -9,8 +9,8 @@
           <%= image_tag candidate.profile_image.url, class: "image-square", size: "180" %>
           <%= candidate.name %>
           <br>
-          <div class="tiny button round">
-            Read my story
+          <div class="center">
+            <%= link_to 'Read my story', candidate_path(candidate), class: "tiny button round" %>
           </div>
         </div>
       </li>

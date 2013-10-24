@@ -11,17 +11,26 @@
     <% if !current_application.complete %>
       <tr>
         <td>1</td>
-        <td><%= link_to 'Profile', edit_candidate_path(current_user) %></td>
+        <td><%= link_to edit_candidate_path(current_user) do %>
+            <i class="icon-edit icon-small dark-text"></i> Profile
+          <% end %>
+        </td>
         <td><%= number_to_percentage(current_user.profile_percent_completed, precision: 0) %> Complete</td>
       </tr>
       <tr>
         <td>2</td>
-        <td><%= link_to 'Complete Application', edit_candidate_application_path(current_user, current_user.application) %></td>
+        <td><%= link_to edit_candidate_application_path(current_user, current_user.application) do %>
+            <i class="icon-edit icon-small dark-text"></i> Application
+          <% end %>
+        </td>
         <td><%= number_to_percentage(current_user.application.response_percent_completed, precision: 0) %> Complete</td>
       </tr>
       <tr>
         <td>3</td>
-        <td id="application-submitter"><%= link_to 'Submit Application', candidate_application_submit_path, {id: 'submit-application'} %></td>
+        <td id="application-submitter"><%= link_to candidate_application_submit_path, {id: 'submit-application'} do %>
+          <i class="icon-book icon-small dark-text"></i> Submit Application
+          <% end %>
+        </td>
         <td id="application-status">Not Completed</td>
       </tr>
     <% else %>
