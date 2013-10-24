@@ -11,8 +11,20 @@ class Candidate < User
 
   after_create :application_create
 
+  before_save :check_urls
+
   def self.search(query)
     all(conditions: ["LOWER(name) like ?", "%#{query}%".downcase])
+  end
+
+  def check_urls
+    self.twitter = "http://#{self.twitter}" unless self.twitter.nil? || self.twitter[/^https?/] || self.twitter.empty?
+    self.facebook = "http://#{self.facebook}" unless self.facebook.nil? ||self.facebook[/^https?/] ||  self.facebook.empty?
+    self.linked_in = "http://#{self.linked_in}" unless self.linked_in.nil? ||self.linked_in[/^https?/] ||  self.linked_in.empty?
+    self.codeacademy = "http://#{self.codeacademy}" unless self.codeacademy.nil? ||self.codeacademy[/^https?/] ||  self.codeacademy.empty?
+    self.github = "http://#{self.github}" unless self.github.nil? ||self.github[/^https?/] ||  self.github.empty?
+    self.blog = "http://#{self.blog}" unless self.blog.nil? ||self.blog[/^https?/] ||  self.blog.empty?
+    self.personal_url = "http://#{self.personal_url}" unless self.personal_url.nil? ||self.personal_url[/^https?/] ||  self.personal_url.empty?
   end
 
   def personal_info_percent

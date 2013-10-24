@@ -14,27 +14,27 @@
     </tr>
     <tr>
       <td>facebook:</td>
-      <td><%= link_to current_user.facebook, target: '_blank' if current_user.facebook %></td>
+      <td><%= link_to current_user.facebook, current_user.facebook, target: '_blank' if current_user.facebook %></td>
     </tr>
     <tr>
       <td>Twitter:</td>
-      <td><%= link_to current_user.twitter, target: '_blank' if current_user.twitter %></td>
+      <td><%= link_to current_user.twitter, current_user.twitter, target: '_blank' if current_user.twitter %></td>
     </tr>
     <tr>
       <td>Github:</td>
-      <td><%= link_to current_user.github, target: '_blank' if current_user.github %></td>
+      <td><%= link_to current_user.github, current_user.github, target: '_blank' if current_user.github %></td>
     </tr>
     <tr>
       <td>LinkedIn:</td>
-      <td><%= link_to current_user.linked_in, target: '_blank' if current_user.linked_in %></td>
+      <td><%= link_to current_user.linked_in, current_user.linked_in, target: '_blank' if current_user.linked_in %></td>
     </tr>
     <tr>
       <td>Personal Blog:</td>
-      <td><%= link_to current_user.blog, target: '_blank' if current_user.blog %></td>
+      <td><%= link_to current_user.blog, current_user.blog, target: '_blank' if current_user.blog %></td>
     </tr>
     <tr>
       <td>Personal Url:</td>
-      <td><%= link_to current_user.personal_url, target: '_blank' if current_user.personal_url %></td>
+      <td><%= link_to current_user.personal_url, current_user.personal_url, target: '_blank' if current_user.personal_url %></td>
     </tr>
   </table>
 </div>
