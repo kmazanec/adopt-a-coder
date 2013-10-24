@@ -6,9 +6,9 @@ describe DonationMailer do
 
     before(:each) do
       @donor = FactoryGirl.build(:donor, email: "another@gmail.com")
-      @donation = FactoryGirl.create(:donation)
       @campaign = FactoryGirl.create(:campaign)
       controller.stub(:current_campaign).and_return(@campaign)
+      @donation = FactoryGirl.create(:donation, campaign: @campaign)
       @candidate = FactoryGirl.create(:candidate)
       @donor.donations = [@donation]
       @mail = DonationMailer.existing_donor_mailer(@donor, @candidate, @donation).deliver
