@@ -39,7 +39,11 @@
             </td>
             <td>
               <div class="center">
-              <% if logged_in? %>
+              <% if candidate == current_campaign.candidate  %>
+                <h5>Current Campaign!</h5>
+              <% elsif current_user_candidate %>
+                <p></p>
+              <% elsif logged_in? %>
                 <%= link_to nominate_candidate_path(candidate), method: :post, class: "small button success submit-nomination" do %>
                   <i class="icon-trophy icon-medium"></i> Nominate!
                 <% end %>
