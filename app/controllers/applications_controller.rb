@@ -2,6 +2,7 @@ class ApplicationsController < ApplicationController
 ####
 ####        REMEMBER THIS IS FOR CANDIDATE APPLICATIONS!
 ####
+  before_filter :require_candidate_login, except: [:create]
 
   def create
   end
