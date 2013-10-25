@@ -1,6 +1,6 @@
 require 'faker'
 
-# Image.create(url: "thinker.jpg")
+Image.create(url: "thinker.jpg")
 
 donor_ids = []
 candidate_ids = []
