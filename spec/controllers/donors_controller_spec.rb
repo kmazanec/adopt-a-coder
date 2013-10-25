@@ -103,7 +103,7 @@ describe DonorsController do
       controller.stub(:current_user).and_return(@candidate)
       get :show, :id => @candidate
 
-      redirect_to root_path
+      response.should redirect_to(root_path)
     end
   end
 end

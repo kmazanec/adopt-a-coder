@@ -25,7 +25,7 @@ describe CandidatesController do
       end
 
       it "redirect to the new canidate's page" do
-        response.should redirect_to(candidate_path(@candidate))
+        response.should redirect_to(profile_candidate_path(@candidate))
       end
 
       it "should set session id" do
