@@ -41,7 +41,7 @@ class ChargesController < ApplicationController
         else
           flash[:success] = "Your donation was successful!  Thank you!  Please log in to make a nomination."
           @donation = Donation.create(token: @charge_id, amount: @amount, donor: @donor, campaign: current_campaign)
-          DonationMailer.existing_donor_mailer(@donor, @candidate).deliver
+          DonationMailer.existing_donor_mailer(@donor, @candidate, @donation).deliver
           render :_donation_confirmation
         end
 

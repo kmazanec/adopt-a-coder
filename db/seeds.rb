@@ -44,13 +44,14 @@ c = Candidate.create(name: "Lindsay James", email: "lindsay_james@hotmail.com", 
                 biography: Faker::Lorem.paragraph(15))
 candidate_ids << c.id
 
+
 m = Media.create(url: "Adigo_small.jpg",
              type: "Image", user_id: c.id)
 c.update_attributes(profile_photo_id: m.id)
 
-m = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
+f = Media.create(url: "http://www.youtube.com/watch?v=BU3jfbb172E",
              type: "Video", user_id: c.id)
-c.update_attributes(profile_video_id: m.id)
+c.update_attributes(profile_video_id: f.id)
 
 
 
@@ -120,10 +121,12 @@ candidate_ids << c.id
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am highly motivated to create extraordinary things. This experience will provide me the perfect introduction into this wonderful industry. I will use those experience to harness my craft and bring happiness to people.",
                 biography: Faker::Lorem.paragraph(15))
 
+
   candidate_ids << d.id
   m = Media.create(url: "Alex_small.jpg",
              type: "Image", user_id: d.id)
 d.update_attributes(profile_photo_id: m.id)
+
 
   d = Candidate.create(name: "Kamille Ullrich", email: "kamille_ullrich@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
@@ -132,11 +135,12 @@ d.update_attributes(profile_photo_id: m.id)
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have always been someone who loves to interact with computers and the internet. This scholarship will not only allow me to create amazing things but also create a better community and world.",
-                biography: Faker::Lorem.paragraph(15))
-  candidate_ids << d.id
+                biography: Faker::Lorem.paragraph(15)) 
+  candidate_ids << d.id 
 
     m = Media.create(url: "Tara_small.jpg",
              type: "Image", user_id: d.id)
+
 d.update_attributes(profile_photo_id: m.id)
 
    d = Candidate.create(name: "Mary Flatley", email: "mary_flatley@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
@@ -153,6 +157,7 @@ d.update_attributes(profile_photo_id: m.id)
              type: "Image", user_id: d.id)
 d.update_attributes(profile_photo_id: m.id)
 
+
    d = Candidate.create(name: "Josh Brooks", email: "josh_brooks@gmail.com", password: "test", password_confirmation: "test", phone: Faker::PhoneNumber.phone_number,
                 password: "test", password_confirmation: "test", address1: Faker::Address.street_address,
                 city: Faker::Address.city, state: Faker::Address.state_abbr, zip: Faker::Address.zip_code, facebook: "https://www.facebook.com/marialopez",
@@ -165,7 +170,6 @@ d.update_attributes(profile_photo_id: m.id)
     m = Media.create(url: "Harry_small.jpg",
              type: "Image", user_id: d.id)
 d.update_attributes(profile_photo_id: m.id)
-
 
 
 
