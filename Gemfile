@@ -56,10 +56,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'travis-lint'
 
 gem 'coveralls', require: false
+gem "faker", "~> 1.2.0"
 
 group :test, :development do
   gem 'rspec-rails'
-  gem "faker", "~> 1.2.0"
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
