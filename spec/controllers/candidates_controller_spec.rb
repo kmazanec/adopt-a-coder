@@ -91,6 +91,7 @@ describe CandidatesController do
       response.should render_template(:index)
    end
 
+
   end
 
   describe "#update" do
@@ -105,6 +106,13 @@ describe CandidatesController do
 
       @candidate.reload.mission.should eq "become a coder"
       response.should redirect_to(profile_candidate_path(@candidate))
+    end
+
+    it 'should flash a notice if the user is not logged in' do
+      controller.stub(:current_user).and_return(nil)
+      patch :update, id: @candidate.id
+
+      flash[:error].should eq "Please log in or sign up in order to view that page."
     end
   end
 end
