@@ -4,7 +4,8 @@ include UserHelper
 describe "Donating from the homepage" do
 
   before(:each) do
-
+    c = FactoryGirl.create(:candidate)
+    Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12500, current_campaign: true)
     visit root_path
   end
 

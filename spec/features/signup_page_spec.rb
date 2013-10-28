@@ -2,6 +2,10 @@ require 'spec_helper'
 include UserHelper
 
 describe "Sign Up Page for donor" do
+  before(:each) do
+    c = FactoryGirl.create(:candidate)
+    Campaign.create(candidate: c, start_date: "31/10/2013", end_date: "31/12/2013", total: 0, goal: 12500, current_campaign: true)
+  end
 
   it "should let you sign up as a donator" do
 
