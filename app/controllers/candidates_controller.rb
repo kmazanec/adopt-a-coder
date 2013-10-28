@@ -8,9 +8,9 @@ class CandidatesController < ApplicationController
 
   def index
     if params[:search]
-      @candidates = Candidate.order("RANDOM()").search(params[:search])
+      @candidates = Candidate.where(approved: true, active: true).order("RANDOM()").search(params[:search])
     else
-      @candidates = Candidate.order("RANDOM()")
+      @candidates = Candidate.where(approved: true, active: true).order("RANDOM()")
     end
   end
 

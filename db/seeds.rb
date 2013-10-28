@@ -41,7 +41,7 @@ c = Candidate.create(name: "Lindsay James", email: "lindsay_james@hotmail.com", 
                 city: "Chicago", state: "IL", zip: "60600", twitter: "http://www.twitter.com/kevinAnother22",
                 facebook: "https://facebook.com/kevinanother22", blog: "http://kevinanother.tumblr.com",
                 mission: "Becoming a software engineer has been my lifelong dream.  I want to create the technology that powers people's lives.  This scholarship will allow me to pursue my dreams while supporting my family.",
-                biography: Faker::Lorem.paragraph(15))
+                biography: Faker::Lorem.paragraph(15), approved: true, active: true)
 candidate_ids << c.id
 
 
@@ -98,7 +98,7 @@ c = Candidate.create(name: "Maria Lopez", email: "maria@lopez.com", phone: "928-
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am a self-motivated, mother of two who wants to change the world.  Through this experience, I will have the ability to not only change my family's lives, but change the lives of people all over the planet.",
-                biography: Faker::Lorem.paragraph(15))
+                biography: Faker::Lorem.paragraph(15), approved: true, active: true)
 
 m = Media.create(url: "Jen_small.jpg",
              type: "Image", user_id: c.id)
@@ -119,7 +119,7 @@ candidate_ids << c.id
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I am highly motivated to create extraordinary things. This experience will provide me the perfect introduction into this wonderful industry. I will use those experience to harness my craft and bring happiness to people.",
-                biography: Faker::Lorem.paragraph(15))
+                biography: Faker::Lorem.paragraph(15), approved: true, active: true)
 
 
   candidate_ids << d.id
@@ -135,7 +135,7 @@ d.update_attributes(profile_photo_id: m.id)
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have always been someone who loves to interact with computers and the internet. This scholarship will not only allow me to create amazing things but also create a better community and world.",
-                biography: Faker::Lorem.paragraph(15)) 
+                biography: Faker::Lorem.paragraph(15), approved: true, active: true)
   candidate_ids << d.id 
 
     m = Media.create(url: "Tara_small.jpg",
@@ -150,7 +150,7 @@ d.update_attributes(profile_photo_id: m.id)
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "I have so many ideas and there is no better way to express them than through computer programming. This experience could change my life and let me reach my full potential.",
-                biography: Faker::Lorem.paragraph(15))
+                biography: Faker::Lorem.paragraph(15), approved: true, active: true)
   candidate_ids << d.id
 
     m = Media.create(url: "Jane_small.jpg",
@@ -165,7 +165,7 @@ d.update_attributes(profile_photo_id: m.id)
                 codeacademy: "http://www.codecademy.com/kberr18", github: "https://github.com/bill-gates",
                 blog: "http://www.buzzfeed.com/bennyjohnson/you-should-be-sad-the-internet-was-not-around-for",
                 personal_url: "http://www.dolekemp96.org/main.htm", mission: "For my entire life, I have wanted to make a difference in the world. This scholarship will give me the opportunity to achieve my dreams and change the world.",
-                biography: Faker::Lorem.paragraph(15))
+                biography: Faker::Lorem.paragraph(15), approved: true, active: true)
   candidate_ids << d.id
     m = Media.create(url: "Harry_small.jpg",
              type: "Image", user_id: d.id)
