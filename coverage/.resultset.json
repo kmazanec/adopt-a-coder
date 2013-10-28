@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/application_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -17,9 +17,9 @@
         1,
         null,
         1,
-        6,
-        0,
-        0,
+        7,
+        1,
+        1,
         null,
         null,
         null,
@@ -33,7 +33,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/applications_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/applications_controller.rb": [
         1,
         null,
         null,
@@ -90,7 +90,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/candidates_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/candidates_controller.rb": [
         1,
         null,
         1,
@@ -149,7 +149,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/donors_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/donors_controller.rb": [
         1,
         null,
         1,
@@ -194,13 +194,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/home_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/home_controller.rb": [
         null,
         1,
         null,
         1,
-        21,
-        21,
+        20,
+        20,
         null,
         null,
         1,
@@ -212,7 +212,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/nominations_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/nominations_controller.rb": [
         1,
         null,
         1,
@@ -233,7 +233,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/password_resets_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/password_resets_controller.rb": [
         1,
         1,
         null,
@@ -270,7 +270,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/controllers/sessions_controller.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/controllers/sessions_controller.rb": [
         1,
         null,
         null,
@@ -304,7 +304,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/mailers/donation_mailer.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/donation_mailer.rb": [
         1,
         1,
         null,
@@ -322,7 +322,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/mailers/donor_mailer.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/donor_mailer.rb": [
         1,
         1,
         null,
@@ -349,7 +349,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/mailers/user_mailer.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/user_mailer.rb": [
         1,
         1,
         null,
@@ -368,7 +368,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/application.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/application.rb": [
         1,
         1,
         null,
@@ -411,20 +411,20 @@
         null,
         1,
         1,
-        36,
-        399,
+        37,
+        410,
         null,
         null,
         null,
         1,
-        45,
+        46,
         1,
         null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/campaign.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/campaign.rb": [
         1,
         1,
         1,
@@ -434,12 +434,12 @@
         1,
         null,
         1,
-        71,
+        69,
         null,
         null,
         1,
-        21,
-        21,
+        20,
+        20,
         null,
         null,
         null,
@@ -447,7 +447,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/candidate.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/candidate.rb": [
         1,
         1,
         1,
@@ -468,17 +468,13 @@
         null,
         null,
         1,
-        57,
-        57,
-        57,
-        57,
-        57,
-        57,
-        57,
-        null,
-        null,
-        1,
-        2,
+        59,
+        59,
+        59,
+        59,
+        59,
+        59,
+        59,
         null,
         null,
         1,
@@ -498,13 +494,17 @@
         null,
         null,
         1,
+        2,
+        null,
+        null,
         1,
-        28,
+        1,
+        29,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/user.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/user.rb": [
         1,
         1,
         null,
@@ -522,8 +522,8 @@
         null,
         null,
         1,
-        64,
-        64,
+        65,
+        65,
         null,
         null,
         null,
@@ -550,32 +550,32 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/video.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/video.rb": [
         1,
         null,
         1,
         null,
         1,
-        21,
-        21,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/media.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/image.rb": [
-        1,
-        null,
-        1,
+        20,
+        20,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donation.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/media.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/image.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/donation.rb": [
         1,
         1,
         1,
@@ -595,7 +595,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/donor.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/donor.rb": [
         1,
         1,
         1,
@@ -624,7 +624,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/nomination.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/nomination.rb": [
         1,
         1,
         1,
@@ -636,14 +636,14 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/question.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/question.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/models/response.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/models/response.rb": [
         1,
         1,
         1,
@@ -656,40 +656,40 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/mailers/candidate_mailer.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/applications_mailer.rb": [
         1,
         1,
         null,
         1,
-        2,
+        1,
         null,
-        2,
+        1,
         null,
         null,
         null,
-        2,
+        1,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/adopt_a_coder/app/mailers/applications_mailer.rb": [
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/candidate_mailer.rb": [
         1,
         1,
         null,
         1,
-        1,
+        2,
         null,
-        1,
+        2,
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1382658775
+    "timestamp": 1382986412
   },
   "Cucumber Features": {
     "coverage": {

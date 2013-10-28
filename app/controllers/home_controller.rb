@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     cid = current_campaign.candidate.id
-    @candidates = Candidate.where('id' != cid).order('random()').limit(4)
+    @candidates = Candidate.where('id' != cid, approved: true, active: true).order('random()').limit(4)
   end
 
   def signup
