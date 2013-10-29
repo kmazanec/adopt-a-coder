@@ -25,10 +25,6 @@ class Application < ActiveRecord::Base
     true
   end
 
-  def response_percent_completed
-    (100  * completed_responses/(self.responses.count))
-  end
-
   def completed_responses
     responses_complete = 0
     self.responses.each do |response|
@@ -36,6 +32,11 @@ class Application < ActiveRecord::Base
     end
     responses_complete
   end
+
+  def response_percent_completed
+    (100  * completed_responses/(self.responses.count))
+  end
+
 
 
   protected
