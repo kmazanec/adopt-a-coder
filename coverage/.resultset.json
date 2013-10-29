@@ -589,9 +589,9 @@
         1,
         null,
         1,
-        15,
-        15,
-        15,
+        11,
+        11,
+        11,
         null,
         null,
         null
@@ -657,22 +657,6 @@
         null,
         null
       ],
-      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/candidate_mailer.rb": [
-        1,
-        1,
-        null,
-        1,
-        7,
-        null,
-        7,
-        null,
-        null,
-        null,
-        7,
-        null,
-        null,
-        null
-      ],
       "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/applications_mailer.rb": [
         1,
         1,
@@ -688,9 +672,25 @@
         null,
         null,
         null
+      ],
+      "/Users/ScottMascio/Desktop/Adopt-A-Coder/app/mailers/candidate_mailer.rb": [
+        1,
+        1,
+        null,
+        1,
+        7,
+        null,
+        7,
+        null,
+        null,
+        null,
+        7,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1383067294
+    "timestamp": 1383069376
   },
   "Cucumber Features": {
     "coverage": {
