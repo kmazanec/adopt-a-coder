@@ -2,7 +2,6 @@ class VideosController < ApplicationController
 
   def create
     @video = current_user.videos.build(video_params)
-    puts @video.inspect
     if @video.save
       flash[:success] = "You have successfully added a new video."
     else
