@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
 
+  before_filter :require_candidate_login
+
   def create
     @image = current_user.images.build(image_params)
     if @image.save
@@ -9,9 +11,6 @@ class ImagesController < ApplicationController
     end
     redirect_to edit_candidate_path(current_user)
   end
-
-
-
 
   private
 
