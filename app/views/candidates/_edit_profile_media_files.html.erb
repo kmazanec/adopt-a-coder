@@ -1,20 +1,16 @@
 <div id= "profile_media_files_edit" class="small-12 columns">
   <div class="panel">
     <h3>Profile  Media Files</h3>
-    <%= form_tag(current_user, method: "patch") do |f| %>
-      <%= hidden_field_tag :type, value: "video" %>
-      <%= label_tag :url, "Please add a link to your video" %>
-      <%= text_field_tag :url %>
-      <%= submit_tag "Update Media Files" %>
+    <%= form_for([current_user, @video]) do |f| %>
+      <%= f.label :url, "Please add a link to your video" %>
+      <%= f.text_field :url %>
+      <%= f.submit "Update Media Files" %>
     <% end %>
 
-    <%= form_tag(current_user, method: "patch") do |f| %>
-      <%= label_tag :profile_image_id, "Please select your profile image" %>
-      <%= collection_select(current_user, :profile_image_id, current_user.images, :id, :url) %>
-      <%= hidden_field_tag :type, value: "image" %>
-      <%= label_tag :url, "Please add a link to an additional image" %>
-      <%= text_field_tag :url %>
-      <%= submit_tag "Update Media Files" %>
+    <%= form_for([current_user, @image]) do |f| %>
+      <%= f.label :url, "Please add a link to an additional image" %>
+      <%= f.text_field :url %>
+      <%= f.submit "Update Media Files" %>
     <% end %>
   </div>
 </div>
