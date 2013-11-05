@@ -83,6 +83,18 @@ describe CandidatesController do
 
   end
 
+  describe "#edit" do
+    it 'should render the edit page' do
+      @candidate = FactoryGirl.create(:candidate)
+      controller.stub(:current_user).and_return(@candidate)
+
+      get :edit, id: @candidate.id
+
+      response.should render_template(:edit)
+    end
+
+  end
+
   describe "#index" do
     it "should show the all the candates" do
 

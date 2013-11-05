@@ -16,6 +16,8 @@ AdoptACoder::Application.routes.draw do
 
   resources "candidates" do
     resources "applications"
+    resources "images"
+    resources "videos"
   end
 
   get '/logout' => 'sessions#logout'
