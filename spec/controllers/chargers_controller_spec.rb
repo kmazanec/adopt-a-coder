@@ -17,7 +17,7 @@ describe ChargesController do
 
   describe "#create" do
 
-    it "should generate a stripe card token" do
+    it "should generate flash notice on successul donation" do
       card_token = StripeMock.generate_card_token(last4: "9191", exp_year: 1984)
       cus = Stripe::Customer.create(card: card_token)
       card = cus.cards.data.first
