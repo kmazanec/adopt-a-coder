@@ -67,6 +67,7 @@ group :test, :development do
   gem 'jasmine'
   gem 'jasmine-jquery-rails'
   gem 'jasmine-rails'
+  gem 'database_cleaner'
 end
 
 # Use unicorn as the app server

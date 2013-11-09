@@ -4,7 +4,7 @@ include UserHelper
 describe "Login as a candidate from the homepage" do
   before(:each) do
     c = FactoryGirl.create(:candidate)
-    m = Media.create!(url: "vinylll.jpg",
+    m = Media.create!(url: "Adigo_small.jpg",
              type: "Image", user_id: c.id)
     f = Media.create!(url: "http://www.vinyll.com/watch?v=BU3jfbb172E",
              type: "Video", user_id: c.id)
@@ -16,7 +16,7 @@ describe "Login as a candidate from the homepage" do
     click_link "Logout"
   end
 
-  it "should let you login as a candidate if you have a profile" do
+  it "should let you login as a candidate if you have a profile", :js => true do
     visit root_path
     click_link "Login"
       fill_in 'email', with: 'derrickrose@gmail.com', match: :first

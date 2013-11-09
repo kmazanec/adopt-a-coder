@@ -4,7 +4,7 @@ include UserHelper
 describe "Sign Up Page for donor" do
   before(:each) do
     c = FactoryGirl.create(:candidate)
-    m = Media.create!(url: "davelees.jpg",
+    m = Media.create!(url: "Adigo_small.jpg",
              type: "Image", user_id: c.id)
     f = Media.create!(url: "http://www.davidube.com/watch?v=BU3jfbb172E",
              type: "Video", user_id: c.id)
@@ -15,7 +15,7 @@ describe "Sign Up Page for donor" do
   end
 
 
-  it "should let you sign up as a donator" do
+  it "should let you sign up as a donator", :js => true do
 
     visit root_path
     click_link "Sign Up!"
