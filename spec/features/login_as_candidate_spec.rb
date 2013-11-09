@@ -23,7 +23,6 @@ describe "Login as a candidate from the homepage" do
       fill_in 'password', with: 'numberone'
       click_button "Login"
       page.should have_content "Derrick Rose"
-      click_link "Logout"
   end
 end
 
