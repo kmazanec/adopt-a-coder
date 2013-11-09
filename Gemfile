@@ -68,6 +68,7 @@ group :test, :development do
   gem 'jasmine-jquery-rails'
   gem 'jasmine-rails'
   gem 'database_cleaner'
+  gem 'stripe-ruby-mock', '>= 1.8.7.0'
 end
 
 # Use unicorn as the app server
