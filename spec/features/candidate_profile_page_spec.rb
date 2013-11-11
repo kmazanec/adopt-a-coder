@@ -6,7 +6,7 @@ describe "Profile Page for candidate" do
   before(:each) do
     c = FactoryGirl.create(:candidate)
 
-    m = Media.create!(url: "derrickrose.jpg",
+    m = Media.create!(url: "Adigo_small.jpg",
              type: "Image", user_id: c.id)
     f = Media.create!(url: "http://www.grantland.com/watch?v=BU3jfbb172E",
              type: "Video", user_id: c.id)
@@ -18,18 +18,18 @@ describe "Profile Page for candidate" do
   end
 
 
-  it "should let you start your application" do
+  it "should let you start your application", :js => true do
 
-    page.should have_link "My Application"
+    page.should have_link "Application"
   end
 
-  it "should let you logout" do
+  it "should let you logout", :js => true do
 
     click_link "Logout"
     page.should have_link "Sign Up!"
   end
 
-  it "should let you return to homepage" do
+  it "should let you return to homepage", :js => true do
 
 
     page.should have_link "Adopt-a-Coder"

@@ -27,7 +27,8 @@ class CandidatesController < ApplicationController
   end
 
   def edit
-
+    @image = Image.new
+    @video = Video.new
   end
 
   def update
