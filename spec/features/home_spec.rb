@@ -31,6 +31,12 @@ describe "Homepage" do
     page.should have_content "When is my card charged?"
   end
 
+  it "should show all candidates when I click all candidates", :js => true do
+
+    click_link "All Candidates", match: :first
+    page.should have_content "All Candidates"
+  end
+
   it "should have 3 Contribute button", :js => true do
 
     page.should have_link('Contribute', :count => 3)
