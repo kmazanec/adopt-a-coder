@@ -24,7 +24,7 @@ describe ChargesController do
   describe "#create" do
 
     it "should generate flash notice on successul donation" do
-      card_token = StripeMock.generate_card_token(last4: "9191", exp_year: 1984)
+      card_token = StripeMock.generate_card_token(last4: "9191", exp_year: 2022)
       cus = Stripe::Customer.create(card: card_token)
       card = cus.cards.data.first
       @candidate = FactoryGirl.create(:candidate)
@@ -60,6 +60,19 @@ describe ChargesController do
         expect(e.http_status).to eq(402)
         expect(e.code).to eq('card_declined')
       }
+    end
+
+    it "should flash a declined card custom error" do
+      StripeMock.prepare_card_error(:card_declined)
+
+      @candidate = FactoryGirl.create(:candidate)
+      @campaign = FactoryGirl.create(:campaign)
+      @donor = FactoryGirl.create(:donor)
+      controller.stub(:current_campaign).and_return(@campaign)
+      controller.stub(:current_candidate).and_return(@candidate)
+      post 'create', email: @donor.email
+      flash[:error].should eq "Your card could not be verified, please try a different form of payment."
+      response.should redirect_to(root_path)
     end
 
     it "mocks a incorrect number card error" do
