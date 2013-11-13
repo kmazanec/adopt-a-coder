@@ -27,11 +27,15 @@ describe ChargesController do
       card_token = StripeMock.generate_card_token(last4: "9191", exp_year: 2022)
       cus = Stripe::Customer.create(card: card_token)
       card = cus.cards.data.first
-      @candidate = FactoryGirl.create(:candidate)
+      @donor = FactoryGirl.build(:donor, email: "another@gmail.com")
       @campaign = FactoryGirl.create(:campaign)
-      @donor = FactoryGirl.create(:donor)
+      Campaign.stub(:current_campaign).and_return(@campaign)
+      @candidate = FactoryGirl.create(:candidate)
+      @donation = FactoryGirl.create(:donation, campaign: @campaign, candidate: @candidate, donor: @donor)
+      @donor.donations = [@donation]
       controller.stub(:current_campaign).and_return(@campaign)
       controller.stub(:current_candidate).and_return(@candidate)
+      controller.stub(:current_user).and_return(@donor)
       post 'create', email: @donor.email
       flash[:success].should eq "Your donation was successful!  Thank you!  Please log in to make a nomination."
       response.should render_template(:_donation_confirmation)
