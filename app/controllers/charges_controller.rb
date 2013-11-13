@@ -13,10 +13,10 @@ class ChargesController < ApplicationController
 
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
-    
+
     @amount = params[:amount]
     @paid = (@amount.to_i * 100).to_s
-   
+
 
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
@@ -29,7 +29,7 @@ class ChargesController < ApplicationController
       @charge_id = charge.id #This will store the token that is returned on a successful process of the car
       @donor = Donor.find_by(email: params[:email])
       @candidate = current_campaign.candidate
-      
+
         if @donor == nil
           temp_password = password_generator
           @donor = Donor.create(name: params[:name], email: params[:email], password: temp_password, password_confirmation: temp_password)
@@ -48,7 +48,7 @@ class ChargesController < ApplicationController
     rescue Stripe::CardError => e
       flash[:error] = "Your card could not be verified, please try a different form of payment."
       redirect_to root_path
-      
+
     end
   end
 end
