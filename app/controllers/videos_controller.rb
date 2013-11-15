@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
 
+  before_filter :require_candidate_login
+
   def create
     @video = current_user.videos.build(video_params)
     if @video.save
@@ -9,8 +11,6 @@ class VideosController < ApplicationController
     end
     redirect_to edit_candidate_path(current_user)
   end
-
-
 
 
   private
