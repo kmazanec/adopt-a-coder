@@ -3,49 +3,49 @@
   <ul class="side-nav center">
     <% if @candidate.codeacademy %>
       <li><%= link_to @candidate.codeacademy do %>
-      <i class="icon-code icon-large dark-text"></i>
+      <i class="fa fa-code icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>
 
     <% if @candidate.facebook %>
       <li><%= link_to @candidate.facebook do %>
-      <i class="icon-facebook icon-large dark-text"></i>
+      <i class="fa fa-facebook icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>
 
     <% if @candidate.twitter %>
       <li><%= link_to @candidate.twitter do %>
-        <i class="icon-twitter icon-large dark-text"></i>
+        <i class="fa fa-twitter icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>
 
     <% if @candidate.github %>
       <li><%= link_to @candidate.github do %>
-        <i class="icon-github icon-large dark-text"></i>
+        <i class="fa fa-github icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>
 
     <% if @candidate.linked_in %>
       <li><%= link_to @candidate.linked_in do %>
-        <i class="icon-linkedin icon-large dark-text"></i>
+        <i class="fa fa-linkedin icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>
 
     <% if @candidate.blog %>
       <li><%= link_to "#{@candidate.blog}" do %>
-        <i class="icon-quote-left icon-large dark-text"></i>
+        <i class="fa fa-quote-left icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>
 
     <% if @candidate.personal_url %>
       <li><%= link_to @candidate.personal_url do %>
-        <i class="icon-home icon-large dark-text"></i>
+        <i class="fa fa-home icon-large dark-text"></i>
       <% end %>
     </li>
     <% end %>

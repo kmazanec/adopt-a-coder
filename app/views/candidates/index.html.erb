@@ -8,7 +8,7 @@
           <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Candidates by Name" %>
         </div>
         <div class="small-3 columns">
-          <button class="button success prefix" type="submit"><i class="icon-search"></i> Search</button>
+          <button class="button success prefix" type="submit"><i class="fa fa-search"></i> Search</button>
         </div>
       </div>
     <% end %>
@@ -45,7 +45,7 @@
                 <p></p>
               <% elsif logged_in? %>
                 <%= link_to nominate_candidate_path(candidate), method: :post, class: "small button success submit-nomination" do %>
-                  <i class="icon-star icon-medium"></i> Nominate!
+                  <i class="fa fa-star icon-medium"></i> Nominate!
                 <% end %>
               <% end %>
               </div>
